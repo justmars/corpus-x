@@ -1,0 +1,36 @@
+- item: Section 1
+  content: |
+    Section 2 of Republic Act No. 7938, as amended by Republic Act No. 10677, is hereby amended to read as follows:
+  units:
+  - item: Section 2
+    units:
+    - item: Paragraph 1
+      content: |
+        The health care services and facilities of the Northern Mindanao Medical Center (NMMC) shall be upgraded to conform with and be commensurate to the bed capacity increase from six hundred (600) to one thousand two hundred (1,200) beds.
+    - item: Paragraph 2
+      content: |
+        Any future increase in bed capacity shall be consistent with the hospital development plan which shall be prepared by the Department of Health (DOH).
+- item: Section 2
+  content: |
+    Section 3 of the same Act is hereby amended to read as follows:
+  units:
+  - item: Section 3
+    content: |
+      The number of medical personnel, the budget for personnel services and maintenance
+      and other operating expenses of the NMMC shall correspondingly be increased. The
+      Secretary of the DOH shall, in coordination with the Secretary of the Department
+      of Budget and Management and the Chairperson of the Civil Service Commission,
+      and after consultation with the Chief of NMMC, determine the additional plantilla
+      positions to be created pursuant to this Act.
+- item: Section 3
+  content: |
+    Section 4 of the same Act is hereby amended to read as follows:
+  units:
+  - item: Section 4
+    content: |
+      The increase in bed capacity of the NMMC fro six hundred (600) to one thousand
+      two hundred (1,200) beds shall be implemented immediately upon approval of this
+      Act.
+- item: Section 4
+  content: |
+    This Act shall take effect fifteen (15) days after its publication in the *Official Gazette* or in a newspaper of general circulation.

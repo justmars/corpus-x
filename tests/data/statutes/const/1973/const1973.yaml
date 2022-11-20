@@ -1,0 +1,1022 @@
+- item: Container 1
+  caption: Preamble
+  content: |
+    We, the sovereign Filipino people, imploring the aid of Divine Providence, in order to establish a Government that shall embody our ideals, promote the general welfare, conserve and develop the patrimony of our Nation, and secure to ourselves and our posterity the blessings of democracy under a regime of justice, peace, liberty, and equality, do ordain and promulgate this Constitution.
+- item: Article I
+  caption: The National Territory
+  units:
+  - item: Section 1
+    content: |
+      The national territory comprises the Philippine archipelago, with all the islands and waters embraced therein, and all the other territories belonging to the Philippines by historic right or legal title, including the territorial sea, the air space, the subsoil, the sea-bed, the insular shelves, and the other submarine areas over which the Philippines has sovereignty or jurisdiction. The waters around, between, and connecting the islands of the archipelago, irrespective of their breadth and dimensions, form part of the internal waters of the Philippines.
+- item: Article II
+  caption: Declaration of Principles and State Policies
+  units:
+  - item: Section 1
+    content: |
+      The Philippines is a republican state. Sovereignty resides in the people and all governmental authority emanates from them.
+  - item: Section 2
+    content: |
+      The defense of the State is a prime duty of the Government and the people, and in the fulfillment of this duty all citizens may be required by law to render personal military or civil service.
+  - item: Section 3
+    content: |
+      The Philippines renounces war as an instrument of national policy, adopts the generally accepted principles of international law as part of the law of the land, and adheres to the policy of peace, equality, justice, freedom, cooperation, and amity with all nations.
+  - item: Section 4
+    content: |
+      The State shall strengthen the family as a basic social institution. The natural right and duty of parents in the rearing of the youth for civic efficiency and the development of moral character shall receive the aid and support of the Government.
+  - item: Section 5
+    content: |
+      The State recognizes the vital role of the youth in nation-building and shall promote their physical, intellectual, and social well-being.
+  - item: Section 6
+    content: |
+      The State shall promote social justice to ensure the dignity, welfare, and security of all the people. Towards this end, the State shall regulate the acquisition, ownership, use, enjoyment, and disposition of private property, and equitably diffuse property ownership and profits.
+  - item: Section 7
+    content: |
+      The State shall establish, maintain, and ensure adequate social services in the field of education, health, housing, employment, welfare, and social security to guarantee the enjoyment by the people of a decent standard of living.
+  - item: Section 8
+    content: |
+      Civilian authority is at all times supreme over the military.
+  - item: Section 9
+    content: |
+      The State shall afford protection to labor, promote full employment and equality in employment, ensure equal work opportunities regardless of sex, race, or creed, and regulate the relations between workers and employers. The State shall assure the rights of workers to self-organization, collective bargaining, security of tenure, and just and humane conditions of work. The State may provide for compulsory arbitration.
+  - item: Section 10
+    content: |
+      The State shall guarantee and promote the autonomy of local government units, especially the [barangays ], to ensure their fullest development as self-reliant communities.
+- item: Article III
+  caption: Citizenship
+  units:
+  - item: Section 1
+    content: |
+      The following are citizens of the Philippines:
+    units:
+    - item: 1
+      content: |
+        Those who are citizens of the Philippines at the time of the adoption of this Constitution.
+    - item: 2
+      content: |
+        Those whose fathers or mothers are citizens of the Philippines.
+    - item: 3
+      content: |
+        Those who elect Philippine citizenship pursuant to the provisions of the Constitution of nineteen hundred and thirty-five.
+    - item: 4
+      content: |
+        Those who are naturalized in accordance with law.
+  - item: Section 2
+    content: |
+      A female citizen of the Philippines who marries an alien shall retain her Philippine citizenship, unless by her act or omission she is deemed, under the law, to have renounced her citizenship.
+  - item: Section 3
+    content: |
+      Philippine citizenship may be lost or reacquired in the manner provided by law.
+  - item: Section 4
+    content: |
+      A natural-born citizen is one who is a citizen of the Philippines from birth without having to perform any act to acquire or perfect his Philippine citizenship.
+- item: Article IV
+  caption: Bill of Rights
+  units:
+  - item: Section 1
+    content: |
+      No person shall be deprived of life, liberty, or property without due process of law, nor shall any person be denied the equal protection of the laws.
+  - item: Section 2
+    content: |
+      Private property shall not be taken for public use without just compensation.
+  - item: Section 3
+    content: |
+      The right of the people to be secure in their persons, houses, papers, and effects against unreasonable searches and seizures of whatever nature and for any purpose shall not be violated, and no search warrant or warrant of arrest shall issue except upon probable cause to be determined by the judge, or such other responsible officer as may be authorized by law, after examination under oath or affirmation of the complainant and the witnesses he may produce, and particularly describing the place to be searched, and the persons or things
+      to be seized.
+  - item: Section 4
+    units:
+    - item: 1
+      content: |
+        The privacy of communication and correspondence shall be inviolable except upon lawful order of the court, or when public safety and order require otherwise.
+    - item: 2
+      content: |
+        Any evidence obtained in violation of this or the preceding section shall be inadmissible for any purpose in any proceeding.
+  - item: Section 5
+    content: |
+      The liberty of abode and of travel shall not, be impaired except upon lawful order of the court, or when necessary in the interest of national security, public safety, or public health.
+  - item: Section 6
+    content: |
+      The right of the people to information on matters of public concern shall be recognized. Access to official records, and to documents and papers pertaining to official acts, transactions, or decisions, shall be afforded the citizen subject to such limitations as may be provided by law.
+  - item: Section 7
+    content: |
+      The right to form associations or societies for purposes not contrary to law shall not be abridged.
+  - item: Section 8
+    content: |
+      No law shall be made respecting an establishment of religion, or prohibiting the free exercise thereof. The free exercise and enjoyment of religious profession and worship, without discrimination or preference, shall forever be allowed. No religious test shall be required for the exercise of civil or political rights.
+  - item: Section 9
+    content: |
+      No law shall be passed abridging the freedom of speech, or of the press, or the right of the people peaceably to assemble and petition the Government for redress of grievances.
+  - item: Section 10
+    content: |
+      No law granting a title of royalty or nobility shall be enacted.
+  - item: Section 11
+    content: |
+      No law impairing the obligation of contracts shall be passed.
+  - item: Section 12
+    content: |
+      No ex post facto law or bill of attainder shall be enacted.
+  - item: Section 13
+    content: |
+      No person shall be imprisoned for debt or non-payment of a poll tax.
+  - item: Section 14
+    content: |
+      No involuntary servitude in any form shall exist except as a punishment for a crime whereof the party shall have been duty convicted.
+  - item: Section 15
+    content: |
+      The privilege of the writ of habeas corpus shall not be suspended except in cases of invasion, insurrection, rebellion, or imminent danger thereof, when the public safety requires it.
+  - item: Section 16
+    content: |
+      All persons shall have the right to a speedy disposition of their cases before all judicial, quasi-judicial, or administrative bodies.
+  - item: Section 17
+    content: |
+      No person shall be held to answer for a criminal offense without due process of law.
+  - item: Section 18
+    content: |
+      All persons, except those charged with capital offenses when evidence of guilt is strong, shall, before conviction, be bailable by sufficient sureties. Excessive bail shall not be required.
+  - item: Section 19
+    content: |
+      In all criminal prosecutions, the accused shall be presumed innocent until the contrary is proved, and shall enjoy the right to be heard by himself and counsel, to be informed of the nature and cause of the accusation against him, to have a speedy, impartial, and public trial, to meet the witnesses face to face, and to have compulsory process to secure the attendance of witnesses and the production of evidence in his behalf. However, after arraignment, trial may proceed notwithstanding the absence of the accused provided that he has
+      been duly notified and his failure to appear is unjustified.
+  - item: Section 20
+    content: |
+      No person shall be compelled to be a witness against himself. Any person under investigation for the commission of an offense shall have the right to remain silent and to counsel, and to be informed of such right. No force, violence, threat, intimidation, or any other means which vitiates the free will shall be used against him. Any confession obtained in violation of this section shall be inadmissible in evidence.
+  - item: Section 21
+    content: |
+      Excessive fines shall not be imposed, nor cruel or unusual punishment inflicted.
+  - item: Section 22
+    content: |
+      No person shall be twice put in jeopardy of punishment for the same offense. If an act is punished by a law and an ordinance, conviction or acquittal under either shall constitute a bar to another prosecution for the same act.
+  - item: Section 23
+    content: |
+      Free access to the courts shall not be denied to any person by reason of poverty.
+- item: Article V
+  caption: Duties and Obligations of Citizens
+  units:
+  - item: Section 1
+    content: |
+      It shall be the duty of the citizen to be loyal to the Republic and to honor the Philippine flag, to defend the State and contribute to its development and welfare, to uphold the Constitution and obey the laws, and to cooperate with the duly constituted authorities in the attainment and preservation of a just and orderly society.
+  - item: Section 2
+    content: |
+      The rights of the individual impose upon him the correlative duty to exercise them responsibly and with due regard for the rights of others.
+  - item: Section 3
+    content: |
+      It shall be the duty of every citizen to engage in gainful work to assure himself and his family a life worthy of human dignity.
+  - item: Section 4
+    content: |
+      It shall be the obligation of every citizen qualified to vote to register and cast his vote.
+- item: Article VI
+  caption: Suffrage
+  units:
+  - item: Section 1
+    content: |
+      Suffrage shall be exercised by citizens of the Philippines not otherwise
+      disqualified by law, who are eighteen years of age or over, and who shall have
+      resided in the Philippines for at least one year and in the place wherein they
+      propose to vote for at least six months preceding the election. No literacy,
+      property, or other substantive requirement shall be imposed on the exercise
+      of suffrage. The Batasang Pambansa shall provide a system for the purpose of
+      securing the secrecy and sanctity of the vote.
+- item: Article VII
+  caption: The President
+  units:
+  - item: Section 1
+    content: |
+      The President shall be the head of state and chief executive of the Republic of the Philippines.
+  - item: Section 2
+    content: |
+      No person may be elected President unless he is a natural-born citizen of the Philippines, a registered voter, able to read and write, at least fifty years of age on the day of election for President, and a resident of the Philippines for at least ten years immediately preceding such election.
+  - item: Section 3
+    units:
+    - item: Paragraph 1
+      content: |
+        The President shall be elected by direct vote of the people for a term of six years which shall begin at noon on the thirtieth day of June following the day of the election and shall end at noon of the same date six years thereafter when the term of his successor shall begin.
+    - item: Paragraph 2
+      content: |
+        The returns of every election for President, duly certified by the board of canvassers of each province or city, shall be transmitted to the Speaker at the Batasang Pambansa, who shall, not later than thirty days after the day of the election, and in the presence of the Batasang Pambansa open all the certificates, and the votes shall then be counted.
+    - item: Paragraph 3
+      content: |
+        The person having the highest number of votes shall be proclaimed elected; but in case two or more shall have an equal and the highest number of votes, one of them shall forthwith be chosen by a vote of a majority of all the Members of the Batasang Pambansa in session assembled.
+  - item: Section 4
+    units:
+    - item: Paragraph 1
+      content: |
+        If, at the time fixed for the beginning of his term, the President-elect shall have died or shall have failed to qualify or if the President shall not have been chosen, the Executive Committee, headed by the Prime Minister, as hereinafter provided, shall exercise the powers and discharge the duties of the President until a President shall have been elected and qualified. If the Batasang Pambansa withdraws its confidence in the Prime Minister, the Speaker shall preside over the Executive Committee. In the absence of an Executive Committee, the Speaker of the Batasang Pambansa shall act as President until a President shall have been elected and qualified.
+    - item: Paragraph 2
+      content: |
+        In the event of death or failure to qualify as herein provided, the Batasang Pambansa shall call a special election in the manner prescribed in Section 7 hereof.
+  - item: Section 5
+    content: |
+      The President, on assuming office, shall take the following oath or affirmation:
+
+      >"I do solemnly swear (or affirm) that I will faithfully and conscientiously
+      fulfill my duties as President of the Philippines, preserve and defend its Constitution,
+      execute its laws, do justice to every man and consecrate myself to the service
+      of the Nation. So help me God." (In case of affirmation, the last sentence is
+      omitted.)
+  - item: Section 6
+    units:
+    - item: 1
+      content: |
+        The President shall have an official residence and shall receive a compensation to be fixed by law, which shall not be increased or decreased during his term of office. He shall not receive during his tenure any other emolument from the Government or any other source. Until the Batasang Pambansa shall provide otherwise, the President shall receive an annual salary of one hundred thousand pesos.
+    - item: 2
+      content: |
+        The President shall not, during his tenure, hold any other office, practice any profession, participate directly or indirectly in the management of any business, or be financially interested directly or indirectly in any contract with, or in any franchise or special privilege granted by, the Government or any subdivision, agency or instrumentality thereof, including any government-owned or controlled corporation.
+  - item: Section 7
+    units:
+    - item: Paragraph 1
+      content: |
+        In case of permanent disability, death, removal from office or resignation of the President, the Executive Committee headed by the Prime Minister as hereinafter provided shall exercise the powers of the President until a President shall have been elected and qualified. If the permanent disability, death, removal from office or resignation of the President occurs earlier than eighteen (18) months before the expiration of his term, the Batasang Pambansa shall, within thirty days from the time the vacancy occurs, call a special election to be held not earlier than forty-five days nor later than sixty days from the time of such call, to elect a President to serve the unexpired term.
+    - item: Paragraph 2
+      content: |
+        In the absence of an Executive Committee, the Speaker shall act as President until the President shall have been elected and qualified.
+  - item: Section 8
+    content: The President shall have control of the ministries.
+  - item: Section 9
+    content: |
+      The President shall be commander-in-chief of all armed forces of the Philippines and, whenever it becomes necessary, he may call out such armed forces to prevent or suppress lawless violence, invasion, insurrection, or rebellion. In case of invasion, insurrection, or rebellion, or imminent danger thereof, when the public safety requires it, he may suspend the privilege of the writ of habeas corpus, or place the Philippines or any part thereof under martial law.
+  - item: Section 10
+    content: |
+      The President shall appoint the heads of bureaus and offices, the officers of the armed forces of the Philippines from the rank of brigadier general or commodore, and all other officers of the Government whose appointments are not otherwise provided for, those whom he may be authorized by law to appoint. However, the Batasang Pambansa may by law vest in the Prime Minister, members of the Cabinet, the Executive Committee, courts, heads of agencies, commissions, and boards the power to appoint inferior officers.
+  - item: Section 11
+    content: |
+      The President may, except in cases of impeachment, grant reprieves, commutations and pardons, remit fines and forfeitures and, with the concurrence of the Batasang Pambansa, grant amnesty.
+  - item: Section 12
+    content: |
+      The President may contract and guarantee foreign and domestic loans on behalf of the Republic of the Philippines, subject to such limitations as may be provided by law.
+  - item: Section 13
+    content: |
+      The President shall formulate the guidelines of national policy.
+  - item: Section 14
+    content: |
+      The President shall address the Batasang Pambansa at the opening of its regular session. He may also appear before it at any other time.
+  - item: Section 15
+    units:
+    - item: Paragraph 1
+      content: |
+        The President shall be immune from suit during his tenure. Thereafter, no suit whatsoever shall lie for official acts done by him or by others pursuant to his specific orders during his tenure.
+    - item: Paragraph 2
+      content: |
+        The immunities herein provided shall apply to the incumbent President referred to in Article XVII of this Constitution.
+  - item: Section 16
+    content: |
+      All powers vested in the President of the Philippines under the 1935 Constitution and the laws of the land which are not herein provided for or conferred upon any official shall be deemed and are hereby vested in the President unless the Batasang Pambansa provides otherwise.
+- item: Article VIII
+  caption: Batasang Pambansa
+  units:
+  - item: Section 1
+    content: The Legislative power shall be vested in a Batasang Pambansa.
+  - item: Section 2
+    units:
+    - item: Paragraph 1
+      content: |
+        The Batasang Pambansa which shall be composed of not more than 200 Members
+        unless otherwise provided by law, shall include representatives elected from
+        the different regions of the Philippines, those elected or selected from various
+        sectors as may be provided by law, and those chosen by the President from the
+        members of the Cabinet. Regional representatives shall be apportioned among
+        the regions in accordance with the number of their respective inhabitants and
+        on the basis of a uniform and progressive ratio.
+    - item: Paragraph 2
+      content: |
+        The number of representatives from each region and the manner of their election shall be prescribed by law. The number of representatives from each sector and the manner of their election or selection shall be prescribed by law.
+  - item: Section 3
+    units:
+    - item: 1
+      content: |
+        The Members of the Batasang Pambansa shall have a term of six years which shall begin; unless otherwise provided by law, at noon on the thirtieth day of June next following their election.
+    - item: 2
+      content: |
+        In case the Batasang Pambansa is dissolved, the newly elected Members shall serve the unexpired portion of the term from the time the President convokes the Assembly, which shall not be later than thirty days immediately following their election.
+  - item: Section 4
+    units:
+    - item: Paragraph 1
+      content: |
+        No person shall be a Member of the Batasang Pambansa as a regional representative
+        unless he is a natural-born citizen of the Philippines and, on the day of the
+        election, is at least twenty-five years of age, able to read and write, a registered
+        voter in the Region in which he shall be elected, and a resident thereof for
+        a period of not less than one year immediately preceding the day of the election.
+    - item: Paragraph 2
+      content: |
+        A sectoral representative shall be a natural-born citizen, able to read and write, and shall have such other qualifications as may be provided by law.
+  - item: Section 5
+    units:
+      - item: 1
+        content: |
+          The regular election of the Members of the Batasang Pambansa shall be held on the second Monday of May 1984 and every six years thereafter.
+      - item: 2
+        content: |
+          In case a vacancy arises in the Batasang Pambansa eighteen months or more before a regular election, the Commission on Elections shall call a special election to be held within sixty days after the vacancy occurs to elect the Member to serve the unexpired term.
+  - item: Section 6
+    content: |
+      The Batasang Pambansa shall convene once every year on the fourth Monday
+      of July for its regular session, unless a different date is fixed by law, and
+      shall continue to be in session for such number of days as it may determine.
+      However, it may be called to session at any time by the President to consider
+      such subjects or legislation as he may designate;
+  - item: Section 7
+    units:
+    - item: 1
+      content: |
+        The Batasang Pambansa shall, by a majority vote of all its Members, elect its Speaker from the Members thereof. It shall choose such other officers as it may deem necessary.
+    - item: 2
+      content: |
+        A majority of all the Members of the Batasang Pambansa shall constitute a quorum to do business, but a smaller number may adjourn from day to day and may compel the attendance of absent Members in such manner, and under such penalties, as the Batasang Pambansa may provide.
+    - item: 3
+      content: |
+        The Batasang Pambansa may determine the rules of its proceedings, punish its Members for disorderly behavior, and with the concurrence of two-thirds of all its Members; suspend or expel a Member, but if the penalty is suspension, this shall not exceed sixty days.
+    - item: 4
+      content: |
+        The Batasang Pambansa shall keep a Journal of its proceedings, and from time to time publish the same, excepting such parts as may, in its judgment, effect national security; and the yeas and nays on any question shall, at the request of one-fifth of the Members present, be entered in the Journal.
+  - item: Section 8
+    units:
+    - item: 1
+      content: |
+        Unless otherwise provided by law, each Member of the Batasang Pambansa shall receive an annual salary of sixty thousand pesos. The Speaker of the Batasang Pambansa shall receive an annual salary of seventy-five thousand pesos. No increase in salary shall take effect until after the expiration of the term of the Members of the Batasang Pambansa approving such increase.
+    - item: 2
+      content: |
+        The records and books of accounts of the Batasang Pambansa shall be open to the public in accordance with law, and such books shall be audited by the Commission on Audit which shall publish annually the itemized expenditures for each Member.
+  - item: Section 9
+    content: |
+      A Member of the Batasang Pambansa shall, in all offenses punishable by not more than six years imprisonment, be privileged from arrest during his attendance at its sessions, and in going to and returning from the same; but the Batasang Pambansa shall surrender the Member involved to the custody of the law within twenty-four hours after its adjournment for a recess or for its next session, otherwise such privilege shall cease upon its failure to do so. A Member shall not be questioned nor be held liable in any other place for any speech or debate in the Batasan or in any committee thereof.
+  - item: Section 10
+    content: |
+      A Member of the Batasang Pambansa shall not hold any other office or employment in the Government, or any subdivision, agency, or instrumentality thereof, including government-owned or controlled corporations, during his tenure except that of Prime Minister, Deputy Prime Minister, Member of the Cabinet or the Executive Committee, or Deputy Minister. Neither shall he, during the term for which he was elected, be appointed to any civil office which may have been created or the emoluments thereof increased while he was a Member of the Batasang Pambansa.
+  - item: Section 11
+    content: No Member of the Batasang Pambansa shall appear as counsel before any
+      court without appellate jurisdiction, before any court in any civil case wherein
+      the Government, or any subdivision, agency, or instrumentality thereof is the
+      adverse party, or in any criminal case wherein any officer or employee of the
+      Government is accused of an offense committed in relation to his office, or
+      before any administrative body. Neither shall he, directly or indirectly be
+      interested financially in any contract with, or in any franchise or special
+      privilege granted by the Government, or any subdivision, agency or instrumentality
+      thereof, including any government-owned or controlled corporation, during his
+      term of office. He shall not accept employment to intervene in any cause or
+      matter where he may be called to act on account of his office.
+  - item: Section 12
+    units:
+    - item: 1
+      content: |
+        There shall be a question hour at least once a month or as often as the Rules of the Batasang Pambansa may provide, which shall be included in its agenda, during which the Prime Minister, the Deputy Prime Minister or any Minister may be required to appear and answer questions and interpellation by Members of the Batasang Pambansa. Written questions shall be submitted to the Speaker at least three days before a scheduled question hour. Interpellations shall not be limited to the written questions, but may cover matters related thereto. The agenda shall specify the subjects of the question hour. When the security of the State so requires and the President so states in writing, the question hour shall be conducted in executive session.
+    - item: 2
+      content: |
+        The Batasang Pambansa or any of its committees may conduct inquiries in aid of legislation in accordance with its duly published rules of procedure. The rights of persons appearing in, or affected by, such inquiries shall be respected.
+  - item: Section 13
+    units:
+    - item: 1
+      units:
+      - item: Paragraph 1
+        content: |
+          The Batasang Pambansa may withdraw its confidence from the Prime Minister by a majority vote of all its Members. The motion for a vote of no confidence shall be calendared for debate if it is signed by at least one-fifth of the Members of the Batasang Pambansa. No such motion shall be debated and voted upon until after the lapse of seven days after its submission.
+      - item: Paragraph 2
+        content: |
+          Within ten days from receipt of the written advice of the approval of the motion of no confidence, the President may submit a nominee for a Prime Minister to be elected by the Batasang Pambansa.
+    - item: 2
+      content: |
+        The Prime Minister may advise the President in writing to dissolve the Batasang Pambansa whenever the need arises for a popular vote of confidence on fundamental issues, but not on a matter involving his own personal integrity. Whereupon, the President may dissolve the Batasang Pambansa not earlier than seven nor later than fourteen days from his receipt of the advice, and call for an election on a date set by him which shall not be earlier than forty-five nor later than sixty days from the date of such dissolution. However, no dissolution of the Batasang Pambansa shall take place within eighteen months immediately preceding a regular election of the Batasang Pambansa or within eighteen months immediately following such election, or during the pendency of impeachment proceedings against the President, or when the powers of the President are exercised by the Executive Committee or the Speaker. The Batasang Pambansa shall not be dissolved oftener than once every twelve (12) months.
+  - item: Section 14
+    units:
+    - item: 1
+      content: |
+        Except as otherwise provided in this Constitution, no treaty shall be valid and effective unless concurred in by a majority of all the Members of the Batasang Pambansa.
+    - item: 2
+      content: |
+        The Batasang Pambansa, by a vote of two-thirds of all its Members, shall have the sole power to declare the existence of a state of war.
+  - item: Section 15
+    content: |
+      In times of war or other national emergency, the Batasang Pambansa may by law authorize the President for a limited period and subject to such restrictions as it may prescribe, to exercise powers necessary and proper to carry out a declared national policy. Unless sooner withdrawn by resolution of the Batasang Pambansa, such powers shall cease upon its next adjournment.
+  - item: Section 16
+    units:
+    - item: 1
+      content: |
+        The Prime Minister shall submit to the Batasang Pambansa within thirty days from the opening of each regular session, as the basis of the general appropriations bill, a budget of receipts based on existing and proposed revenue measures, and of expenditures. The form, content, and manner of preparation of the budget shall be prescribed by law.
+    - item: 2
+      content: |
+        No provision or enactment shall be embraced in the general appropriations bill unless it relates specifically to some particular appropriation therein. Any such provision or enactment shall be limited in its operation to the appropriation to which it relates.
+    - item: 3
+      content: |
+        The procedure in approving appropriations for the Batasang Pambansa shall strictly follow the procedure for approving appropriations for other departments and agencies.
+    - item: 4
+      content: |
+        A special appropriations bill shall specify the purpose for which it is intended, and shall be supported by funds actually available as certified to by the National Treasurer, or to be raised by a corresponding revenue proposal included therein.
+    - item: 5
+      content: |
+        No law shall be passed authorizing any transfer of appropriations; however, the President, the Prime Minister, the Speaker, the Chief Justice of the Supreme Court, and the heads of Constitutional Commissions may by law be authorized to augment any item in the general appropriations law for their respective offices from savings in other items of their respective appropriations.
+    - item: 6
+      content: |
+        If, by the end of any fiscal year, the Batasang Pambansa shall have failed to pass the general appropriations bill for the ensuing fiscal year, the general appropriations law for the preceding fiscal year shall be deemed re-enacted and shall remain in force and effect until the general appropriations bill is passed by the Batasang Pambansa.
+  - item: Section 17
+    units:
+    - item: 1
+      content: |
+        The rule of taxation shall be uniform and equitable. The Batasang Pambansa shall evolve a progressive system of taxation.
+    - item: 2
+      content: |
+        The Batasang Pambansa may by law authorize the President to fix within specified limits, and subject to such limitations and restrictions as it may impose, tariff rates, import and export quotas, tonnage and wharfage dues, and other duties or imposts.
+    - item: 3
+      content: |
+        Charitable institutions, churches, parsonages or convents appurtenant thereto, mosques, and non-profit cemeteries, and all lands, buildings, and improvements actually, directly, and exclusively used for religious or charitable purposes shall be exempt from taxation.
+    - item: 4
+      content: |
+        No law granting any tax exemption shall be passed without the concurrence of a majority of all the Members of the Batasang Pambansa.
+  - item: Section 19
+    units:
+    - item: 1
+      content: |
+        Every bill shall embrace only one subject which shall be expressed in the title thereof.
+    - item: 2
+      content: |
+        No bill shall become a law unless it has passed three readings on separate days, and printed copies thereof in its final form have been distributed to the Members three days before its passage, except when the Prime Minister certifies to the necessity of its immediate enactment to meet a public calamity or emergency. Upon the last reading of a bill, no amendment thereto shall be allowed, and the vote thereon shall be taken immediately thereafter, and the yeas and nays entered in the Journal.
+  - item: Section 20
+    units:
+    - item: 1
+      content: |
+        Every bill passed by the Batasang Pambansa shall, before it becomes a law, be presented to the President. If he approves the same, he shall sign it; otherwise, he shall veto it and return the same with his objections to the Batasang Pambansa. The bill may be reconsidered by the Batasang Pambansa and, if approved by two-thirds of all its Members, shall become a law. The President shall act on every bill passed by the Batasang Pambansa within thirty days after the date of receipt thereof; otherwise it shall become a law as if he had signed it.
+    - item: 2
+      content: |
+        The President shall have the power to veto any particular item or items in an appropriation, revenue, or tariff bill, but the veto shall not affect the item or items to which he does not object.
+- item: Article IX
+  caption: The Prime Minister, the Cabinet and the Executive Committee
+  units:
+  - item: Section 1
+    units:
+    - item: Paragraph 1
+      content: |
+        There shall be a Cabinet which shall be composed of Ministers with or without portfolio appointed by the President. At least a majority of the Members of the Cabinet who are heads of ministries shall come from the Regional Representatives of the Batasang Pambansa.
+    - item: Paragraph 2
+      content: |
+        The Prime Minister shall be the head of the Cabinet. He shall, upon the nomination of the President from among the Members of the Batasang Pambansa, be elected by a majority of all the Members thereof.
+  - item: Section 2
+    content: |
+      The Prime Minister and the Cabinet shall be responsible to the Batasang Pambansa for the program of government approved by the President.
+  - item: Section 3
+    units:
+    - item: Paragraph 1
+      content: |
+        There shall be an Executive Committee to be designated by the President, composed of the Prime Minister as Chairman, and not more than fourteen other members, at least half of whom shall be Members of the Batasang Pambansa. The Executive Committee shall assist the President in the exercise of his powers and functions and in the performance of his duties as he may prescribe.
+    - item: Paragraph 2
+      content: |
+        The Members of the Executive Committee shall have the same qualifications as those of the Members of the Batasang Pambansa.
+  - item: Section 4
+    content: |
+      The term of office of the Prime Minister shall commence from the date of his election by the Batasang Pambansa and shall end on the date that the nomination of his successor is submitted by the President to the Batasang Pambansa. Any other member of the Cabinet or the Executive Committee may be removed at the discretion of the President.
+  - item: Section 5
+    units:
+    - item: 1
+      content: |
+        The President may nominate from among the Members of the Batasang Pambansa a Deputy Prime Minister who shall be elected by a majority of the Members thereof. The Deputy Prime Minister shall perform such functions as may be assigned to him by the Prime Minister.
+    - item: 2
+      content: |
+        The President shall also appoint the Deputy Ministers who shall perform such functions as may be assigned to them by law or by the respective heads of ministries.
+  - item: Section 6
+    content: |
+      The Prime Minister, Deputy Prime Minister, the Members of the Cabinet, and the Members of the Executive Committee, on assuming office, shall take the following oath or affirmation:
+
+      >"I do solemnly swear (or affirm) that I will faithfully and conscientiously
+      fulfill my duties as (name of position) of the Philippines, preserve and defend
+      its Constitution, execute its laws, do justice to every man and consecrate myself
+      to the service of the Nation. So help me God." (In case of affirmation, the
+      last sentence will be omitted.)
+  - item: Section 7
+    content: |
+      The salaries and emoluments of the Prime Minister, Deputy Prime Minister, Members of the Cabinet and of the Executive Committee shall be fixed by law which shall not be increased or decreased during their tenure of office. Until otherwise provided by law, the Prime Minister shall receive the same salary as that of the President.
+  - item: Section 8
+    content: |
+      The Prime Minister, the Members of the Cabinet and the Members of the Executive Committee, shall be subject to the provisions of Section 11, Article VIII hereof and may not appear as counsel before any court or administrative body, or manage any business, or practice any profession, and shall also be subject to such other disqualifications as may be provided by law.
+  - item: Section 9
+    content: |
+      The Prime Minister, Deputy Prime Minister, any Member of the Cabinet or the Executive Committee may resign for any cause without vacating his seat as Regional or Sectoral Representative in the Batasang Pambansa, or any other government position.
+  - item: Section 10
+    content: |
+      The Prime Minister shall have supervision of all ministries.
+- item: Article X
+  caption: The Judiciary
+  units:
+  - item: Section 1
+    content: |
+      The Judicial power shall be vested in one Supreme Court and in such inferior courts as may be established by law. The Batasang Pambansa shall have the power to define, prescribe, and apportion the jurisdiction of the various courts, but may not deprive the Supreme Court of its jurisdiction over cases enumerated in Section five hereof.
+  - item: Section 2
+    units:
+    - item: 1
+      content: |
+        The Supreme Court shall be composed of a Chief Justice and fourteen Associate Justices. It may sit en banc or in two divisions.
+    - item: 2
+      content: |
+        All cases involving the constitutionality of a treaty, executive agreement, or law shall be heard and decided by the Supreme Court en banc, and no treaty, executive agreement, or law may be declared unconstitutional without the concurrence of at least ten Members. All other cases, which under its rules are required to be heard en banc, shall be decided with the concurrence of at least eight Members.
+    - item: 3
+      content: |
+        Cases heard by a division shall be decided with the concurrence of at least five Members, but if such required number is not obtained, the case shall be decided en banc: Provided, that no doctrine or principle of law laid down by the Court in a decision rendered en banc or in division may be modified or reversed except by the Court sitting en banc.
+  - item: Section 3
+    units:
+    - item: 1
+      content: |
+        No person shall be appointed Member of the Supreme Court unless he is a natural-born citizen of the Philippines, at least forty years of age, and has for ten years or more been a judge of a court of record or engaged in the practice of law in the Philippines.
+    - item: 2
+      content: |
+        The Batasang Pambansa shall prescribe the qualifications of judges of inferior courts, but no person may be appointed judge thereof unless he is a natural-born citizen of the Philippines and a member of the Philippine Bar.
+  - item: Section 4
+    content: |
+      The Members of the Supreme Court and judges of inferior courts shall be appointed by the President.
+  - item: Section 5
+    content: |
+      The Supreme Court shall have the following powers:
+    units:
+    - item: 1
+      content: |
+        Exercise original jurisdiction over cases affecting ambassadors, other public ministers, and consuls, and over petitions for certiorari, prohibition, mandamus, quo warranto, and habeas corpus.
+    - item: 2
+      content: |
+        Review and revise, reverse, modify, or affirm on appeal or certiorari, as the law or the Rules of Court may provide, final judgments and decrees of inferior courts in
+      units:
+      - item: a
+        content: |
+          All cases in which the constitutionality or validity of any treaty, executive agreement, law, ordinance, or executive order or regulation is in question.
+      - item: b
+        content: |
+          All cases involving the legality of any tax, impost, assessment, or toll, or any penalty imposed in relation thereto.
+      - item: c
+        content: |
+          All cases in which the jurisdiction of any inferior court is in issue.
+      - item: d
+        content: |
+          All criminal cases in which the penalty imposed is death or life imprisonment.
+      - item: e
+        content: |
+          All cases in which only an error or question of law is involved.
+    - item: 3
+      content: |
+        Assign temporarily judges of inferior courts to other stations as public interest may require. Such temporary assignment shall not last longer than six mouths without the consent of the judge concerned.
+    - item: 4
+      content: |
+        Order a change of venue or place of trial to avoid a miscarriage of justice.
+    - item: 5
+      content: |
+        Promulgate rules concerning pleading, practice, and procedure in all courts, the admission to the practice of law, and the integration of the Bar, which, however, may be repealed, altered, or supplemented by the Batasang Pambansa. Such rules shall provide a simplified and inexpensive procedure for the speedy disposition of cases, shall be uniform for all courts of the same grade, and shall not diminish, increase, or modify substantive rights.
+    - item: 6
+      content: |
+        Appoint its officials and employees in accordance with the Civil Service Law.
+  - item: Section 6
+    content: |
+      The Supreme Court shall have administrative supervision over all courts and the personnel thereof.
+  - item: Section 7
+    content: |
+      The Members of the Supreme Court and judges of inferior courts shall hold office during good behavior until they reach the age of seventy years or become incapacitated to discharge the duties of their office. The Supreme Court shall have the power to discipline judges of inferior courts and, by a vote of at least eight Members, order their dismissal.
+  - item: Section 8
+    content: |
+      The conclusions of the Supreme Court in any case submitted to it for decision en banc or in division shall be reached in consultation before the case is assigned to a Member for the writing of the opinion of the Court. A  Member dissenting from a decision shall state the reasons for his dissent. The same requirements shall be observed by all inferior collegiate courts.
+  - item: Section 9
+    content: |
+      Every decision of a court of record shall clearly and distinctly state the facts and the law on which it is based. The Rules of Court shall govern the promulgation of minute resolutions.
+  - item: Section 10
+    content: |
+      The salary of the Chief Justice and of the Associate Justices of the Supreme Court, and of judges of inferior courts shall be fixed by law, which shall not be decreased during the continuance in office. Until the Batasang Pambansa shall provide otherwise, the Chief Justice shall receive an annual salary of seventy-five thousand pesos, and each Associate Justice, sixty thousand pesos.
+  - item: Section 11
+    units:
+    - item: 1
+      content: |
+        Upon the effectivity of this Constitution, the maximum period within which a case or matter shall be decided or resolved from the date of its submission, shall be eighteen months for the Supreme Court, and, unless reduced by the Supreme Court, twelve months for all inferior collegiate courts, and three months for all other inferior courts.
+    - item: 2
+      content: |
+        With respect to the Supreme Court and other collegiate appellate courts, when the applicable maximum period shall have lapsed without the rendition of the corresponding decision or resolution because the necessary vote cannot be had, the judgment, order, or resolution appealed from shall be deemed affirmed, except in those cases where a qualified majority is required and in appeals from judgments of conviction in criminal cases; and in original special civil actions and proceedings for habeas corpus, the petition in such cases shall be deemed dismissed; and a certification to this effect signed by the Chief Magistrate of the court shall be issued and a copy thereof attached to the record of the case.
+  - item: Section 12
+    content: |
+      The Supreme Court shall, within thirty days from the opening of each regular session of the Batasang Pambansa, submit to the President, the Prime Minister, and the Batasang Pambansa an annual report on the operations and activities of the Judiciary.
+- item: Article XI
+  caption: Local Government
+  units:
+  - item: Section 1
+    content: |
+      The territorial and political subdivisions of the Philippines are the provinces, cities, municipalities, and barrios.
+  - item: Section 2
+    content: |
+      The Batasang Pambansa shall enact a local government code which may not thereafter be amended except by a majority vote of all its Members, defining a more responsive and accountable local government structure with an effective system of recall, allocating among the different local government units their powers, responsibilities, and resources, and providing for the qualifications, election and removal, term, salaries, powers, functions, and duties of local officials, and all other matters relating to the organization and operation of the local units. However, any change in the existing form of local government shall not take effect until ratified by a majority of the votes cast in a plebiscite called for the purpose.
+  - item: Section 3
+    content: |
+      No province, city, municipality, or barrio may be created, divided, merged,
+      abolished, or its boundary substantially altered, except in accordance with
+      the criteria established in the local government code, and subject to the approval
+      by a majority of the votes cast in a plebiscite in the unit or units affected.
+  - item: Section 4
+    units:
+    - item: 1
+      content: |
+        Provinces with respect to component cities and municipalities, and cities and municipalities with respect to component barrios, shall ensure that the acts of their component units are within the scope of their assigned powers and functions. Highly urbanized cities, as determined by standards established in the local government code, shall be independent of the province.
+    - item: 2
+      content: |
+        Local government units may group themselves, or consolidate or coordinate their efforts, services, and resources for purposes commonly beneficial to them.
+  - item: Section 5
+    content: |
+      Each local government unit shall have the power to create its own sources of revenue and to levy taxes, subject to such limitations as may be provided by law.
+- item: Article XII
+  caption: The Constitutional Commissions
+  units:
+  - item: A
+    caption: Common Provisions
+    units:
+    - item: Section 1
+      content: |
+        The Constitutional Commissions shall be the Civil Service Commission, the Commission on Elections, and the Commission on Audit.
+    - item: Section 2
+      content: |
+        Unless otherwise provided by law, the Chairman and each Commissioner of a Constitutional Commission shall receive an annual salary of sixty thousand pesos and fifty thousand pesos, respectively, which shall not be decreased during their continuance in office.
+    - item: Section 3
+      content: |
+        No Member of a Constitutional Commission shall, during his tenure in office, engage in the practice of any profession or in the management of any business, or be financially interested directly or indirectly in any contract with, or in any franchise or privilege granted by, the Government, or any subdivision, agency, or instrumentality thereof including government-owned or controlled corporations.
+    - item: Section 4
+      content: |
+        The Constitutional Commissions shall appoint their officials and employees in accordance with the Civil Service Law.
+  - item: B
+    caption: The Civil Service Commission
+    units:
+    - item: Section 1
+      units:
+      - item: 1
+        content: |
+          The Civil Service embraces every branch, agency, subdivision, and instrumentality of the Government, including every government-owned or controlled corporation. It shall be administered by an independent Civil, Service Commission composed of a Chairman and two Commissioners, who shall be natural-born citizens of the Philippines, and, at the time of their appointment, are at least thirty-five years of age and holders of a college degree, and must not have been candidates for any elective position in the election immediately preceding their appointment. The Chairman and the Commissioners shall be appointed by the President for a term of seven years without reappointment. Of the Commissioners first appointed, one shall hold office for seven years, another for five years, and the third for three years. Appointment to any vacancy shall be only for the unexpired portion of the term of the predecessor.
+      - item: 2
+        content: |
+          The Commission shall, subject to such limitations as may be provided by law, establish a career service and adopt measures to promote morale, efficiency, and integrity in the Civil Service.
+    - item: Section 2
+      content: |
+        Appointments in the Civil Service, except as to those which are policy-determining, primarily confidential, or highly technical in nature, shall be made only according to merit and fitness, to be determined as far as practicable by competitive examination.
+    - item: Section 3
+      content: |
+        No officer or employee in the Civil Service shall be suspended or dismissed except for causes as provided by law.
+    - item: Section 4
+      units:
+      - item: 1
+        content: |
+          Unless otherwise provided by law, no elective official shall be eligible for appointment to any office or position during his tenure, except as Member of the Executive Committee referred to in Section 3, Article IX, hereof.
+      - item: 2
+        content: |
+          No candidate who lost in an election shall be eligible for appointment or reappointment to any office in the Government, or in any government-owned or controlled Corporation, within one year following such election.
+    - item: Section 5
+      content: |
+        No officer or employee in the Civil Service, including members of the armed forces, shall engage directly or indirectly in any partisan political activity or take part in any election except to vote.
+    - item: Section 6
+      content: |
+        The Batasang Pambansa shall provide for the standardization of compensation of government officials and employees, including those in government-owned or controlled corporations, taking into account the nature of the responsibilities pertaining to, and the qualifications required for, the positions concerned.
+  - item: C
+    caption: The Commission on Elections
+    units:
+    - item: Section 1
+      units:
+      - item: 1
+        content: |
+          There shall be an independent Commission on Elections composed of a Chairman and eight Commissioners, who shall be natural-born citizens of the Philippines, and, at the time of their appointment, at least thirty-five years of age and holders of a college degree. However, a majority thereof, including the Chairman, shall be members of the Philippine Bar who have been engaged in the practice of law for at least ten years.
+      - item: 2
+        content: |
+          <!-- Commission on Elections - Section 1.2 -->
+          The Chairman and the Commissioners shall be appointed by the President for a term of seven years without reappointment. Of the Commissioners first appointed, three shall hold office for seven years, three for five years, and the last three for three years. Appointment to any vacancy shall be only for the unexpired portion of the term of the predecessor.
+    - item: Section 2
+      content: |
+        The Commission on Elections shall have the following powers and functions:
+      units:
+      - item: 1
+        content: |
+          Enforce and administer all laws relative to the conduct of elections.
+      - item: 2
+        content: |
+          Be the sole judge of all contests relating to the elections, returns, and qualifications of all Members of the Batasang Pambansa and elective provincial and city officials.
+      - item: 3
+        content: |
+          Decide, save those involving the right to vote, administrative questions affecting elections, including the determination of the number and location of polling places, the appointment of election officials and inspectors, and the registration of voters.
+      - item: 4
+        content: |
+          Deputize, with the consent or at the instance of the President, law enforcement agencies and instrumentalities of the Government, including the armed forces of the Philippines, for the purpose of ensuring free, orderly, and honest elections.
+      - item: 5
+        content: |
+          Register and accredit political parties subject to the provisions of Section eight hereof.
+      - item: 6
+        content: |
+          Recommend to the Batasang Pambansa effective measures to minimize election expenses and prohibit all forms of election frauds and malpractices, political opportunism, guest or nuisance candidacy, or other similar acts.
+      - item: 7
+        content: |
+          Submit to the President, the Prime Minister, and the Batasang Pambansa a report on the conduct and manner of each election.
+      - item: 8
+        content: |
+          Perform such other functions as may be provided by law.
+    - item: Section 3
+      content: |
+        The Commission on Elections may sit en banc or in three divisions. All election cases may be heard and decided by divisions, except contests involving Members of the Batasang Pambansa, which shall be heard and decided en banc. Unless otherwise provided by law, all election cases shall be, decided within ninety days from the date of their submission for decision.
+    - item: Section 4
+      content: |
+        The Commission may recommend to the President the removal of, or any other disciplinary action against, any officer or employee it has deputized, for violation or disregard of, or disobedience to, its decision, order, or directive.
+    - item: Section 5
+      content: |
+        The enjoyment or utilization of all franchises or permits for the operation of transportation and other public utilities, media of communication or information, all grants, special privileges, or concessions granted by the Government, or any subdivision, agency, or instrumentality thereof, including any government-owned or controlled corporation, may be supervised or regulated by the Commission during the election period for the purpose of ensuring free, orderly, and honest elections.
+    - item: Section 6
+      content: |
+        Unless otherwise fixed by the Commission in special cases, the election period shall commence ninety days before the day of election and shall end thirty days thereafter.
+    - item: Section 7
+      content: |
+        No pardon, parole or suspension of sentence for violation of the law or rules and regulations concerning elections shall be granted without the recommendation of the Commission.
+    - item: Section 8
+      units:
+      - item: Paragraph 1
+        content: |
+          The political parties whose respective candidates for President have obtained the first and second highest number of votes in the last preceding election for President under this Constitution shall be entitled to accredition if each has obtained at least ten percent (10%) of the total number of votes cast in such election. If the candidates for President obtaining the two highest number of votes do not each obtain at least ten percent (10%) of the total number of votes cast, or in case no election for President shall as yet have been held, the Commission on Elections shall grant accredition to political parties as may be provided by law;
+      - item: Paragraph 2
+        content: |
+          No religious sect shall be registered as a political party, and no political party which seeks to achieve its goal through violence shall be entitled to accredition.
+    - item: Section 9
+      units:
+      - item: 1
+        content: |
+          Bona fide candidates for any public office shall be free from any form of harassment and discrimination.
+      - item: 2
+        units:
+        - item: Paragraph 1
+          content: |
+            Accredited political parties shall be represented in the registration board, board of election inspectors, board of canvassers, or other similar bodies as may be provided by law.
+        - item: Paragraph 2
+          content: |
+            Accredited political parties may by law be granted other rights or privileges.
+    - item: Section 10
+      content: |
+        No elective public officer may change his political affiliation during his term of office, and no candidate for any elective office may change his political party affiliation within six months immediately preceding or following an election, unless otherwise provided by law.
+    - item: Section 11
+      content: |
+        Any decision, order, or ruling of the Commission may be brought to the Supreme Court on certiorari by the aggrieved party within thirty days from his, receipt of a copy thereof.
+  - item: D
+    caption: The Commission on Audit
+    units:
+    - item: Section 1
+      units:
+      - item: 1
+        content: |
+          There shall be an independent Commission on Audit composed of a Chairman and two Commissioners, who shall be natural-born citizens of the Philippines and, at the time of their appointment, at least forty years of age and certified public accountants or members of the Philippine Bar for at least ten years.
+      - item: 2
+        content: |
+          <!-- Commission on Audit - Section 1.2 -->
+          The Chairman and the Commissioners shall be appointed by the President for a term of seven years without reappointment. Of the Commissioners first appointed, one shall hold office for seven years, another for five years, and the third for three years. Appointment to any vacancy shall be only for the unexpired portion of the term of the predecessor.
+    - item: Section 2
+      content: |
+        The Commission on Audit shall have the following powers and functions:
+      units:
+      - item: 1
+        content: |
+          Examine, audit, and settle, in accordance with law and regulations, all accounts pertaining to the revenues and receipts of, and expenditures or uses of funds and property, owned or held in trust by, or pertaining to, the Government, or any of its subdivisions, agencies, or instrumentalities, including government-owned or controlled corporations; keep the general accounts of the Government and, for such period as may be provided by law, preserve the vouchers pertaining thereto; and promulgate accounting and auditing rules and regulations including those for the prevention of irregular, unnecessary, excessive; or extravagant expenditures or uses of funds and property.
+      - item: 2
+        content: |
+          Decide any case brought before it within sixty days from the date of its submission for resolution. Unless otherwise provided by law, any decision, order, or ruling of the Commission may be brought to the Supreme Court on certiorari by the aggrieved party within thirty days from his receipt of a copy thereof.
+      - item: 3
+        content: |
+          Submit to the President, the Prime Minister, and the Batasang Pambansa, within the time fixed by law, an annual financial report of the Government, its subdivisions, agencies, and instrumentalities, including government-owned or controlled corporations, and recommend measures necessary to improve their efficiency and effectiveness. It shall submit such other reports as may be required by law.
+      - item: 4
+        content: |
+          Perform such other duties and functions as may be prescribed by law.
+- item: Article XIII
+  caption: Accountability of Public Officers
+  units:
+  - item: Section 1
+    content: |
+      Public office is a public trust. Public officers and employees shall serve with the highest degree of responsibility, integrity, loyalty, and efficiency, and shall remain accountable to the people.
+  - item: Section 2
+    content: |
+      The President, the Members of the Supreme Court, and the Members of the Constitutional Commissions shall be removed from office on impeachment for, and conviction of, culpable violation of the Constitution, treason, bribery, other high crimes, or graft and corruption.
+  - item: Section 3
+    content: |
+      The Batasang Pambansa shall have the exclusive power to initiate, try, and decide all cases of impeachment. Upon the filling of a verified complaint, the Batasang Pambansa may initiate impeachment by a vote of at least one-fifth of all its Members. No official shall be convicted without the concurrence of at least two-thirds of all the Members thereof. When the Batasang Pambansa sits in impeachment cases, its Members shall be on oath or affirmation.
+  - item: Section 4
+    content: |
+      Judgments in cases of impeachment shall be limited to removal from office and disqualification to hold any office of honor, trust, or profit under the Republic of the Philippines, but the party convicted shall nevertheless be liable and subject to prosecution, trial, and punishment, in accordance with law.
+  - item: Section 5
+    content: |
+      The Batasang Pambansa shall create a special court, to be known as Sandiganbayan, which shall have jurisdiction over criminal and civil cases involving graft and corrupt practices and such other offenses committed by public officers and employees, including those in government-owned or controlled corporations, in relation to their office as may be determined by law.
+  - item: Section 6
+    content: |
+      The Batasang Pambansa shall create an office of the Ombudsman, to be known as Tanodbayan, which shall receive and investigate complaints relative to public office, including those in government-owned or controlled corporations, make appropriate recommendations, and in case of failure of justice as defined by law, file and prosecute the corresponding criminal, civil, or administrative case before the proper court or body.
+- item: Article XIV
+  caption: The National Economy and the Patrimony of the Nation
+  units:
+  - item: Section 1
+    content: |
+      The Batasang Pambansa shall establish a National Economic and Development Authority, to be headed by the President, which shall recommend to the Batasang Pambansa, after consultation with the private sector, local government units, and other appropriate public agencies, continuing, coordinated, and fully integrated social and economic plans and programs.
+  - item: Section 2
+    content: |
+      The State shall regulate or prohibit private monopolies when the public interest so requires. No combination in restraint of trade or unfair competition shall be allowed.
+  - item: Section 3
+    content: |
+      The Batasang Pambansa shall, upon recommendation of the National Economic and Development Authority, reserve to citizens of the Philippines or to corporations or associations wholly owned, by such citizens, certain traditional areas of investments when the national interest so dictates.
+  - item: Section 4
+    content: |
+      The Batasang Pambansa shall not, except by general law, provide for the formation, organization, or regulation of private corporations, unless such corporations are owned or controlled by the Government or any subdivision or instrumentality thereof.
+  - item: Section 5
+    content: |
+      No franchise, certificate, or any other form of authorization for the operation of a public utility shall be granted except to citizens of the Philippines or to corporations or associations organized under the laws of the Philippines at least sixty per centum of the capital of which is owned by such citizens, nor shall such franchise, certificate, or authorization be exclusive in character or for a longer period than fifty years. Neither shall any such franchise or right be granted except under the condition that it shall be subject to amendment, alteration, or repeal in by the Batasang Pambansa when the public interest so requires. The State shall encourage equity participation in public utilities by the general public. The participation of foreign investors in the governing body of any public utility enterprise shall be limited to their proportionate share in the capital thereof.
+  - item: Section 6
+    content: |
+      The State may, in the interest of national welfare or defense, establish and operate industries and means of transportation and communications, and, upon payment of just compensation, transfer to public ownership utilities and other private enterprises to be operated by the Government.
+  - item: Section 7
+    content: |
+      In times of national emergency when the public interest so requires, the State may temporarily take over or direct the operation of any privately owned public utility or business affected with public interest.
+  - item: Section 8
+    content: |
+      All lands of the public domain, waters, minerals, coal, petroleum and other mineral oils, all forces of potential energy, fisheries, wildlife, and other natural resources of the Philippines belong to the State. With the exception of agricultural, industrial or commercial, residential, and resettlement lands of the public domain, natural resources shall not be alienated, and no license, concession, or lease for the exploration, development, exploitation, or utilization of any of the natural resources shall be granted for a period exceeding twenty-five years, renewable for not more than twenty-five years, except as to water rights for irrigation, water supply, fisheries, or industrial uses other than the development of water power, in which cases, beneficial use may be the measure and the limit of the grant.
+  - item: Section 9
+    content: |
+      The disposition, exploration, development, of exploitation, or utilization of any of the natural resources of the Philippines shall be limited to citizens of the Philippines, or to corporations or association at least sixty per centum of the capital of which is owned by such citizens. The Batasang Pambansa, in the national interest, may allow such citizens, corporations, or associations to enter into service contracts for financial, technical, management, or other forms of assistance with any foreign person or entity for the exploitation, development, exploitation, or utilization of any of the natural resources. Existing valid and binding service contracts for financial, the technical, management, or other forms of assistance are hereby recognized as such.
+  - item: Section 10
+    content: |
+      Lands of the public domain are classified into agricultural, industrial or commercial, residential, resettlement, mineral, timber or forest, and grazing lands, and such other classes as may be provided by law.
+  - item: Section 11
+    content: |
+      The Batasang Pambansa, taking into account conservation, ecological, and developmental requirements of the natural resources, shall determine by law the size of lands of the public domain which may be developed, held or acquired by, or leased to, any qualified individual, corporation, or association, and the conditions therefor. No private corporation or association may hold alienable lands of the public domain except by lease not to exceed one thousand hectares in area; nor may any citizen hold such lands by lease in excess of five hundred hectares or acquire by purchase or homestead in excess of twenty-four hectares. No private corporation or association may hold by lease, concession, license, or permit, timber or forest lands and other timber or forest resources in excess of one hundred thousand hectares; however, such area may be increased by the Batasang Pambansa upon recommendation of the National Economic and Development Authority.
+  - item: Section 12
+    content: |
+      The State shall formulate and implement an agrarian reform program aimed at emancipating the tenant from the bondage of the soil and achieving the goals enunciated in this Constitution.
+  - item: Section 13
+    content: |
+      The Batasang Pambansa may authorize, upon payment of just compensation, the expropriation of private land to be subdivided into small lots and conveyed at cost to deserving citizens.
+  - item: Section 14
+    content: |
+      Save in cases of hereditary succession, no private lands shall be transferred or conveyed except to individuals, corporations, or associations qualified to acquire or hold lands of the public domain.
+  - item: Section 15
+    content: |
+      Notwithstanding the provisions of Section 14 of this Article, a natural-born citizen of the Philippines who has lost his Philippine citizenship may be a transferee of private land, for use by him as his residence, as the Batasang Pambansa shall provide.
+  - item: Section 16
+    content: |
+      Any provision of paragraph one, Section fourteen, Article Eight and of this Article notwithstanding, the President may enter into international treaties or agreements as the national welfare and interest may require.
+- item: Article XV
+  caption: General Provisions
+  units:
+  - item: Section 1
+    content: |
+      The flag of the Philippines shall be red, white, and blue, with a sun
+      and three stars, as consecrated and honored by the people and recognized by
+      law.
+  - item: Section 2
+    content: |
+      The interim Batasang Pambansa may by law adopt a new name for the country,
+      a national anthem, and a national seal, which shall all be truly reflective
+      and symbolic of the ideals, history, and traditions of the people. Thereafter,
+      the national name, anthem, and seal so adopted shall not be subject to change
+      except by constitutional amendment.
+  - item: Section 3
+    units:
+    - item: 1
+      content: |
+        This Constitution shall be officially promulgated in English and in Pilipino, and translated into each dialect spoken by over fifty thousand people, and into Spanish and Arabic. In case of conflict, the English text shall prevail.
+    - item: 2
+      content: |
+        The Batasang Pambansa shall take steps towards the development and formal adoption of a common national language to be known as Filipino.
+    - item: 3
+      content: |
+        Until otherwise provided by law, English and Pilipino shall be the official languages.
+  - item: Section 4
+    content: |
+      All public officers and employees and members of the armed forces shall take an oath to support and defend the Constitution.
+  - item: Section 5
+    content: |
+      No elective or appointive public officer or employee shall receive additional or double compensation unless specifically authorized by law, nor accept, without the consent of the Batasang Pambansa, any present, emolument, office, or title of any kind from any foreign state.
+  - item: Section 6
+    content: |
+      No salary or any form of emolument of any public officer or employee, including constitutional officers, shall be exempt from payment of income tax.
+  - item: Section 7
+    units:
+    - item: 1
+      content: |
+        The ownership and management of mass media shall be limited to citizens of the Philippines or to corporations or associations wholly owned and managed by such citizens.
+    - item: 2
+      content: |
+        The governing body of every entity engaged in commercial telecommunications shall in all cases be controlled by the citizens of the Philippines.
+  - item: Section 8
+    units:
+    - item: 1
+      content: |
+        All educational institutions shall be under the supervision of, and subject to regulation by, the State. The State shall establish and maintain a complete, adequate, and integrated system of education relevant to the goals of national development.
+    - item: 2
+      content: |
+        All institutions of higher learning shall enjoy academic freedom.
+    - item: 3
+      content: |
+        The study of the Constitution shall be part of the curricula in all schools.
+    - item: 4
+      content: |
+        All educational institutions shall aim to inculcate love of country, teach the duties of citizenship, and develop moral character, personal discipline, and scientific, technological, and vocational efficiency.
+    - item: 5
+      content: |
+        The State shall maintain a system of free public, elementary education and, in areas where finances permit, establish and maintain a system of free public education at least up to the secondary level.
+    - item: 6
+      content: |
+        The State shall provide citizenship and vocational training to adult citizens and out-of-school youth, and create and maintain scholarships for poor and deserving students.
+    - item: 7
+      content: |
+        Educational institutions, other than those established by religious orders, mission boards, and charitable organizations, shall be owned solely by citizens of the Philippines, or corporations or association sixty per centum of the capital of which is owned by such citizens. The control and administration of educational institutions shall be vested in citizens of the Philippines. No educational institution shall be established exclusively for aliens, and no group of aliens shall comprise more than one-third of the enrolment in any school. The provisions of this sub-section shall not apply to schools established for foreign diplomatic personnel and their dependents and, unless otherwise provided by law, for other foreign temporary residents.
+    - item: 8
+      content: |
+        At the option expressed in writing by the parents or guardians, and without cost to them and the Government, religion shall be taught to their children or wards in public elementary and high schools as may be provided by law.
+  - item: Section 9
+    units:
+    - item: 1
+      content: |
+        The State shall promote scientific research and invention. The advancement of science and technology shall have priority in the national development.
+    - item: 2
+      content: |
+        Filipino culture shall be preserved and developed for national identity. Arts and letters shall be under the patronage of the State.
+    - item: 3
+      content: |
+        The exclusive right to inventions, writings and artistic creations shall be secured to inventors authors, and artists for a limited period. Scholarships, grants-in-aid, or other forms of incentives shall be provided for specially gifted citizens.
+  - item: Section 10
+    content: |
+      It shall be the responsibility of the State to achieve and maintain population levels most conducive to the national welfare.
+  - item: Section 11
+    content: |
+      The State shall consider the customs traditions, beliefs, and interests of national cultural communities in the formulation and implementation of state policies.
+  - item: Section 12
+    content: |
+      The State shall establish and maintain an integrated national police force whose organization, administration, and operation shall be provided by law.
+  - item: Section 13
+    units:
+    - item: 1
+      content: |
+        The armed forces of the Philippines shall include a citizen army composed of all able-bodied citizens of the Philippines who shall undergo military training as may be provided by law. It shall keep a regular force necessary for the security of the State.
+    - item: 2
+      content: |
+        The citizen army shall have a corps of trained officers and men in active duty status as may be necessary to train, service, and keep it in reasonable preparedness at all times.
+  - item: Section 14
+    content: |
+      The Batasang Pambansa shall establish a central monetary authority which
+      shall provide policy direction in the areas of money, banking, and credit. It
+      shall have supervisory authority over the operations of banks and exercise such
+      regulatory authority as may be provided by law over the operations of finance
+      companies and other institutions performing similar functions. Until the Batasang
+      Pambansa shall otherwise provide, the Central Bank of the Philippines, operating
+      under existing laws, shall function as the central monetary authority.
+  - item: Section 15
+    content: |
+      The separation of church and state shall be inviolable.
+  - item: Section 16
+    content: |
+      The State may not be sued without its consent.
+- item: Article XVI
+  caption: Amendments
+  units:
+  - item: Section 1
+    units:
+    - item: 1
+      content: |
+        Any amendment to, or revision of this Constitution may be proposed by the Batasang Pambansa upon a vote of three-fourths of all its Members, or by a constitutional convention.
+    - item: 2
+      content: |
+        The Batasang Pambansa may, by a vote of two-thirds of all its Members, call a constitutional convention or, by a majority vote of all its Members, submit the question of calling such a convention to the electorate in an election.
+  - item: Section 2
+    content: |
+      Any amendment to, or revision of, this Constitution shall be valid when ratified by a majority of the votes cast in a plebiscite which shall be held not later than three months after the approval of such amendment or revision.
+- item: Article XVII
+  caption: Transitory Provisions
+  units:
+  - item: Section 1
+    content: |
+      There shall be an interim National Assembly which shall exist immediately upon the ratification of this Constitution and shall continue until the Members of the regular National Assembly shall have been elected and shall have assumed office following an election called for the purpose by the interim National Assembly. Except as otherwise provided in this Constitution, the interim National Assembly shall have the same powers and its Members shall have the same functions, responsibilities, rights and privileges, and disqualifications as the regular. National Assembly and the Members thereof.
+  - item: Section 2
+    content: |
+      The Members of the interim National Assembly shall be the incumbent President and Vice-President of the Philippines, those who served as President of the nineteen hundred and seventy-one Constitutional Convention, those Members of the Senate and the House of Representatives who shall express in writing to the Commission on Elections within thirty days after the ratification of this Constitution their option to serve therein, and those Delegates to the nineteen hundred and seventy-one Constitutional Convention who have opted to serve therein by voting affirmatively for this Article. They may take their oath of office before any officer authorized to administer oath and qualify thereto, after the ratification of this Constitution.
+  - item: Section 3
+    units:
+    - item: 1
+      content: |
+        The incumbent President of the Philippines shall initially convene the interim National Assembly and shall preside over its sessions until the interim Speaker shall have been elected. He shall continue to exercise his powers and prerogatives under the nineteen hundred and thirty-five Constitution and the powers vested in the President and the Prime Minister under this Constitution until he calls upon the interim National Assembly to elect the interim President and the interim Prime Minister, who shall then exercise their respective powers vested by this Constitution.
+    - item: 2
+      content: |
+        All proclamations, orders, decrees, instructions, and acts promulgated, issued, or done by the incumbent President shall be part of the law of the land, and shall remain valid, legal, binding, and effective even after lifting of martial law or the ratification of this Constitution, unless modified, revoked, or superseded by subsequent proclamations, orders, decrees, instructions, or other acts of the incumbent President, or unless expressly and explicitly modified or repealed by the regular National Assembly.
+  - item: Section 4
+    content: |
+      The interim Prime Minister and his Cabinet shall exercise all the powers and functions, and discharge the responsibilities of the regular Prime Minister and his Cabinet, and shall be subject to the same disqualifications provided in this Constitution.
+  - item: Section 5
+    content: |
+      The interim National Assembly shall give priority to measures for the orderly transition from the presidential to the parliamentary system, the reorganization of the Government, the eradication of graft and corruption, the effective maintenance of peace and order, the implementation of declared agrarian reforms, the standardization of compensation of government employees, and such other measures as shall bridge the gap between the rich and the poor.
+  - item: Section 6
+    content: |
+      The interim National Assembly shall reapportion the Assembly seats in accordance with Section two, Article Eight, of this Constitution.
+  - item: Section 7
+    content: |
+      All existing laws not inconsistent with this Constitution shall remain operative until amended, modified, or repealed by the National Assembly.
+  - item: Section 8
+    content: |
+      All courts existing at the time of the ratification of this Constitution shall continue and exercise their jurisdiction, until otherwise provided by law in accordance with this Constitution, and all cases pending in said courts shall be heard, tried, and determined under the laws then in force. The provisions of the existing Rules of Court not inconsistent with this Constitution shall remain operative unless amended, modified, or repealed by the Supreme Court or the National Assembly.
+  - item: Section 9
+    content: |
+      All officials and employees in the existing Government of the Republic of the Philippines shall continue in office until otherwise provided by law or decreed by the incumbent President of the Philippines, but all officials whose appointments are by this Constitution vested in the Prime Minister shall vacate their respective offices upon the appointment and qualification of their successors.
+  - item: Section 10
+    content: |
+      The incumbent members of the Judiciary may continue in office until they reach the age of seventy years, unless sooner replaced in accordance with the preceding section hereof.
+  - item: Section 11
+    content: |
+      The rights and privileges granted to citizens of the United States or to corporations or associations owned or controlled by such citizens under the Ordinance appended to the nineteen hundred and thirty-five Constitution shall automatically terminate on the third day of July, nineteen hundred and seventy-four. Titles to private lands acquired by such persons before such date shall be valid as against other private persons only.
+  - item: Section 12
+    content: |
+      All treaties, executive agreements, and contracts entered into by the Government, or any subdivision, agency, or instrumentality thereof, including government-owned or controlled corporations, are hereby recognized as legal, valid, and binding. When the national interest so requires, the incumbent President of the Philippines or the interim Prime Minister may review all contracts, concessions, permits, or other forms of privileges for the exploration, development, exploitation, or utilization of natural resources entered into, granted, issued, or acquired before the ratification of this Constitution.
+  - item: Section 13
+    content: |
+      Any public officer or employee separated from the service as a result of the reorganization effected under this Constitution shall, if entitled under the laws then in force, receive the retirement and other benefits accruing thereunder.
+  - item: Section 14
+    content: |
+      All records, equipment, buildings, facilities, and other properties of any office or body abolished or reorganized under this Constitution shall be transferred to the office or body to which its powers, functions, and responsibilities substantially pertain.
+  - item: Section 15
+    content: |
+      The interim National Assembly, upon special call by the interim Prime Minister, may, by a majority vote of all its Members, propose amendments to this Constitution. Such amendments shall take effect when ratified in accordance with Article Sixteen hereof.
+  - item: Section 16
+    content: |
+      This Constitution shall take effect immediately upon its ratification by a majority of the votes cast in a plebiscite called for the purpose and, except as herein provided, shall supersede the Constitution of nineteen hundred and thirty-five and all amendments thereto.

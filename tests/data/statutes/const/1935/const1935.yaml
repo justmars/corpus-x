@@ -1,0 +1,619 @@
+- item: Paragraph 1
+  content: |
+    The Filipino people, imploring the aid of Divine Providence, in order to establish a government that shall embody their ideals, conserve and develop the patrimony of the nation, promote the general welfare, and secure to themselves and their posterity the blessings of independence under a regime of justice, liberty, and democracy, do ordain and promulgate this Constitution.
+- item: Article I
+  caption: The National Territory
+  units:
+  - item: Section 1
+    content: |
+      The Philippines comprises all the territory ceded to the United States by the treaty of Paris concluded between the United States and Spain on the tenth day of December, eighteen hundred and ninety-eight, the limits of which are set forth in Article III of said treaty, together with all the islands embraced in the treaty concluded at Washington, between the United States and Spain on the seventh day of November, nineteen hundred, and in the treaty concluded between the United States and Great Britain on the second day of January, nineteen hundred and thirty, and all territory over which the present Government of the Philippine Islands exercises jurisdiction.
+- item: Article II
+  caption: Declaration of Principles
+  units:
+  - item: Section 1
+    content: |
+      The Philippines is a republican state. Sovereignty resides in the people and all government authority emanates from them.
+  - item: Section 2
+    content: |
+      The defense of the State is a prime duty of government, and in the fulfillment of this duty all citizens may be required by law to render personal military or civil service.
+  - item: Section 3
+    content: |
+      The Philippines renounces war as an instrument of national policy, and adopts the generally accepted principles of international law as a part of the law of the Nation.
+  - item: Section 4
+    content: |
+      The natural right and duty of parents in the rearing of the youth for civic efficiency should receive the aid and support of the Government.
+  - item: Section 5
+    content: |
+      The promotion of social justice to insure the well-being and economic security of all the people should be the concern of the State.
+- item: Article III
+  caption: Bill of Rights
+  units:
+  - item: Section 1
+    units:
+    - item: 1
+      content: |
+        No person shall be deprived of life, liberty, or property without due process of law, nor shall any person be denied the equal protection of the laws.
+    - item: 2
+      content: |
+        Private property shall not be taken for public use without just compensation.
+    - item: 3
+      content: |
+        The right of the people to be secure in their persons, houses, papers, and effects against unreasonable searches and seizures shall not be violated, and no warrants shall issue but upon probable cause, to be determined by the judge after examination under oath or affirmation of the complainant and the witnesses he may produce, and particularly describing the place to be searched, and the persons or things to be seized.
+    - item: 4
+      content: |
+        The liberty of abode and of changing the same within the limits prescribed by law shall not be impaired.
+    - item: 5
+      content: |
+        The privacy of communication and correspondence shall be inviolable except upon lawful order of the court or when public safety and order require otherwise.
+    - item: 6
+      content: |
+        The right to form associations or societies for purposes not contrary to law shall not be abridged.
+    - item: 7
+      content: |
+        No law shall be made respecting an establishment of religion, or prohibiting the free exercise thereof, and the free exercise and enjoyment of religious profession and worship, without discrimination or preference, shall forever be allowed. No religious test shall be required for the exercise of civil or political rights.
+    - item: 8
+      content: |
+        No law shall be passed abridging the freedom of speech, or of the press, or the right of the people peaceably to assemble and petition the Government for redress of grievances.
+    - item: 9
+      content: |
+        No law granting a title of nobility shall be enacted, and no person holding any office of profit or trust shall, without the consent of the National Assembly, accept any present, emolument, office, or title of any kind whatever from any foreign state.
+    - item: 10
+      content: |
+        No law impairing the obligation of contracts shall be passed.
+    - item: 11
+      content: |
+        No ex post facto law or bill of attainder shall be enacted.
+    - item: 12
+      content: |
+        No person shall be imprisoned for debt or nonpayment of a poll tax.
+    - item: 13
+      content: |
+        No involuntary servitude in any form shall exist except as a punishment for crime whereof the party shall have been duly convicted.
+    - item: 14
+      content: |
+        The privilege of the writ of habeas corpus shall not be suspended except in cases of invasion, insurrection, or rebellion, when the public safety requires it, in any of which events the same may be suspended wherever during such period the necessity for such suspension shall exist.
+    - item: 15
+      content: |
+        No person shall be held to answer for a criminal offense without due process of law.
+    - item: 16
+      content: |
+        All persons shall before conviction be bailable by sufficient sureties, except those charged with capital offenses when evidence of guilt is strong. Excessive bail shall not be required.
+    - item: 17
+      content: |
+        In all criminal prosecutions the accused shall be presumed to be innocent until the contrary is proved, and shall enjoy the right to be heard by himself and counsel, to be informed of the nature and cause of the accusation against him, to have a speedy and public trial, to meet the witnesses face to face and to have compulsory process to secure the attendance of witnesses in his behalf.
+    - item: 18
+      content: |
+        No person shall be compelled to be a witness against himself.
+    - item: 19
+      content: |
+        Excessive fines shall not be imposed, nor cruel and unusual punishment inflicted.
+    - item: 20
+      content: |
+        No person shall be twice put in jeopardy of punishment for the same offense. If an act is punished by a law and an ordinance, conviction or acquittal under either shall constitute a bar to another prosecution for the same act.
+    - item: 21
+      content: |
+        Free access to the courts shall not be denied to any person by reason of poverty.
+- item: Article IV
+  caption: Citizenship
+  units:
+  - item: Section 1
+    content: |
+      The following are citizens of the Philippines:
+    units:
+    - item: 1
+      content: |
+        Those who are citizens of the Philippine Islands at the time of the adoption of this Constitution.
+    - item: 2
+      content: |
+        Those born in the Philippine Islands of foreign parents who, before the adoption of this Constitution, had been elected to public office in the Philippine Islands.
+    - item: 3
+      content: |
+        Those whose fathers are citizens of the Philippines.
+    - item: 4
+      content: |
+        Those whose mothers are citizens of the Philippines and, upon reaching the age of majority, elect Philippine citizenship.
+    - item: 5
+      content: |
+        Those who are naturalized in accordance with law.
+  - item: Section 2
+    content: |
+      Philippine citizenship may be lost or re-acquired in the manner provided by law.
+- item: Article V
+  caption: Suffrage
+  units:
+  - item: Section 1
+    content: |
+      Suffrage may be exercised by male citizens of the Philippines not otherwise disqualified by law, who are twenty-one years of age or over and are able to read and write, and who shall have resided in the Philippines for one year and in the municipality wherein they propose to vote for at least six months preceding the election. The National Assembly shall extend the right of suffrage to women, if in a plebiscite which shall be held for that purpose within two years after the adoption of this Constitution, not less than three hundred thousand women possessing the necessary qualifications shall vote affirmatively on the question.
+- item: Article VI
+  caption: Legislative Department
+  units:
+  - item: Section 1
+    content: |
+      The Legislative power shall be vested in a National Assembly. The Members of the National Assembly shall not exceed one hundred and twenty, shall be chosen every three years, and shall be apportioned among the several provinces as nearly as may be according to the number of their respective inhabitants, but each province shall have at least one Member. The National Assembly shall by law make an apportionment within three years after the return of every enumeration, and not otherwise. Until such apportionment shall have been made, the National Assembly shall consist of ninety-eight Members, of whom eighty-seven shall be elected by the representative districts as now provided by law; and three by the Mountain Province, and one by each of the other eight existing special provinces. The Members of the National Assembly in the provinces of Sulu, Lanao, and Cotabato shall be chosen as may be determined by law; in all other provinces they shall be elected by the qualified voters therein.
+  - item: Section 2
+    content: |
+      No person shall be a Member of the National Assembly unless he has been five years a citizen of the Philippines, is at least thirty years of age, and, at the time of his election, a qualified elector, and a resident of the province in which he is chosen for not less than one year immediately prior to his election.
+  - item: Section 3
+    units:
+    - item: 1
+      content: |
+        In case of vacancy in the National Assembly a special election may be called in the corresponding district, in the manner prescribed by law, but the member thus elected shall serve only for the unexpired term.
+    - item: 2
+      content: |
+        Elections for the National Assembly shall be held on the dates fixed by law.
+    - item: 3
+      content: |
+        The National Assembly shall convene in regular session once every year, on the second Monday of the month immediately following that on which the election of its Members was held, unless a different date is fixed by law. The National Assembly may be called in special session at any time by the President to consider general legislation or only such subjects as he may designate. No special session shall continue longer than thirty days and no regular session longer than one hundred days, exclusive of Sundays.
+    - item: 4
+      content: |
+        The National Assembly shall choose its Speaker, a secretary, a sergeant-at-arms, and such other officers as may be required. A majority of all the Members shall constitute a quorum to do business, but a smaller number may adjourn from day to day, and may compel the attendance of absent Members, in such manner and under such penalties as the National Assembly may provide.
+    - item: 5
+      content: |
+        The National Assembly may determine the rules of its proceedings, punish its Members for disorderly behavior, and, with the concurrence of two-thirds, expel a Member. It shall keep a Journal of its proceedings, and from time to time publish the same, excepting such parts as may in its judgment require secrecy; the yeas and nays on any question shall, at the request of the one-fifth of its Members present, be entered in the Journal.
+  - item: Section 4
+    content: |
+      There shall be an Electoral Commission composed of three Justices of the Supreme Court designated by the Chief Justice, and of six Members chosen by the National Assembly, three of whom shall be nominated by the party having the largest number of votes, and three by the party having the second largest number of votes therein. The senior Justice in the Commission shall be its Chairman. The Electoral Commission shall be the sole judge of all contests relating to the election, returns, and qualifications of the Members of the National Assembly.
+  - item: Section 5
+    content: |
+      The Members of the National Assembly shall, unless otherwise provided by law, receive an annual compensation of five thousand pesos each including per diems and other emoluments or allowances and exclusive only of travelling expenses to and from their respective districts when attending sessions of the National Assembly. No increase in said compensation shall take effect until after the expiration of the full term of the Members of the National Assembly elected subsequent to the approval of such increase. The Speaker of the National Assembly shall receive an annual compensation of sixteen thousand pesos until otherwise provided by law.
+  - item: Section 6
+    content: |
+      The Members of the National Assembly shall in all cases except treason, felony, and breach of the peace, be privileged from arrest during their attendance at the sessions of the National Assembly, and in going to and returning from the same; and for any speech or debate therein, they shall not be questioned in any other place.
+  - item: Section 7
+    content: |
+      The National Assembly shall elect from among its Members, on the basis of proportional representation of the political parties therein, a Commission on Appointments and a Commission on Impeachment, each to consist of twenty-one members. These Commissions shall be constituted within thirty days after the National Assembly shall have been organized with the election of its Speaker, and shall meet only while the National Assembly is in session, at the call of their respective Chairmen or a majority of their members, to discharge such powers and functions as are herein conferred upon them.
+  - item: Section 8
+    units:
+    - item: 1
+      content: |
+        No Member of the National Assembly may hold any other office or employment in the Government without forfeiting his seat, nor shall any such Member during the time for which he was elected, be appointed to any civil office which may have been created or the emoluments whereof shall have been increased while he was a Member of the National Assembly.
+    - item: 2
+      content: |
+        No Member of the National Assembly shall directly or indirectly be financially interested in any contract with the Government or any subdivision or instrumentality thereof, or in any franchise or special privilege granted by the National Assembly during his term of office; nor shall any such Member appear as counsel before the Electoral Commission or any court in any civil case wherein the Government or any sub-division or instrumentality thereof is the adverse party, or collect any fee for his appearance in any administrative proceedings or in any criminal case wherein an officer or employee of the Government is accused of an offense committed in relation to his office. No Member of the Commission on Appointments of the National Assembly shall appear as counsel before any court inferior to the Supreme Court.
+  - item: Section 9
+    units:
+    - item: 1
+      content: |
+        The President shall submit within fifteen days of the opening of each regular session of the National Assembly a budget of receipts and expenditures, which shall be the basis of the general appropriation bill. The National Assembly may not increase the appropriations recommended by the President for the operation of the Government as specified in the Budget, except the appropriations for the National Assembly and the Judicial Department. The form of the Budget and the information that it should contain shall be prescribed by law.
+    - item: 2
+      content: |
+        No provision or enactment shall be embraced in the general appropriation, unless it relates specifically to some particular appropriation in the bill; and any such provision or enactment shall be limited in its operation to such appropriation.
+  - item: Section 10
+    content: |
+      The heads of departments upon their own initiative or upon the request of the National Assembly may appear before and be heard by the National Assembly on any matter pertaining to their departments, unless the public interest shall require otherwise and the President shall so state in writing.
+  - item: Section 11
+    units:
+    - item: 1
+      content: |
+        Every bill which shall have passed the National Assembly shall, before it becomes a law, be presented to the President. If he approve the same, he shall sign it; but if not, he shall return it with his objections to the National Assembly, which shall enter the objections at large on its Journal and proceed to reconsider it. If, after such reconsideration, two-thirds of all the Members of the National Assembly shall agree to pass the bill, it shall become a law. In all such cases the votes of the National Assembly shall be determined by yeas and nays, and the names of the Members voting for and against shall not be returned by the President as herein provided within twenty days (Sundays excepted) after it shall have been presented to him, the same shall become a law in like manner as if he had signed it, unless the National Assembly by adjournment prevent its return, in which case it shall become a law unless vetoed by the President within thirty days after adjournment.
+    - item: 2
+      content: |
+        The President shall have the power to veto any particular item or items of an appropriation bill, but the veto shall not affect the item or items to which he does not object. When a provision of an appropriation bill affects one or more items of the same, the President cannot veto the provision without at the same time vetoing the particular item or items to which it relates. The item or items objected to shall not take effect except in the manner heretofore provided as to bills returned to the National Assembly without the approval of the President. If the veto refers to a bill or any item of an appropriation bill which appropriates a sum in excess of ten per centum of the total amount voted in the appropriation bill for the general expenses of the Government for the preceding year, or if it should refer to a bill authorizing an increase of the public debt, the same shall not become a law unless approved by three-fourths of all the Members of the National Assembly.
+    - item: 3
+      content: |
+        The President shall have the power to veto any separate item or items in a revenue or tariff bill, and the item or items vetoed shall not take effect except in the manner provided as to bills vetoed by the President.
+  - item: Section 12
+    units:
+    - item: 1
+      content: |
+        No bill which may be enacted into law shall embrace more than one subject which shall be expressed in the title of the bill.
+    - item: 2
+      content: |
+        No bill shall be passed or become a law unless it shall have been printed and copies thereof in its final form furnished the Members at least three calendar days prior to its passage by the National Assembly, except when the President shall have certified to the necessity of its immediate enactment. Upon the last reading of a bill no amendment thereof shall be allowed, and the question upon its final passage shall be taken immediately thereafter, and the yeas and nays entered on the Journal.
+  - item: Section 13
+    units:
+    - item: 1
+      content: |
+        All money collected on any tax levied for a special purpose shall be treated as special fund and paid out for such purpose only. If the purpose for which a special fund was created has been fulfilled or abandoned, the balance, if any, shall be transferred to the general funds of the Government.
+    - item: 2
+      content: |
+        No money shall be paid out of the Treasury except in pursuance of an appropriation made by law.
+    - item: 3
+      content: |
+        No public money or property shall ever be appropriated, applied, or used, directly or indirectly, for the use, benefit, or support of any sect, church, denomination, sectarian institution, or system of religion, or for the use, benefit, or support of any priest, preacher, minister, or other religious teacher or dignitary is assigned to the armed forces or to any penal institution, orphanage, or leprosarium.
+  - item: Section 14
+    units:
+    - item: 1
+      content: |
+        The rule of taxation shall be uniform.
+    - item: 2
+      content: |
+        The National Assembly may by law authorize the President, subject to such limitations and restrictions as it may impose, to fix within specified limits, tariff rates, import or export quotas, and tonnage and wharfage dues.
+    - item: 3
+      content: |
+        Cemeteries, churches, and parsonages or convents appurtenant thereto, and all lands, buildings, and improvements used exclusively for religious, charitable, or educational purposes shall be exempt from taxation.
+  - item: Section 15
+    content: |
+      The National Assembly shall, with the concurrence of two-thirds of all its Members, have the sole power to declare war.
+  - item: Section 16
+    content: |
+      In times of war or other national emergency, the National Assembly may by law authorize the President, for a limited period and subject to such restrictions as it may prescribe, to promulgate rules and regulations to carry out a declared national policy.
+- item: Article VII
+  caption: Executive Department
+  units:
+  - item: Section 1
+    content: |
+      The Executive power shall be vested in a President of the Philippines.
+  - item: Section 2
+    content: |
+      The President shall hold his office during a term of six years, and together with the Vice-President chosen for the same term, shall be elected by direct vote of the people. The election returns for President and Vice-President, duly certified by the board of canvassers of each province, shall be transmitted to the National Assembly. Upon the receipt of such returns the National Assembly shall forthwith, in public session, count the votes, and proclaim the persons elected President and Vice-President. The persons respectively having the highest number of votes for President and Vice-President shall be declared elected, but in case two or more shall have an equal and the highest number of votes for either office, the National Assembly shall, by a majority vote of all its Members, elect one of said persons as President or Vice-President.
+  - item: Section 3
+    content: |
+      No person may be elected to the office of President or Vice-President, unless he be a natural-born citizen of the Philippines, a qualified voter, forty years of age or over, and has been a resident of the Philippines for at least ten years immediately preceding the election.
+  - item: Section 4
+    content: |
+      No person elected President may be re-elected for the following term, nor shall the Vice-President or any other person who may have succeeded to the office of President as herein provided at least one year before the election, be eligible to the office of President at such election.
+  - item: Section 5
+    content: |
+      Elections for President and Vice-President shall be held once every six years on a date to be fixed by the National Assembly.
+  - item: Section 6
+    content: |
+      The terms of the President and Vice-President shall end at noon on the thirtieth day of December following the expiration of six years after their election, and the terms of their successors shall begin from such time.
+  - item: Section 7
+    content: |
+      If, at the time fixed for the beginning of the term of the President, the President-elect shall have died, the Vice-President-elect shall become President. If a President shall not have been chosen before the time fixed for the beginning of his term, or if the President-elect shall have failed to qualify, then the Vice-President shall act as President until a President shall have qualified, and the National assembly may by law provide for the case wherein neither a President-elect nor a Vice-President-elect shall have qualified, declaring who shall then act as President, or the manner in which one who is to act shall be selected, and such person shall act accordingly until a President or Vice-President shall have qualified.
+  - item: Section 8
+    content: |
+      Before he enter on the execution of his office, the President shall take the following oath or affirmation:
+
+      >"I do solemnly swear (or affirm) that I will faithfully and conscientiously
+      fulfill my duties As President of the Philippines, preserve and defend its Constitution,
+      executive its laws, do justice to every man, and consecrate myself to the service
+      of the Nation. So help me God." (In case of affirmation, last sentence will
+      be omitted.)'
+  - item: Section 9
+    content: |
+      In the event of the removal of the President from office or of his death,
+      resignation, or inability to discharge the powers and duties of the said office,
+      the same shall devolve on the Vice-President, and the National Assembly shall
+      by law provide for the case of removal, death, resignation, or inability, both
+      of the President and Vice-President, declaring what officer shall then act as
+      President, and such officer shall act accordingly, until the disability be removed
+      or a President shall be elected.
+  - item: Section 10
+    content: |
+      The President shall have an official residence and receive a compensation to be ascertained by law which shall be neither increased nor diminished during the period for which he shall have been elected, and he shall not receive within that period any other emolument from the Government or any of its subdivisions or instrumentalities. Until the National Assembly shall provide otherwise, the President shall receive an annual salary of thirty thousand pesos. The Vice-President, when not acting as President, shall receive an annual compensation of fifteen thousand pesos until otherwise provided by law.
+  - item: Section 11
+    units:
+    - item: 1
+      content: |
+        The President shall have control of all the executive departments, bureaus, or offices, exercise general supervision over all local governments as may be provided by law, and take care that the laws be faithfully executed.
+    - item: 2
+      content: |
+        The President shall be commander-in-chief of all armed forces of the Philippines and, whenever it becomes necessary, he may call out such armed forces to prevent or suppress lawless violence, invasion, insurrection, or rebellion, or imminent danger thereof, when the public safety requires it, he may suspend the privileges of the writ of habeas corpus, or place the Philippines or any part thereof under martial law.
+    - item: 3
+      content: |
+        The President shall nominate and with the consent of the Commission on Appointments of the National Assembly shall appoint the heads of the executive departments and bureaus, officers of the Army from the rank of colonel, of the Navy and air forces from the rank of captain or commander, and all other officers of the Government whose appointments are not herein otherwise provided for, and those whom he may be authorized by law to appoint; but the National Assembly may by law vest the appointment of inferior officers, in the President alone, in the courts, or in the heads of departments.
+    - item: 4
+      content: |
+        The President shall have the power to make appointments during the recess of the national Assembly, but such appointments shall be effective only until disapproval by the Commission on Appointments or until the next adjournment of the National Assembly.
+    - item: 5
+      content: |
+        The President shall from time to time give to the National Assembly information of the state of the Nation, and recommend to its consideration such measures as shall judge necessary and expedient.
+    - item: 6
+      content: |
+        The President shall have the power to grant reprieves, commutations, and pardons, and remit fines and forfeitures, after conviction, for all offenses, except in cases of impeachment, upon such conditions and with such restrictions and limitations as he may deem proper to impose. He shall have the power to grant amnesty with the concurrence of the National Assembly.
+    - item: 7
+      content: |
+        The President shall have the power, with the concurrence of a majority of all the Members of the National Assembly, to make treaties, and with the consent of the Commission on Appointments, he shall appoint ambassadors, other public ministers, and consuls. He shall receive ambassadors and other ministers duly accredited to the Government of the Philippines.
+  - item: Section 12
+    units:
+    - item: 1
+      content: |
+        The executive departments of the present Government of the Philippine Islands shall continue as now authorized by law until the National Assembly shall provide otherwise.
+    - item: 2
+      content: |
+        The heads of departments and chiefs of bureaus or offices and their assistants shall not, during their continuance in office, engage in the practice of any profession, or intervene, directly or indirectly, in the management or control of any private enterprise which in any way may be affected by the functions of their office; nor shall they, directly or indirectly, be financially interested in any contract with the Government, or any subdivision or instrumentality thereof.
+    - item: 3
+      content: |
+        The President may appoint the Vice-President as a member of his cabinet and also as head of an executive department.
+- item: Article VIII
+  caption: Judicial Department
+  units:
+  - item: Section 1
+    content: |
+      The Judicial power shall be vested in one Supreme Court and in such inferior courts as may be established by law.
+  - item: Section 2
+    content: |
+      The National Assembly shall have the power to define, prescribe, and apportion the jurisdiction of the various courts, but may not deprive the Supreme Court of its original jurisdiction over cases affecting ambassadors, other public ministers, and consuls, nor of its jurisdiction to review, revise, reverse, modify, or affirm on appeal, certiorari, or writ of error, as the law or the rules of court may provide, final judgments and decrees of inferior courts in -
+    units:
+    - item: 1
+      content: |
+        All cases in which the constitutionality or validity of any treaty, law, ordinance, or executive order or regulation is in question.
+    - item: 2
+      content: |
+        All cases involving the legality of any tax, impost, assessment, or toll, or any penalty imposed in relation thereto.
+    - item: 3
+      content: |
+        All cases in which the jurisdiction of any trial courts is in issue.
+    - item: 4
+      content: |
+        All criminal cases in which the penalty imposed is death or life imprisonment.
+    - item: 5
+      content: |
+        All cases in which an error or question of law is involved.
+  - item: Section 3
+    content: |
+      Until the National Assembly shall provide otherwise, the Supreme Court
+      shall have such original and appellate jurisdiction as may be possessed and
+      exercised by the Supreme Court of the Philippine Islands at the time of the
+      adoption of this Constitution. The original jurisdiction of the Supreme Court
+      shall include all cases affecting ambassadors, other public ministers, and consuls.
+  - item: Section 4
+    content: |
+      The Supreme Court shall be composed of a Chief Justice and ten Associate
+      Justices and may sit either en banc or in two divisions unless otherwise provided
+      by law.
+  - item: Section 5
+    content: |
+      The members of the Supreme Court and all judges of inferior courts shall be appointed by the President with the consent of the Commission on Appointments of the National Assembly.
+  - item: Section 6
+    content: |
+      No person may be appointed member of the Supreme Court unless he has
+      been five years a citizen of the Philippines, is at least forty years of age,
+      and has for ten years or more been a judge of a court of record or engaged in
+      the practice of law in the Philippines.
+  - item: Section 7
+    content: |
+      No judge appointed for a particular district shall be designated or transferred
+      to another district without the approval of the Supreme Court. The National
+      Assembly shall by law determine the residence of judges of inferior courts.
+  - item: Section 8
+    content: |
+      The National Assembly shall prescribe the qualifications of judges of
+      inferior courts, but no person may be appointed judge of any such courts unless
+      he is a citizen of the Philippines and has been admitted to the practice of
+      law in the Philippines.
+  - item: Section 9
+    content: |
+      The members of the Supreme Court and all judges of inferior courts shall hold office during good behavior, until they reach the age of seventy years, or become incapacitated to discharge the duties of their office. They shall receive such compensation as may be fixed by law, which shall not be diminished during the continuance in office. Until the National Assembly shall provide otherwise, the Chief Justice of the Supreme Court shall receive an annual compensation of sixteen thousand pesos, and each Associate Justice, fifteen thousand pesos.
+  - item: Section 10
+    content: |
+      All cases involving the constitutionality of treaty or law shall be heard
+      and decided by the Supreme Court en banc, and no treaty or law may be declared
+      unconstitutional without the concurrence of two-thirds of all the members of
+      the Court.
+  - item: Section 11
+    content: |
+      The conclusions of the Supreme Court in any case submitted to it for
+      decision shall be reached in consultation before the case is assigned to a Justice
+      for the writing of the opinion of the Court. Any Justice dissenting from a decision
+      shall state the reasons for his dissent.
+  - item: Section 12
+    content: |
+      No decision shall be rendered by any court of record without expressing therein clearly and distinctly the facts and the law on which it is based.
+  - item: Section 13
+    content: |
+      The Supreme Court shall have the power to promulgate rules concerning
+      pleading, practice, and procedure in all courts, and the admission to the practice
+      of law. Said rules shall be uniform for all courts of the same grade and shall
+      not diminish, increase, or modify substantive rights. The existing laws on pleading,
+      practice, and procedure are hereby repealed as statues, and are declared Rules
+      of Courts, subject to the power of the Supreme Court to alter and modify the
+      same. The National Assembly shall have the power to repeal, alter, or supplement
+      the rules concerning pleading, practice, and procedure, and the admission to
+      the practice of law in the Philippines.
+- item: Article IX
+  caption: Impeachment
+  units:
+  - item: Section 1
+    content: |
+      The President, the Vice-President, the Justices of the Supreme Court, and the Auditor General, shall be removed from office on impeachment for, and conviction of, culpable violation of the Constitution, treason, bribery, or other high crimes.
+  - item: Section 2
+    content: |
+      The Commission on Impeachment of the National Assembly, by a vote of two-thirds of its Members, shall have the sole power of impeachment.
+  - item: Section 3
+    content: |
+      The National Assembly shall have the sole power to try all impeachments. When sitting for that purpose the Members shall be on oath or affirmation. When the President of the Philippines is on trial, the Chief Justice of the Supreme Court shall preside. No person shall be convicted without the concurrence of three-fourths of all the Members who do not belong to the Commission on Impeachment.
+  - item: Section 4
+    content: |
+      Judgment in cases of impeachment shall not extend further then to removal from office and disqualification to hold and enjoy any office of honor, trust, or profit under the Government of the Philippines, but the party convicted shall nevertheless be liable and subject to prosecution, trial, and punishment, according to law.
+- item: Article X
+  caption: General Auditing Office
+  units:
+  - item: Section 1
+    content: |
+      There shall be a General Auditing Office under the direction and control of an Auditor General, who shall hold office for a term of ten years and may not be reappointed. The Auditor General shall be appointed by the President with the consent of the Commission on Appointments, and shall receive an annual compensation to Le fixed by law which shall not be diminished during his continuance in office. Until the National Assembly shall provide otherwise, the Auditor General shall receive an annual compensation of twelve thousand pesos.
+  - item: Section 2
+    content: |
+      The Auditor General shall examine, audit, and settle all accounts pertaining to the revenues and receipts from whatever source, including trust funds derived from bond issues; and audit, in accordance with law and administrative regulations, all expenditures of funds or property pertaining to or held in trust by the Government or the provinces or municipalities thereof. He shall keep the general accounts of the Government and preserve the vouchers pertaining thereto. It shall be the duty of the Auditor General to bring to the attention of the proper administrative officer expenditures of funds or property which, in his opinion, are irregular, unnecessary, excessive, or extravagant. He shall also perform such other functions as may be prescribed by law.
+  - item: Section 3
+    content: |
+      The decisions of the Auditor General shall be rendered within the time fixed by law, and the same may be appealed to the President whose action shall be final. When the aggrieved party is a private person or entity, an appeal from the decision of the Auditor General may be taken directly to a court of record in the manner provided by law.
+  - item: Section 4
+    content: |
+      The Auditor General shall submit to the President and the National Assembly an annual report covering the financial condition and operations of the Government, and such other reports as may be required.
+- item: Article XI
+  caption: Civil Service
+  units:
+  - item: Section 1
+    content: |
+      A Civil Service embracing all branches and subdivisions of the Government shall be provided by law. Appointments in the Civil Service, except as to those which are policy-determining, primarily confidential or highly technical in nature, shall be made only according to merit and fitness, to be determined as far as practicable by competitive examination.
+  - item: Section 2
+    content: |
+      Officers and employees in the Civil Service, including members of the armed forces, shall not engage directly or indirectly in partisan political activities or take part in any election except to vote.
+  - item: Section 3
+    content: |
+      No officer or employee of the Government shall receive additional or double compensation unless specifically authorized by law.
+  - item: Section 4
+    content: |
+      No officer or employee in the Civil Service shall be removed or suspended except for cause as provided by law.
+- item: Article XII
+  caption: Conservation and Utilization of Natural Resources
+  units:
+  - item: Section 1
+    content: |
+      All agricultural, timber, and mineral lands of the public domain, waters, minerals, coal, petroleum, and other mineral oils, all forces or potential energy, and other natural resources of the Philippines belong to the State, and their disposition, exploitation, development, or utilization shall be limited to citizens of the Philippines, or to corporations or associations at least sixty per centum of the capital of which is owned by such citizens, subject to any existing right, grant, lease, or concession at the time of the inauguration of the Government established under this Constitution. Natural resources, with the exception of public agricultural land, shall not be alienated, and no license, concession, or lease for the exploitation, development, or utilization of any of the natural resources shall be granted for a period exceeding twenty-five years, except as to water rights for irrigation, water supply, fisheries, or industrial uses other than the development of water power, in which cases beneficial use may be the measure and the limit of the grant.
+  - item: Section 2
+    content: |
+      No private corporation or association may acquire, lease, or hold public agricultural lands in excess of one thousand and twenty-four hectares, nor may any individual acquire such lands by purchase in excess of one hundred and forty-four hectares, or by lease in excess of one thousand and twenty-four hectares, or by homestead in excess of twenty-four hectares. Lands adapted to grazing, not exceeding two thousand hectares, may be leased to an individual, private corporation, or association.
+  - item: Section 3
+    content: |
+      The National Assembly may determine by law the size of private agricultural land which individuals, corporations, or associations may acquire and hold, subject to rights existing prior to the enactment of such law.
+  - item: Section 4
+    content: |
+      The National Assembly may authorize, upon payment of just compensation, the expropriation of lands to be subdivided into small lots and conveyed at cost to individuals.
+  - item: Section 5
+    content: |
+      Save in cases of hereditary succession, no private agricultural land shall be transferred or assigned except to individuals, corporations, or associations qualified to acquire or hold lands of the public domain in the Philippines.
+  - item: Section 6
+    content: |
+      The State may, in the interest of national welfare and defense, establish and operate industries and means of transportation and communication, and, upon payment of just compensation, transfer to public ownership utilities and other private enterprises to be operated by the Government.
+- item: Article XIII
+  caption: General Provisions
+  units:
+  - item: Section 1
+    content: |
+      The flag of the Philippines shall be red, white, and blue, with a sun and three stars, as consecrated and honored by the people and recognized by law.
+  - item: Section 2
+    content: |
+      All public officers and members of the armed forces shall take an oath to support and defend the Constitution.
+  - item: Section 3
+    content: |
+      The National Assembly shall take steps toward the development and adoption of a common national language based on one of the existing native languages. Until otherwise provided by law, English and Spanish shall continue as official languages.
+  - item: Section 4
+    content: |
+      The State shall promote scientific research and invention. Arts and letters shall be under its patronage. The exclusive right to writings and inventions shall be secured to authors and inventors for a limited period.
+  - item: Section 5
+    content: |
+      All educational institutions shall be under the supervision of and subject to regulation by the State. The Government shall establish and maintain a complete and adequate system of public education, and shall provide at least free public primary instruction, and citizenship training to adult citizens. All schools shall aim to develop moral character, personal discipline, civic conscience, and vocational efficiency, and to teach the duties of citizenship. Optional religious instruction shall be maintained in the public schools as now authorized by law. Universities established by the State shall enjoy academic freedom. The State shall create scholarships in arts, science, and letters for specially gifted citizens.
+  - item: Section 6
+    content: |
+      The State shall afford protection to labor, especially to working women and minors, and shall regulate the relations between landowner and tenant, and between labor and capital in industry and in agriculture. The State may provide for compulsory arbitration.
+  - item: Section 7
+    content: |
+      The National Assembly shall not, except by general law, provide for the formation, organization, or regulation of private corporations, unless such corporations are owned or controlled by the Government or any subdivision or instrumentality thereof.
+  - item: Section 8
+    content: |
+      No franchise, certificate, or any other form of authorization for the operation of a public utility shall be granted except to citizens of the Philippines or to corporations or other entities organized under the laws of the Philippines, sixty per centum of the capital of which is owned by citizens of the Philippines, nor shall such franchise, certificate, or authorization be exclusive in character or for a longer period than fifty years. No franchise or right shall be granted to any individual, firm, or corporation, except under the condition that it shall be subject to amendment, alteration, or repeal by the National Assembly when the public interest so requires.
+  - item: Section 9
+    content: |
+      The Government shall organize and maintain a national police force to preserve public order and enforce the law.
+  - item: Section 10
+    content: |
+      This Constitution shall be officially promulgated in English and Spanish, but in case of conflict the English text shall prevail.
+- item: Article XIV
+  caption: Amendments
+  units:
+  - item: Section 1
+    content: |
+      The National Assembly, by a vote of three-fourths of all its Members, may propose amendments to this Constitution or call a convention for that purpose. Such amendments shall be valid as part of this Constitution when approved by a majority of the votes cast at an election at which the amendments are submitted to the people for their ratification.
+- item: Article XV
+  caption: Transitory Provisions
+  units:
+  - item: Section 1
+    content: |
+      The first election of the officers provided in this Constitution and the inauguration of the Government of the Commonwealth of the Philippines shall take place as provided in Public Act Numbered One hundred and twenty-seven of the Congress of the United States, approved March twenty-four, nineteen hundred and thirty-four.
+  - item: Section 2
+    content: |
+      All laws of the Philippine Islands shall continue in force until the inauguration of the Commonwealth of the Philippines; thereafter, such laws shall remain operative, unless inconsistent with this Constitution, until amended, altered, modified, or repealed by the National Assembly, and all references in such laws to the Government or officials of the Philippine Islands shall be construed, in so far as applicable, to refer to the Government and corresponding officials under this Constitution.
+  - item: Section 3
+    content: |
+      All courts existing at the time of the adoption of this Constitution shall continue and exercise their jurisdiction, until otherwise provided by law in accordance with this Constitution, and all cases, civil and criminal, pending in said courts, shall be heard, tried and determined under the laws then in force.
+  - item: Section 4
+    content: |
+      All officers and employees in the existing Government of the Philippine Islands shall continue in office until the National Assembly shall provide otherwise, but all officers whose appointments are by this Constitution vested in the President shall vacate their respective offices upon the appointment and qualification of their successors, if such appointment is made within a period of one year from the date of the inauguration of the Commonwealth of the Philippines.
+  - item: Section 5
+    content: |
+      The Members of the National Assembly for the Mountain Province shall be elected as may be provided by law. The voters of municipalities and municipal districts formerly belonging to a special province and now forming part of regular provinces shall vote in the election for Members of the National Assembly in such districts as may be provided by law.
+  - item: Section 6
+    content: |
+      The provisions of this Constitution, except those contained in this article and in Article V, and those which refer to the election and qualifications of officers to be elected under this Constitution, shall not take effect until the inauguration of the Commonwealth of the Philippines.
+- item: Article XVI
+  caption: Special Provisions Effective Upon the Proclamation of the Independence of the Philippines
+  units:
+  - item: Section 1
+    content: |
+      Upon the proclamation of the President of the United States recognizing the independence of the Philippines -
+    units:
+    - item: 1
+      content: |
+        The property rights of the United States and the Philippines shall be promptly adjusted and settled, and all existing property rights of citizens or corporations of the United States shall be acknowledged, respected, and safeguarded to the same extent as property rights of citizens of the Philippines.
+    - item: 2
+      content: |
+        The officials elected and serving under this Constitution shall be constitutional officers of the free and independent government of the Philippines and qualified to function in all respects as if elected directly under such Government, and shall serve their full terms of office as prescribed in this Constitution.
+    - item: 3
+      content: |
+        The debts and liabilities of the Philippines, its provinces, cities, municipalities, and instrumentalities, which shall be valid and subsisting at the time of the final and complete withdrawal of the sovereignty of the United States, shall be assumed by the free and independent government of the Philippines; and where bonds have been issued under authority of an Act of Congress of the United States by the Philippine Islands, or any province, city, or municipality therein, the Government of the Philippines will make adequate provision for the necessary funds for the payment of interest and principal, and such obligations shall be a first lien on all taxes collected.
+    - item: 4
+      content: |
+        The Government of the Philippines will assume all continuing obligations of the United States under the Treaty of Peace with Spain ceding the Philippine Islands to the United States.
+- item: Article XVII
+  caption: The Commonwealth and the Republic
+  units:
+  - item: Section 1
+    content: |
+      The government established by this Constitution shall be known as the Commonwealth of the Philippines. Upon the final and complete withdrawal of the sovereignty of the United States and the proclamation of Philippine independence, the Commonwealth of the Philippines shall thenceforth be known as the Republic of the Philippines.
+- item: Container 1
+  caption: Ordinance Appended to the Constitution
+  units:
+  - item: Section 1
+    content: |
+      Notwithstanding the provisions of the foregoing Constitution, pending the final and complete withdrawal of the sovereignty of the United States over the Philippines -
+    units:
+    - item: 1
+      content: |
+        All citizens of the Philippines shall owe allegiance to the United States.
+    - item: 2
+      content: |
+        Every officer of the Government of the Commonwealth of the Philippines shall, before entering upon the discharge of his duties, take and subscribe an oath of office, declaring, among other things, that he recognizes and accepts the supreme authority of and will maintain true faith and allegiance to the United States.
+    - item: 3
+      content: |
+        Absolute toleration of religious sentiment shall be secured and no inhabitant or religious organization shall be molested in person or property on account of religious belief or mode or worship.
+    - item: 4
+      content: |
+        Property owned by the United States, cemeteries, churches, and parsonages or convents appurtenant thereto, and all lands, buildings, and improvements used exclusively for religious, charitable, or educational purposes shall be exempt for taxation.
+    - item: 5
+      content: |
+        Trade relations between the Philippines and the United States shall be upon the basis prescribed in section six of Public Act Numbered One hundred and twenty-seven of the Congress of the United States approved March twenty-four, nineteen hundred and thirty-four.
+    - item: 6
+      content: |
+        The public debt of the Philippines and its subordinate branches shall not exceed limits now or hereafter fixed by the Congress of the United States, and no loans shall be contracted in foreign countries without the approval of the President of the United States.
+    - item: 7
+      content: |
+        The debts, liabilities, and obligations of the present Government of the Philippine Islands, its provinces, municipalities, and instrumentalities, valid and subsisting at the time of the adoption of the Constitution, shall be assumed and paid by the Government of the Commonwealth of the Philippines.
+    - item: 8
+      content: |
+        The Government of the Commonwealth of the Philippines shall establish and maintain an adequate system of public schools, primarily conducted in the English language.
+    - item: 9
+      content: |
+        Acts affecting currency, coinage, imports, exports, and immigration shall not become law until approved by the President of the United States.
+    - item: 10
+      content: |
+        Foreign affairs shall be under the direct supervision and control of the United States.
+    - item: 11
+      content: |
+        All acts passed by the National Assembly of the Commonwealth of the Philippines shall be reported to the Congress of the United States.
+    - item: 12
+      content: |
+        The Philippines recognizes the right of the United States to expropriate property for public uses, to maintain military and other reservations and armed forces in the Philippines, and, upon order of the President of the United States, to call into the service of such armed forces all military forces organized by the Government of the Commonwealth of the Philippines.
+    - item: 13
+      content: |
+        The decisions of the courts of the Philippines shall be subject to review by the Supreme Court of the United States as now provided by law, and such review shall also extend to all cases involving the Constitution of the Philippines.
+    - item: 14
+      content: |
+        Appeals from decisions of the Auditor General may be taken to the President of the United States.
+    - item: 15
+      content: |
+        The United States may, by Presidential proclamation, exercise the right to intervene for the preservation of the Government of the Commonwealth of the Philippines and for the maintenance of the Government as provided in the Constitution thereof, and for the protection of life, property, and individual liberty and for the discharge of Government obligations under and in accordance with the provisions of the Constitution.
+    - item: 16
+      content: |
+        The authority of the United States High Commissioner to the Government of the Commonwealth of the Philippines as provided in Public Act Numbered One hundred and twenty-seven of the Congress of the United States approved March twenty-four, nineteen hundred and thirty-four, is hereby recognized.
+    - item: 17
+      content: |
+        Citizens and corporations of the United States shall enjoy in the Commonwealth of the Philippines all the civil rights of the citizens and corporations, respectively, thereof.
+    - item: 18
+      content: |
+        Every duly adopted amendment to the Constitution of the Philippines shall be submitted to the President of the United States for approval. If the President approve the amendment or if the President fail to disapprove such amendment within six months from the time of its submission, the amendment shall take effect as a part of such Constitution
+    - item: 19
+      content: |
+        The President of the United States shall have authority to suspend the taking effect of or the operation of any law, contract, or executive order of the Government of the Commonwealth of the Philippines, which in his judgment will result in a failure of the Government of the Commonwealth of the Philippines to fulfill its contracts, or to meet its bonded indebtedness and interest thereon or to provide for its sinking funds, or which seems likely to impair the reserves for the protection of the currency of the Philippines, or which in his judgment will violate international obligations of the United States.
+    - item: 20
+      content: |
+        The President of the Commonwealth of the Philippines shall make an annual report to the President and Congress of the United States of the proceedings and operations of the Government of the Commonwealth of the Philippines and shall make such other reports as the President or Congress may request.
+  - item: Section 2
+    content: |
+      Pending the final and complete withdrawal of the sovereignty of the United States over the Philippines, there shall be a Resident Commissioner of the Philippines to the United States who shall be appointed by the President of the Commonwealth of the Philippines with the consent of the Commission on Appointments. The powers and duties of the Resident Commissioner shall be as provided in section seven, paragraph five of Public Act Numbered One hundred and twenty-seven of the Congress of the United States, approved March twenty-four, nineteen hundred and thirty-four, together with such other duties as the National Assembly may determine. The qualifications, compensation, and expenses of the Resident Commissioner shall be fixed by law.
+  - item: Section 3
+    content: |
+      All other provisions of Public Act Numbered One hundred and twenty-seven of the Congress of the United States, approved March twenty-four, nineteen hundred and thirty-four, applicable to the Government of the Commonwealth of the Philippines are hereby made a part of this Ordinance as if such provisions were expressly interested herein.
