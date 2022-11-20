@@ -1,12 +1,12 @@
-# Corpus-X
+# corpus-x
 
 ## Concept
 
-*corpus-base* + *corpus-pax* + *statute-trees* = converting the raw corpus to its database variant **corpus-x**. See how this is accomplish [via this notebook](notebooks/setup.ipynb). B
+*corpus-pax* + *corpus-base* +  *statute-trees* = converts raw `yaml`-based corpus repository to its database variant **corpus-x**; see [details](notebooks/setup.ipynb). After constructing all of the required tables, it becomes possible to evaluate the raw data before constructing the same for the web / app usage.
 
 ## Components
 
-Broken down into individual components:
+The setup process can be broken down into individual components:
 
 Order | Time | Instruction | Docs
 :--:|:--:|--:|:--
@@ -16,8 +16,6 @@ Order | Time | Instruction | Docs
 3 | ~10min | Assuming inclusion files are already created, can populate the various tables under `corpus-x` | [Post-inclusions](docs/3-post-inclusions.md)
 
 ## Decision
-
-After constructing all of the required tables, it becomes possible to unify the different tables for each row. For instance, instead of using multiple tables (with various joins), a single call can retrieve the detail view of a single decision id.
 
 ```python
 >>> from sqlpyd import Connection
@@ -113,7 +111,7 @@ With respect to a codification_id:
     'units': [
         { # this is the nested tree that can be styled via html / css / js
             'item': 'Judiciary Reorganization Act',
-            'id': '1.',
+            'id': '1.', # why necessary to create a root node? easier to create relationships, i.e. repeals / associations of whole documents to a single unit node
             'units': [
                 {
                     'item': 'Container 1',
