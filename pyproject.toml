@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 corpus-base = "^0.0.11"   # has corpus-pax, sqlpyd, citation-utils
-statute-trees = "^0.0.16" # has citation-utils, statute-patterns
+statute-trees = "^0.0.17" # has citation-utils, statute-patterns
 
 [tool.poetry.group.dev.dependencies]
 rich = "^12.6"

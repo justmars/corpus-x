@@ -27,9 +27,9 @@ SELECT
         json_object(
             'id',
             id,
-            'official_title',
-            title,
             'serial_title',
+            title,
+            'official_title',
             description,
             'statute_date',
             DATE

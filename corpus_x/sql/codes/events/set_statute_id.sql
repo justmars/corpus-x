@@ -13,8 +13,8 @@ WITH evt AS (
 base AS (
     SELECT
         id,
-        description,
-        -- the description is serial title
+        title,
+        -- the title is serial title (see statute-trees 0.0.17)
         variant,
         DATE
     FROM
@@ -34,7 +34,7 @@ events_matched AS (
         evt
         JOIN base
     WHERE
-        evt.statute = base.description -- the description is serial title
+        evt.statute = base.title -- the title is serial title (see statute-trees 0.0.17)
         AND (
             (IFNULL(evt.date, NULL) IS NULL
             OR evt.date = base.date)

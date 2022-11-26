@@ -106,7 +106,7 @@ def test_ra_11716_statutes_found(ra_11716_obj):
 def test_ra_11716_material_paths(ra_11716_obj):
     assert ra_11716_obj["material_paths"] == [
         {
-            "item": "An Act Increasing The Bed Capacity Of The Northern Mindanao Medical Center In Cagayan De Oro City, Amending For The Purpose Republic Act No. 7938, As Amended By Republic Act No. 10677, And Appropriating Funds Therefor",
+            "item": "Republic Act No. 11716",
             "material_path": "1.",
             "statute_id": "ra-11716-april-29-2022",
         },

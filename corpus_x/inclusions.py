@@ -80,7 +80,7 @@ class StatuteInOpinion(StatuteBase, TableConfig):
 
     @classmethod
     def update_statute_ids(cls, c: Connection) -> list[dict]:
-        """Asssuming proper inserts of missing statutes from cls.add_statutes(), update the rows with their proper foreign keys."""
+        """Assuming proper inserts of missing statutes from cls.add_statutes(), update the rows with their proper foreign keys."""
         return c.db.execute(
             corpus_sqlenv.get_template("statutes/update_id.sql").render(
                 statute_tbl=StatuteRow.__tablename__,

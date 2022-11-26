@@ -5,7 +5,7 @@ from typing import Iterator
 from corpus_base.decision import CitationRow, DecisionRow
 from loguru import logger
 from pydantic import EmailStr, Field
-from sqlite_utils.db import Table
+from sqlite_utils.db import NotFoundError
 from sqlpyd import Connection, TableConfig
 from statute_patterns import Rule, StatuteSerialCategory
 from statute_patterns.components.utils import DETAILS_FILE
@@ -158,6 +158,7 @@ class CodeStatuteEvent(StatuteAffector, TableConfig):
         ["locator", "content", "statute"],
         ["locator", "statute"],
         ["codification_id", "material_path"],
+        ["affector_statute_id", "affector_material_path"],
     ]
     codification_id: str = Field(
         ..., col=str, fk=(CodeRow.__tablename__, "id")
@@ -264,6 +265,18 @@ class CodeStatuteEvent(StatuteAffector, TableConfig):
                 )
             )
 
+    @classmethod
+    def fetch_unmaterialized(cls, c: Connection) -> list[dict] | None:
+        """Search for unit events which were unable to get an affector material path."""
+        sql_file = "codes/events/search_unmaterialized.sql"
+        if rows := c.db.execute_returning_dicts(
+            corpus_sqlenv.get_template(sql_file).render(
+                event_tbl=cls.__tablename__,
+            )
+        ):
+            return rows
+        return None
+
 
 class Codification(Integrator):
     id: str
@@ -285,23 +298,9 @@ class Codification(Integrator):
 
     @classmethod
     def insert_statute_id(cls, c: Connection) -> sqlite3.Cursor:
-        """First create a nullable foreign key field to the statute_id then update the column."""
-        t = c.db[CodeRow.__tablename__]
-
-        # TODO: adding a new column takes about 30 seconds
-        if isinstance(t, Table):
-            if "statute_id" not in t.columns_dict:
-                t.add_column(
-                    col_name="statute_id",
-                    col_type=str,
-                    fk=StatuteRow.__tablename__,
-                    fk_col="id",
-                )
-        # TODO: the update_statute_id.sql may need some refinement.
-        template_name = "codes/update_statute_id.sql"
-        template = corpus_sqlenv.get_template(template_name)
+        template_name = "codes/update_statute_id.sql"  # TODO: needs refinement
         return c.db.execute(
-            template.render(
+            corpus_sqlenv.get_template(template_name).render(
                 code_tbl=CodeRow.__tablename__,
                 statutes_tbl=StatuteRow.__tablename__,
             )
@@ -309,8 +308,27 @@ class Codification(Integrator):
 
     @classmethod
     def add_rows(cls, c: Connection):
+        stat = c.db[StatuteRow.__tablename__]
+        t = c.db[CodeRow.__tablename__]
+        t.add_column(  # type: ignore
+            col_name="statute_id",
+            col_type=str,
+            fk=StatuteRow.__tablename__,
+            fk_col="id",
+        )
+
         for f in CODIFICATION_PATH.glob("**/*.yaml"):
-            Codification.create_obj(c, f)
+            idx = Codification.create_obj(c, f)
+            code_obj = t.get(idx)  # type: ignore
+            try:  # check if statute base of code obj existing
+                stat.get(code_obj["statute_id"])  # type: ignore
+            except NotFoundError:
+                Statute.create_via_catid(
+                    c,
+                    code_obj["statute_category"],
+                    code_obj["statute_serial_id"],
+                )
+
         cls.insert_statute_id(c)
         CodeStatuteEvent.add_statutes_from_events(c)
         CodeStatuteEvent.update_statute_ids(c)
