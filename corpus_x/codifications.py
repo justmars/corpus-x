@@ -1,3 +1,4 @@
+import json
 import sqlite3
 from pathlib import Path
 from typing import Iterator
@@ -27,7 +28,7 @@ from .resources import (
     corpus_sqlenv,
 )
 from .statutes import Statute, StatuteMaterialPath, StatuteRow, StatuteTitleRow
-from .utils import set_info_handler
+from .utils import set_histories, set_info_handler
 
 set_info_handler("codes")
 
@@ -60,6 +61,20 @@ class CodeRow(Page, StatuteBase, TableConfig):
         if results:
             return results[0]
         return {}
+
+    @classmethod
+    def set_update_units(cls, c: Connection, pk: str) -> str:
+        """Using data from codification events, add the `material_path` and `statute_id` of the affecting statute to each history node of the original `units` field."""
+        tbl = c.db[cls.__tablename__]
+        nodes = json.loads(tbl.get(pk)["units"])  # type: ignore
+        set_histories(  # being a recursive call to self, this will update the nodes _in place_
+            pk,
+            nodes,
+            c.db[CodeStatuteEvent.__tablename__],  # type: ignore
+            c.db[CodeCitationEvent.__tablename__],  # type: ignore
+        )
+        tbl.update(pk, {"units": json.dumps(nodes)})  # type: ignore
+        return pk
 
 
 class CodeUnitSearch(TableConfig):
@@ -329,11 +344,14 @@ class Codification(Integrator):
                     code_obj["statute_serial_id"],
                 )
 
-        cls.insert_statute_id(c)
-        CodeStatuteEvent.add_statutes_from_events(c)
-        CodeStatuteEvent.update_statute_ids(c)
-        CodeStatuteEvent.update_unit_ids(c)
+        cls.insert_statute_id(c)  # insert single statute
+        CodeStatuteEvent.add_statutes_from_events(c)  # populate statutes table
+        CodeStatuteEvent.update_statute_ids(c)  # needed to update tree
+        CodeStatuteEvent.update_unit_ids(c)  # needed to update tree
         CodeCitationEvent.update_decision_ids(c)
+
+        for row in t.rows:  # update the original trees
+            CodeRow.set_update_units(c, row["id"])
 
     @classmethod
     def from_page(cls, file_path: Path):
