@@ -67,12 +67,7 @@ class CodeRow(Page, StatuteBase, TableConfig):
         """Using data from codification events, add the `material_path` and `statute_id` of the affecting statute to each history node of the original `units` field."""
         tbl = c.db[cls.__tablename__]
         nodes = json.loads(tbl.get(pk)["units"])  # type: ignore
-        set_histories(  # being a recursive call to self, this will update the nodes _in place_
-            pk,
-            nodes,
-            c.db[CodeStatuteEvent.__tablename__],  # type: ignore
-            c.db[CodeCitationEvent.__tablename__],  # type: ignore
-        )
+        set_histories(pk, nodes, c)  # recursive; updates nodes _in place_
         tbl.update(pk, {"units": json.dumps(nodes)})  # type: ignore
         return pk
 

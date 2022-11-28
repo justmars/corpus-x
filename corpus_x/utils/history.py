@@ -1,4 +1,5 @@
 from sqlite_utils.db import Table
+from sqlpyd import Connection
 
 
 def detect_statute_mp(code_pk: str, stat_id: str, tbl: Table, h: dict):
@@ -95,7 +96,7 @@ def detect_statute_id(code_pk: str, tbl: Table, h: dict):
     return None
 
 
-def detect_decision_id(code_pk: str, tbl: Table, h: dict):
+def detect_case_id(code_pk: str, tbl: Table, h: dict):
     if cite := h.get("citation"):
         if rows := list(
             tbl.rows_where(
@@ -107,20 +108,26 @@ def detect_decision_id(code_pk: str, tbl: Table, h: dict):
             return rows[0]["affector_decision_id"]
 
 
-def set_histories(
-    code_pk: str,
-    nodes: list[dict],
-    statute_tbl: Table,
-    decision_tbl: Table,
-):
+def set_histories(code_pk: str, nodes: list[dict], c: Connection):
+    from corpus_base.decision import DecisionRow
+
+    from corpus_x.codifications import CodeCitationEvent, CodeStatuteEvent
+    from corpus_x.statutes import StatuteRow
+
+    ct_evt = c.db[CodeCitationEvent.__tablename__]
+    st_evt = c.db[CodeStatuteEvent.__tablename__]
+    st = c.db[StatuteRow.__tablename__]
+    dec = c.db[DecisionRow.__tablename__]
     for node in nodes:
         if h_list := node.get("history", None):
             for h in h_list:
-                if case_id := detect_decision_id(code_pk, decision_tbl, h):
+                if case_id := detect_case_id(code_pk, ct_evt, h):  # type: ignore
                     h["decision_id"] = case_id
-                if stat_id := detect_statute_id(code_pk, statute_tbl, h):  # type: ignore
+                    h["decision_date"] = dec.get(case_id)["date"]  # type: ignore
+                if stat_id := detect_statute_id(code_pk, st_evt, h):  # type: ignore
                     h["statute_id"] = stat_id
-                    if mp := detect_statute_mp(code_pk, stat_id, statute_tbl, h):  # type: ignore
+                    h["statute_date"] = st.get(stat_id)["date"]  # type: ignore
+                    if mp := detect_statute_mp(code_pk, stat_id, st_evt, h):  # type: ignore
                         h["statute_mp"] = mp
         if subunits := node.get("units"):
-            set_histories(code_pk, subunits, statute_tbl, decision_tbl)
+            set_histories(code_pk, subunits, c)
