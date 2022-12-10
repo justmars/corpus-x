@@ -688,24 +688,6 @@ datasette = "*"
 test = ["pytest"]
 
 [[package]]
-name = "datasette-publish-fly"
-version = "1.2"
-description = "Datasette plugin for publishing data using Fly"
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "datasette-publish-fly-1.2.tar.gz", hash = "sha256:c25b33e14d66cba430188fe4bf0fd98410fdb74bbc456ac0062f2875e2e6a843"},
-    {file = "datasette_publish_fly-1.2-py3-none-any.whl", hash = "sha256:7e1bfb30697ea1fd4f5762f015fc29b1205a24254f9086c03b3a13f0c05394d3"},
-]
-
-[package.dependencies]
-datasette = ">=0.60.2"
-
-[package.extras]
-test = ["cogapp", "pytest", "pytest-mock"]
-
-[[package]]
 name = "debugpy"
 version = "1.6.4"
 description = "An implementation of the Debug Adapter Protocol for Python"
@@ -1882,14 +1864,14 @@ testing = ["docopt", "pytest (<6.0.0)"]
 
 [[package]]
 name = "pathspec"
-version = "0.10.2"
+version = "0.10.3"
 description = "Utility library for gitignore style pattern matching of file paths."
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "pathspec-0.10.2-py3-none-any.whl", hash = "sha256:88c2606f2c1e818b978540f73ecc908e13999c6c3a383daf3705652ae79807a5"},
-    {file = "pathspec-0.10.2.tar.gz", hash = "sha256:8f6bf73e5758fd365ef5d58ce09ac7c27d2833a8d7da51712eac6e27e35141b0"},
+    {file = "pathspec-0.10.3-py3-none-any.whl", hash = "sha256:3c95343af8b756205e2aba76e843ba9520a24dd84f68c22b9f93251507509dd6"},
+    {file = "pathspec-0.10.3.tar.gz", hash = "sha256:56200de4077d9d0791465aa9095a01d421861e405b5096955051deefd697d6f6"},
 ]
 
 [[package]]
@@ -3175,4 +3157,4 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "66dbc3b74ab7437392657e4c3f96501e3687c89fdfd4a79e0a4d15ddc59c6e00"
+content-hash = "2528a3e9ac7750f6a56164b7d7db36b13a4e8e8777b7b6c56258396e24c77566"

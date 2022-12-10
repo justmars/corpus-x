@@ -12,7 +12,6 @@ statute-trees = "^0.0.17"        # has citation-utils, statute-patterns
 datasette = "^0.63.2"
 datasette-pretty-json = "^0.2.2"
 datasette-auth-tokens = "^0.3"
-datasette-publish-fly = "^1.2"
 
 [tool.poetry.group.dev.dependencies]
 rich = "^12.6"
