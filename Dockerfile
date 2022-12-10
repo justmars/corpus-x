@@ -29,8 +29,8 @@ ENV LD_LIBRARY_PATH=/usr/local/lib
 
 # variables are used in litestream.yml and run.sh
 ARG RUNFILE=/scripts/run.sh
-ENV DB_FILE=/db/x.db
-ENV METADATA_PATH=/db/metadata.yml
+ENV DB_FILE=/data/x.db
+ENV METADATA_PATH=/etc/metadata.yml
 ENV REPLICA_URL=s3://corpus-x/db
 ENV DS_PORT=8080
 
@@ -38,7 +38,7 @@ ENV DS_PORT=8080
 EXPOSE $DS_PORT
 
 # copy Datasette metadata + Litestream configuration file & startup script, enable access with chmod 777
-COPY app/db/metadata.yml $METADATA_PATH
+COPY app/etc/metadata.yml $METADATA_PATH
 COPY app/etc/litestream.yml /etc/litestream.yml
 COPY app/scripts/run.sh $RUNFILE
 RUN chmod 777 $RUNFILE

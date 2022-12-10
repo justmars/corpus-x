@@ -1,0 +1,38 @@
+# this is the app name
+# once instantiated in fly.io, view in /app via ssh console
+app = "corpus-x"
+
+# add env variables
+[env]
+FLY_PRIMARY_REGION = "sin"
+
+# source "corpus-x-data" is created via fly volumes create corpus-x-data
+# destination "/db" is location of sqlite db; this is a folder of the volume
+# ssh into the db to check
+[mounts]
+source = "corpus_x_data"
+destination = "/data"
+
+# see https://fly.io/docs/reference/configuration/#picking-a-deployment-strategy
+[deploy]
+strategy = "immediate"
+
+[[services]]
+internal_port = 8080
+protocol = "tcp"
+
+[services.concurrency]
+hard_limit = 25
+soft_limit = 20
+
+[[services.ports]]
+handlers = ["http"]
+port = 80
+
+[[services.ports]]
+handlers = ["tls", "http"]
+port = 443
+
+[[services.tcp_checks]]
+interval = "10000"
+timeout = "2000"
