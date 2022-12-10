@@ -14,6 +14,7 @@ Order | Time | Instruction | Docs
 1 | ~20-40min | [corpus-base](https://github.com/justmars/corpus-base#read-me) pre-requiste before `corpus-x` can work. |[Setup](docs/1-setup.md)
 2 | ~120-130min | If inclusion files not yet created, run script to generate. |[Pre-inclusions](docs/2-pre_inclusions.md)
 3 | ~10min | Assuming inclusion files are already created, can populate the various tables under `corpus-x` | [Post-inclusions](docs/3-post-inclusions.md)
+4 | ~60min | Package into Docker container, replicate to litestream | [Container](docs/4-container.md)
 
 ## Decision
 
