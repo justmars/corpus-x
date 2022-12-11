@@ -38,37 +38,22 @@ events_matched AS (
         JOIN base
         ON (
             -- the affector statute id needs to have previously set (see update_statute_id_in_events.sql)
-            evt.affector_statute_id = base.statute_id
+            base.statute_id = evt.affector_statute_id
         )
         AND (
             -- the event locator is always present
-            evt.locator = base.item
+            base.item = evt.locator
         )
         AND (
-            COALESCE(
-                -- option 1
-                (
-                    iif(
-                        -- both are present
-                        (
-                            evt.caption
-                            AND evt.content
-                        ),
-                        -- a match occurs, return early
-                        (
-                            evt.caption = base.caption
-                            AND evt.content LIKE '%' || base.content || '%'
-                        ),
-                        NULL -- if no match occurs, go to option 2
-                    )
-                ),
-                -- option 2
-                (IFNULL(evt.caption, NULL) IS NULL
-                OR evt.caption = base.caption),
-                -- option 3
-                (IFNULL(evt.content, NULL) IS NULL
-                OR evt.content LIKE '%' || base.content || '%'),
-                1
+            (
+                -- will evaluate to true if empty; will return the comparison result as a boolean if true / false
+                evt.caption IS NULL
+                OR base.caption = evt.caption
+            )
+            AND (
+                -- the same treatment (null or true, see sqlite) is applied to content but now qualified by the like operator
+                evt.content IS NULL
+                OR base.content LIKE '%' || evt.content || '%'
             )
         )
 )
