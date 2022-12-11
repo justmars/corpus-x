@@ -1,6 +1,6 @@
 import sqlite3
+from collections.abc import Iterator
 from pathlib import Path
-from typing import Iterator
 
 from loguru import logger
 from pydantic import EmailStr, Field

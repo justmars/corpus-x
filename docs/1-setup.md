@@ -6,7 +6,8 @@ Establish the sqlite3 database connection within the current working directory:
 
 ```python
 from sqlpyd import Connection
-c = Connection(DatabasePath="x.db", WAL=True) # type: ignore
+
+c = Connection(DatabasePath="x.db", WAL=True)  # type: ignore
 ```
 
 ## pax
@@ -15,7 +16,8 @@ Create individuals / organizations tables; individuals will be formatters of dec
 
 ```python
 from corpus_pax import init_persons
-init_persons(c) # creates the tables and populates the same; eta: ~9sec.
+
+init_persons(c)  # creates the tables and populates the same; eta: ~9sec.
 ```
 
 ## sc
@@ -30,8 +32,9 @@ Note that this creates an entryin `logs/base.log` highlighting recurring errors,
 
 ```python
 from corpus_base import build_sc_tables, init_sc_cases
-build_sc_tables(c) # creates tables
-init_sc_cases(c) # populates the tables created; eta: ~17min.
+
+build_sc_tables(c)  # creates tables
+init_sc_cases(c)  # populates the tables created; eta: ~17min.
 ```
 
 ## x
@@ -40,5 +43,6 @@ With the previous tables existing, can now create the remaining tables since the
 
 ```python
 from corpus_x import build_x_tables
-build_x_tables(c) # creates tables
+
+build_x_tables(c)  # creates tables
 ```

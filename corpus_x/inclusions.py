@@ -1,6 +1,7 @@
 import sqlite3
 import sys
-from typing import Iterator, NamedTuple
+from collections.abc import Iterator
+from typing import NamedTuple
 
 import yaml
 from citation_utils import Citation, extract_citations

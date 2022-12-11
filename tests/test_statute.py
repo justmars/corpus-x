@@ -12,18 +12,16 @@ def ra_11716_obj(shared_datadir):
 
 
 def test_ra_11716_obj_keys(ra_11716_obj):
-    assert set(ra_11716_obj.keys()) == set(
-        [
-            "id",
-            "emails",
-            "meta",
-            "titles",
-            "tree",
-            "unit_fts",
-            "material_paths",
-            "statutes_found",
-        ]
-    )
+    assert set(ra_11716_obj.keys()) == {
+        "id",
+        "emails",
+        "meta",
+        "titles",
+        "tree",
+        "unit_fts",
+        "material_paths",
+        "statutes_found",
+    }
 
 
 def test_ra_11716_unit_fts(ra_11716_obj):

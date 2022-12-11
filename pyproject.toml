@@ -7,11 +7,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-corpus-base = "^0.0.11"          # has corpus-pax, sqlpyd, citation-utils
-statute-trees = "^0.0.17"        # has citation-utils, statute-patterns
-datasette = "^0.63.2"
-datasette-pretty-json = "^0.2.2"
-datasette-auth-tokens = "^0.3"
+corpus-base = "^0.0.11"   # has corpus-pax, sqlpyd, citation-utils
+statute-trees = "^0.0.17" # has citation-utils, statute-patterns
 
 [tool.poetry.group.dev.dependencies]
 rich = "^12.6"
@@ -20,8 +17,6 @@ pytest-datadir = "^1.4.1"
 pytest-instafail = "^0.4.2"
 pytest-cov = "^2.12.1"
 mypy = "^0.991"
-black = "^22.12.0"
-isort = "^5.10"
 pre-commit = "^2.20"
 ipykernel = "^6.12"
 types-Markdown = "^3.4.0"

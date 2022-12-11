@@ -7,8 +7,11 @@ After the inclusion files are created, can now create preliminary tables:
 ```python
 from corpus_x import Statute
 from sqlpyd import Connection
-c = Connection() # type: ignore
-Statute.make_tables(c) # this will create the statutes table first (and it relations) so that the foreign keys created in the inclusions tables will work for StatutesInOpinions
+
+c = Connection()  # type: ignore
+Statute.make_tables(
+    c
+)  # this will create the statutes table first (and it relations) so that the foreign keys created in the inclusions tables will work for StatutesInOpinions
 ```
 
 ## Populate StatuteInOpinion and CitationInOpinion rows
@@ -18,7 +21,8 @@ Since we have a StatuteInOpinion table and a CitationInOpinion, we can create th
 ```python
 from corpus_x import Inclusion
 from sqlpyd import Connection
-c = Connection() # type: ignore
+
+c = Connection()  # type: ignore
 Inclusion.make_tables(c)
 ```
 
@@ -26,7 +30,8 @@ These tables reference foreign keys. But since we've already created the Statute
 
 ```python
 from corpus_x import Inclusion
-Inclusion.from_files_to_db(c) # glob paths to inclusion.yaml, eta: ~4min.
+
+Inclusion.from_files_to_db(c)  # glob paths to inclusion.yaml, eta: ~4min.
 ```
 
 ## Included statutes in opinions
@@ -35,6 +40,7 @@ We can get the most popular statutes as sourced from decisions already in the da
 
 ```python
 from corpus_x import StatuteInOpinion
+
 StatuteInOpinion.most_popular(c)
 ```
 
@@ -43,8 +49,9 @@ With this list of about ~500 statutes, we can add statutes via their local paths
 ```python
 from corpus_x import StatuteInOpinion
 from sqlpyd import Connection
-c = Connection() # type: ignore
-StatuteInOpinion.add_statutes(c) # eta ~2 minutes to store 500 objects
+
+c = Connection()  # type: ignore
+StatuteInOpinion.add_statutes(c)  # eta ~2 minutes to store 500 objects
 StatuteInOpinion.update_statute_ids(c)
 ```
 
@@ -54,6 +61,7 @@ We can get the most popular citations as sourced from decisions already in the d
 
 ```python
 from corpus_x import CitationInOpinion
+
 CitationInOpinion.most_popular(c)
 ```
 

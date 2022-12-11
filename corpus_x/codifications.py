@@ -1,7 +1,7 @@
 import json
 import sqlite3
+from collections.abc import Iterator
 from pathlib import Path
-from typing import Iterator
 
 from corpus_base.decision import CitationRow, DecisionRow
 from loguru import logger
@@ -93,7 +93,7 @@ class CodeCitationEvent(CitationAffector, TableConfig):
     material_path: str = generic_mp
     affector_decision_id: str = Field(
         None,
-        description=f"The historical event is affected by a decision found in the decisions table.",
+        description="The historical event is affected by a decision found in the decisions table.",
         col=str,
         fk=(DecisionRow.__tablename__, "id"),
     )
@@ -376,7 +376,7 @@ class Codification(Integrator):
 
     def add_to_database(self, c: Connection):
         try:
-            if is_existing := CodeRow.get_id(c, self.id):
+            if CodeRow.get_id(c, self.id):
                 logger.info(f"Already existing: {self.id=}")
             else:
                 return self.insert_objects(c, CodeRow, self.relations)
