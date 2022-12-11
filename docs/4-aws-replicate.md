@@ -22,7 +22,7 @@ export LITESTREAM_SECRET_ACCESS_KEY=yyy
 Run the following replication command:
 
 ```console
-litestream replicate -trace logs db/x.db s3://corpus-x/db
+litestream replicate x.db s3://corpus-x/db
 ```
 
 This will produce the following lines:
@@ -34,10 +34,14 @@ replicating to: name="s3" type="s3" bucket="corpus-x" path="db" region="" endpoi
 path/to/db/x.db: sync: new generation "xxxxxxxx", no generation exists
 ```
 
-Can view progress of  replication process via MacOS's Activity Monitor / Network panel.
+## monitor upload
 
-Considering the size of the database, it will take sometime to upload. After the replication, the following line appears:
+See replication / upload progress in MacOS's _Activity Monitor_ / _Network_ panel.
+
+Considering the size of the database, it will take sometime to upload.
+
+After the replication, the following line should appear in the console:
 
 ```console
-path/to/db/x.db(s3): snapshot written d4cb93a1d08cbeb2/00000000
+path/to/db/x.db(s3): snapshot written xxx/00000000
 ```
