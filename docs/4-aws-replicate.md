@@ -1,28 +1,34 @@
 # litestream
 
-## aws credentials
+## config file
 
-The following variables (AWS credentials) need to be set since they're used for replicating the database to aws:
+View the [litestream config file](./../litestream.yml) which lists down the various env variables that need to be set:
 
-- `LITESTREAM_ACCESS_KEY_ID`
-- `LITESTREAM_SECRET_ACCESS_KEY`
+var | desc | notes
+--:|:--|--
+`LITESTREAM_ACCESS_KEY_ID` | aws access id | starts with `AKIA`
+`LITESTREAM_SECRET_ACCESS_KEY` | aws secret key | see password manager
+`REPLICA_URL` | must have an aws s3 bucket | s3://bucket/path
+`DB_FILE` | the db path | *.db that will be replicated to the aws s3 bucket
 
-These values are also accessed as arguments to docker run since the variables will allow for restoring the database to the docker container.
+## set credentials that config will use
 
 Enter the shell and export the proper values:
 
 ```sh
 poetry shell
-export LITESTREAM_ACCESS_KEY_ID=xxx
-export LITESTREAM_SECRET_ACCESS_KEY=yyy
+export DB_FILE=a-name-of-a-db.db
+export LITESTREAM_ACCESS_KEY_ID=AKIAxxx
+export LITESTREAM_SECRET_ACCESS_KEY=xxx
+export REPLICA_URL=s3://bucket/path
 ```
 
-## copy local database to cloud aws
+## use config to litestream local db to aws bucket
 
 Run the following replication command:
 
 ```console
-litestream replicate x.db s3://corpus-x/db
+litestream replicate -config litestream.yml
 ```
 
 This will produce the following lines:
@@ -45,3 +51,7 @@ After the replication, the following line should appear in the console:
 ```console
 path/to/db/x.db(s3): snapshot written xxx/00000000
 ```
+
+## check successful replication
+
+View the aws s3 [bucket](https://s3.console.aws.amazon.com/s3/buckets/) and confirm existence of a new generation.
