@@ -9,6 +9,9 @@ readme = "README.md"
 python = "^3.10"
 corpus-base = "^0.0.11"   # has corpus-pax, sqlpyd, citation-utils
 statute-trees = "^0.0.17" # has citation-utils, statute-patterns
+ipykernel = "^6.19.2"
+notebook = "^6.4.11"
+jupyter = "^1.0.0"
 
 [tool.poetry.group.dev.dependencies]
 rich = "^12.6"
@@ -18,13 +21,11 @@ pytest-instafail = "^0.4.2"
 pytest-cov = "^2.12.1"
 mypy = "^0.991"
 pre-commit = "^2.20"
-ipykernel = "^6.12"
 types-Markdown = "^3.4.0"
 types-PyYAML = "^6.0.7"
 types-python-slugify = "^5.0.4"
 types-python-dateutil = "^2.8.19"
-notebook = "^6.4.11"
-jupyter = "^1.0.0"
+notebook = "^6.5.2"
 
 [tool.pytest.ini_options]
 filterwarnings = ['ignore::DeprecationWarning']
