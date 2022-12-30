@@ -12,4 +12,9 @@ Order | Time | Instruction | Docs
 
 ## gotchas
 
-The event data contained in the `units` field of the codification need to be updated separately.
+The statutory event data contained in the `units` field does not yet contain the `statute_id`s. Note that, prior to database insertion, we only know the statute label but not the id. Once the statute has been inserted, we can now match the statute label to the id:
+
+```python
+for row in c.db[CodeRow.__tablename__].rows:
+    obj = CodeRow.set_update_units(c, row["id"])
+```
