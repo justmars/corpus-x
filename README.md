@@ -10,6 +10,6 @@ Order | Time | Instruction | Docs
 3 | ~10min | Assuming inclusion files are already created, can populate the various tables under `corpus-x` | [Post-inclusions](docs/3-post-inclusions.md)
 4 | ~60min | Litestream output `x.db` on AWS bucket | [Replicated db](docs/4-aws-replicate.md)
 
-## things to know when updating content
+## gotchas
 
 The event data contained in the `units` field of the codification need to be updated separately.
