@@ -1,13 +1,21 @@
 [tool.poetry]
 name = "corpus-x"
 version = "0.0.1"
-description = "Create full corpus, requires corpus-base."
+description = "Add codification and statute tables to pre-existing corpus-base database."
 authors = ["Marcelino G. Veloso III <mars@veloso.one>"]
 readme = "README.md"
+homepage = "https://lawdata.xyz"
+repository = "https://github.com/justmars/corpus-x"
+classifiers = [
+  "Programming Language :: Python :: 3.11",
+  "Typing :: Typed",
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Legal Industry",
+]
 
 [tool.poetry.dependencies]
-python = "3.11.0"         # see citation-utils + citation-report
-corpus-base = "^0.0.12"   # has corpus-pax, sqlpyd, citation-utils
+python = "3.11.0"         # see corpus-base issue why fixed at 3.11.0
+corpus-base = "^0.1.0"    # has corpus-pax, sqlpyd, citation-utils
 statute-trees = "^0.0.18" # has citation-utils, statute-patterns
 
 [tool.poetry.group.dev.dependencies]
