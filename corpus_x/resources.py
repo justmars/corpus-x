@@ -29,9 +29,11 @@ corpus_sqlenv = Environment(
 class Integrator(BaseModel, abc.ABC):
     """
     1. Tables need to be created, see `cls.make_tables()`
-    2. With `cls.add_rows()`, the content of the table structures are sourced from a local repository processed by `cls.create_obj` functions.
+    2. With `cls.add_rows()`, the content of the table structures are
+        sourced from a local repository processed by `cls.create_obj`
+        functions.
     3. The Integrator instance is a collection of @relations.
-    3. Each instance can be added to the tables. See `self.add_to_database()`
+    4. Each instance can be added to the tables. See `self.add_to_database()`
     """
 
     id: str = NotImplemented
@@ -43,30 +45,41 @@ class Integrator(BaseModel, abc.ABC):
     @classmethod
     @abc.abstractmethod
     def make_tables(cls, c: Connection) -> None:
-        """Common process for creatng the tables associated with the concrete class."""
+        """Common process for creatng the tables associated
+        with the concrete class."""
         raise NotImplementedError
 
     @classmethod
     @abc.abstractmethod
     def add_rows(cls, c: Connection) -> None:
-        """Common process for creating objects from the source files for these to become prospective rows to the tables created."""
+        """Common process for creating objects from the source
+        files for these to become prospective rows to
+        the tables created."""
         raise NotImplementedError
 
     @abc.abstractmethod
     def add_to_database(self, c: Connection) -> str | None:
-        """Each entry of the concrete class is an instance of a pydantic BaseModel, this implies prior validation, and thus can now be added to the tables created in `cls.make_tables()`"""
+        """Each entry of the concrete class is an instance
+        of a pydantic BaseModel, this implies prior validation,
+        and thus can now be added to the tables created
+        in `cls.make_tables()`"""
         raise NotImplementedError
 
     @classmethod
     @abc.abstractmethod
     def from_page(cls, file_path: Path) -> None:
-        """The `file_path` expects an appropriate .yaml file containing the metadata. The data will be processed into an interim 'page' that will eventually build an instance of the concrete class."""
+        """The `file_path` expects an appropriate .yaml file
+        containing the metadata. The data will be processed into an
+        interim 'page' that will eventually build an instance of
+        the concrete class."""
         raise NotImplementedError
 
     @property
     @abc.abstractmethod
     def relations(cls):
-        """Helper property to associate TableConfigured models to their instantiated values in preparation for database insertion."""
+        """Helper property to associate TableConfigured models
+        to their instantiated values in preparation for
+        database insertion."""
         raise NotImplementedError
 
     def insert_objects(
@@ -75,9 +88,12 @@ class Integrator(BaseModel, abc.ABC):
         obj: Any,
         correlations: list[tuple[Any, Any]],
     ) -> str:
-        """The use of the concrete class' `insert_objects()` function implies that an `Individual` table already exists.
+        """The use of the concrete class' `insert_objects()` function
+        implies that an `Individual` table already exists.
 
-        The `obj` is a subclass of `TableConfig`. Since we're already aware of the `id` of the `obj`, we can also use this same id to create the author of the object as well as the correlated entities.
+        The `obj` is a subclass of `TableConfig`. Since we're already aware
+        of the `id` of the `obj`, we can also use this same id to create the
+        author of the object as well as the correlated entities.
 
         Each correlated entity must also be a subclass of `TableConfig`.
         """
@@ -120,21 +136,27 @@ def sql_get_detail(generic_tbl_name: str, generic_id: str) -> str:
 
 
 def sql_get_authors(generic_tbl_name: str, generic_id: str) -> str:
-    """Produce the SQL query string necessary to get the authors from the Individual table based on the `generic_tbl_name`'s target `generic_id`.
+    """Produce the SQL query string necessary to get the authors from the
+    Individual table based on the `generic_tbl_name`'s target `generic_id`.
 
-    Each generic_tbl_name will be sourced from either: DecisionRow, CodeRow, DocRow, StatuteRow. Each of these tables are associated with the Individual table. The result looks something like this:
+    Each generic_tbl_name will be sourced from either: DecisionRow,
+    CodeRow, DocRow, StatuteRow. Each of these tables are associated
+    with the Individual table. The result looks something like this:
 
+    ```
     >>> from .statutes import StatuteRow
     >>> sql = sql_get_authors(StatuteRow.__tablename__, "ra-386-june-18-1949")
     >>> type(sql)
     <class 'str'>
+    ```
 
-    See sqlite_utils which creates m2m object tables after sorting the tables alphabetically.
+    See sqlite_utils which creates m2m object tables after sorting the tables
+    alphabetically.
     """
-    l = [generic_tbl_name, Individual.__tablename__]
+    tables = [generic_tbl_name, Individual.__tablename__]
     template = corpus_sqlenv.get_template("base/get_author_ids.sql")
     return template.render(
-        generic_tbl="_".join(sorted(l)),  #
+        generic_tbl="_".join(sorted(tables)),
         col_generic_obj="_".join([generic_tbl_name, "id"]),
         col_author_id="_".join([Individual.__tablename__, "id"]),
         target_id=generic_id,

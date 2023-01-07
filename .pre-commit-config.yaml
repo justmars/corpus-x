@@ -11,6 +11,13 @@ repos:
       - id: trailing-whitespace
       - id: name-tests-test
         args: ["--django"]
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+        args: ["--ignore=F401,INP001,E501"]
+        additional_dependencies:
+          - flake8-no-pep420==2.0.0
   - repo: https://github.com/pycqa/isort
     rev: 5.10.1
     hooks:
@@ -24,5 +31,5 @@ repos:
   - repo: https://github.com/asottile/pyupgrade
     rev: v3.3.1
     hooks:
-    - id: pyupgrade
-      args: [--py311-plus]
+      - id: pyupgrade
+        args: [--py311-plus]

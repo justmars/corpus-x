@@ -12,7 +12,8 @@ def detect_statute_mp(code_pk: str, stat_id: str, tbl: Table, h: dict):
     if all([loc, cap, cont, stat_id]):
         mps = list(
             tbl.rows_where(
-                "codification_id = ? and locator = ? and caption = ? and content = ? and affector_statute_id = ?",
+                """codification_id = ? and locator = ?
+                and caption = ? and content = ? and affector_statute_id = ?""",
                 (code_pk, loc, cap, cont, stat_id),
                 select="affector_material_path",
             )
@@ -20,7 +21,8 @@ def detect_statute_mp(code_pk: str, stat_id: str, tbl: Table, h: dict):
     elif all([loc, cap, stat_id]):
         mps = list(
             tbl.rows_where(
-                "codification_id = ? and locator = ? and caption = ? and affector_statute_id = ?",
+                """codification_id = ? and locator = ? and caption = ?
+                and affector_statute_id = ?""",
                 (code_pk, loc, cap, stat_id),
                 select="affector_material_path",
             )
@@ -28,7 +30,8 @@ def detect_statute_mp(code_pk: str, stat_id: str, tbl: Table, h: dict):
     elif all([loc, cont, stat_id]):
         mps = list(
             tbl.rows_where(
-                "codification_id = ? and locator = ? and content = ? and affector_statute_id = ?",
+                """codification_id = ? and locator = ? and content = ?
+                and affector_statute_id = ?""",
                 (code_pk, loc, cont, stat_id),
                 select="affector_material_path",
             )
@@ -36,7 +39,8 @@ def detect_statute_mp(code_pk: str, stat_id: str, tbl: Table, h: dict):
     elif all([loc, stat_id]):
         mps = list(
             tbl.rows_where(
-                "codification_id = ? and locator = ? and affector_statute_id = ?",
+                """codification_id = ? and locator = ?
+                and affector_statute_id = ?""",
                 (code_pk, loc, stat_id),
                 select="affector_material_path",
             )
@@ -121,13 +125,21 @@ def set_histories(code_pk: str, nodes: list[dict], c: Connection):
     for node in nodes:
         if h_list := node.get("history", None):
             for h in h_list:
-                if case_id := detect_case_id(code_pk, ct_evt, h):  # type: ignore
+
+                case_id = detect_case_id(code_pk, ct_evt, h)  # type: ignore
+                if case_id:
+                    case_date = dec.get(case_id)["date"]  # type: ignore
                     h["decision_id"] = case_id
-                    h["decision_date"] = dec.get(case_id)["date"]  # type: ignore
-                if stat_id := detect_statute_id(code_pk, st_evt, h):  # type: ignore
+                    h["decision_date"] = case_date
+
+                stat_id = detect_statute_id(code_pk, st_evt, h)  # type: ignore
+                if stat_id:
+                    stat_date = st.get(stat_id)["date"]  # type: ignore
                     h["statute_id"] = stat_id
-                    h["statute_date"] = st.get(stat_id)["date"]  # type: ignore
-                    if mp := detect_statute_mp(code_pk, stat_id, st_evt, h):  # type: ignore
+                    h["statute_date"] = stat_date
+                    elements = (code_pk, stat_id, st_evt, h)
+                    mp = detect_statute_mp(*elements)  # type: ignore
+                    if mp:
                         h["statute_mp"] = mp
         if subunits := node.get("units"):
             set_histories(code_pk, subunits, c)

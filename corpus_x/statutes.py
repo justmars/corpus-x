@@ -25,7 +25,8 @@ from corpus_x.resources import STATUTE_PATH, Integrator, corpus_sqlenv
 
 
 class StatuteRow(Page, StatuteBase, TableConfig):
-    """This corresponds to statute_trees.StatutePage but is adjusted for the purpose of table creation."""
+    """This corresponds to statute_trees.StatutePage but is adjusted
+    for the purpose of table creation."""
 
     __prefix__ = "lex"
     __tablename__ = "statutes"
@@ -73,7 +74,8 @@ class StatuteRow(Page, StatuteBase, TableConfig):
 
 
 class StatuteTitleRow(TableConfig):
-    """This corresponds to statute_patterns.StatuteTitle but is adjusted for the purpose of table creation."""
+    """This corresponds to statute_patterns.StatuteTitle but
+    is adjusted for the purpose of table creation."""
 
     __prefix__ = "lex"
     __tablename__ = "statute_titles"
@@ -123,7 +125,11 @@ class StatuteFoundInUnit(StatuteBase, TableConfig):
     material_path: str = generic_mp
     matching_statute_id: str | None = Field(
         None,
-        description="Each unit in Statute A (see MP) may refer to Statute B. Statute B is referenced through it's category and identifier (see StatuteBase).",
+        description=(
+            "Each unit in Statute A (see MP) may refer to Statute B."
+            " Statute B is referenced through it's category and identifier"
+            " (see StatuteBase)."
+        ),
         fk=(StatuteRow.__tablename__, "id"),
     )
 
@@ -162,7 +168,10 @@ class StatuteFoundInUnit(StatuteBase, TableConfig):
         mp: str,
         statute_id: str,
     ) -> Iterator["StatuteFoundInUnit"]:
-        """Given text of a particular `material_path`, determine if there are statutes found by `get_statute_labels`; if they're found, determine the proper `StatuteFoundInUnit` to yield."""
+        """Given text of a particular `material_path`, determine if there are
+        statutes found by `get_statute_labels`; if they're found, determine
+        the proper `StatuteFoundInUnit` to yield.
+        """
         for rule in extract_rules(text):
             yield cls(
                 material_path=mp,
@@ -178,7 +187,9 @@ class StatuteFoundInUnit(StatuteBase, TableConfig):
         pk: str,
         units: list["StatuteUnit"],
     ) -> Iterator["StatuteFoundInUnit"]:
-        """Traverse the tree and search the caption and content of each unit for possible Statutes."""
+        """Traverse the tree and search the caption and content of each unit
+        for possible Statutes.
+        """
         for u in units:
             if u.caption and u.content:
                 text = f"{u.caption}. {u.content}"
@@ -190,7 +201,8 @@ class StatuteFoundInUnit(StatuteBase, TableConfig):
 
     @classmethod
     def get_statutes_from_references(cls, c: Connection) -> Iterator[dict]:
-        """Extract relevant statute category and identifier pairs from the cls.__tablename__."""
+        """Extract relevant statute category and identifier pairs
+        from the cls.__tablename__."""
         template_name = "statutes/references/unique_statutes_list.sql"
         template = corpus_sqlenv.get_template(template_name)
         q = template.render(statute_references_tbl=cls.__tablename__)
@@ -199,7 +211,10 @@ class StatuteFoundInUnit(StatuteBase, TableConfig):
 
     @classmethod
     def update_statute_ids(cls, c: Connection) -> sqlite3.Cursor:
-        """After running `cls.add_statutes_from_references()`, all Statutes contained in Statute references will be present in the `db`. Supply the `matching_statute_id`."""
+        """After running `cls.add_statutes_from_references()`, all Statutes
+        contained in Statute references will be present in the `db`.
+        Supply the `matching_statute_id`.
+        """
         with c.session as cur:
             return cur.execute(
                 corpus_sqlenv.get_template("statutes/update_id.sql").render(
@@ -211,7 +226,11 @@ class StatuteFoundInUnit(StatuteBase, TableConfig):
 
 
 class Statute(Integrator):
-    """A Statute is a container for statutory components. Because of the pre-processing required for each component, can save time by recreating the components into a single data file. See `create_data_file()`."""
+    """A Statute is a container for statutory components.
+    Because of the pre-processing required for each component, can save time
+    by recreating the components into a single data file.
+    See `create_data_file()`.
+    """
 
     id: str
     emails: list[EmailStr]
@@ -224,7 +243,8 @@ class Statute(Integrator):
 
     @classmethod
     def create_via_catid(cls, c: Connection, cat: str, id: str):
-        """Create statute/s if the `cat` and `id` passed does not yet exist in the `statutes` table of the database."""
+        """Create statute/s if the `cat` and `id` passed does not yet
+        exist in the `statutes` table of the database."""
         if StatuteRow.get_id_via_catid(c, cat, id):
             return
         rule = Rule(cat=StatuteSerialCategory(cat), id=id)
@@ -234,7 +254,8 @@ class Statute(Integrator):
 
     @classmethod
     def make_tables(cls, c: Connection):
-        """The bulk of the fields declared within the Statute container are table structures."""
+        """The bulk of the fields declared within the Statute
+        container are table structures."""
         c.create_table(StatuteRow)  # corresponds to StatutePage
         c.create_table(StatuteTitleRow)  # corresponds to StatuteTitle
         c.create_table(StatuteUnitSearch)

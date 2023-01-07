@@ -52,7 +52,11 @@ def valid_mp(candidate_unit_id: str) -> str:
     etc. where all root nodes start with 1. and all branches / leaves
     terminate in the same fashion, e.g. 1.2.13.16.
 
-    The root's identifier `materialized_path` is always 1. and the value of the specific branch can be determined through the addition of other identifier's to the root. e.g. '1.1.1.2' of 'mv-2022-ra-386-v1' will yield all material nodes of the tree from the root to the specified `mp` branch.
+    The root's identifier `materialized_path` is always 1. and the value of
+    the specific branch can be determined through the addition of other
+    identifier's to the root. e.g. '1.1.1.2' of 'mv-2022-ra-386-v1'
+    will yield all material nodes of the tree from the root to the specified
+    `mp` branch.
     """
     mp_pattern = re.compile(r"(\d+\.)+")
     if mp_pattern.fullmatch(candidate_unit_id):

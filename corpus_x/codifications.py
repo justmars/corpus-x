@@ -21,12 +21,7 @@ from statute_trees import (
     generic_mp,
 )
 
-from .resources import (
-    CODIFICATION_PATH,
-    STATUTE_PATH,
-    Integrator,
-    corpus_sqlenv,
-)
+from .resources import CODIFICATION_PATH, Integrator, corpus_sqlenv
 from .statutes import Statute, StatuteMaterialPath, StatuteRow, StatuteTitleRow
 from .utils import set_histories, set_info_handler
 
@@ -64,7 +59,9 @@ class CodeRow(Page, StatuteBase, TableConfig):
 
     @classmethod
     def set_update_units(cls, c: Connection, pk: str) -> str:
-        """Using data from codification events, add the `material_path` and `statute_id` of the affecting statute to each history node of the original `units` field."""
+        """Using data from codification events, add the `material_path`
+        and `statute_id` of the affecting statute to each history node
+        of the original `units` field."""
         tbl = c.db[cls.__tablename__]
         nodes = json.loads(tbl.get(pk)["units"])  # type: ignore
         set_histories(pk, nodes, c)  # recursive; updates nodes _in place_
@@ -93,14 +90,18 @@ class CodeCitationEvent(CitationAffector, TableConfig):
     material_path: str = generic_mp
     affector_decision_id: str = Field(
         None,
-        description="The historical event is affected by a decision found in the decisions table.",
+        description=(
+            "The historical event is"
+            " affected by a decision found in the decisions table."
+        ),
         col=str,
         fk=(DecisionRow.__tablename__, "id"),
     )
 
     @classmethod
     def extract_units(cls, pk: str, units: list["CodeUnit"]):
-        """Given a list of code units, extract affected units with their associated historical events."""
+        """Given a list of code units, extract affected units
+        with their associated historical events."""
         for u in units:
             if u.history:
                 for evt in u.history:
@@ -127,7 +128,10 @@ class CodeCitationEvent(CitationAffector, TableConfig):
 
 
 class CodeStatuteEvent(StatuteAffector, TableConfig):
-    """Each `StatuteAffector` is a history node which takes into account a possible `date` and `variant` field to deal with duplicates. If they are present, these are used to detect the `affector_statute_id`."""
+    """Each `StatuteAffector` is a history node which takes into account
+    a possible `date` and `variant` field to deal with duplicates.
+    If they are present, these are used to detect the `affector_statute_id`.
+    """
 
     __prefix__ = "lex"
     __tablename__ = "codification_events_statute"
@@ -199,7 +203,9 @@ class CodeStatuteEvent(StatuteAffector, TableConfig):
 
     @classmethod
     def extract_units(cls, pk: str, units: list["CodeUnit"]):
-        """Given a list of code units, extract affected units with their associated historical events."""
+        """Given a list of code units, extract affected units
+        with their associated historical events.
+        """
         for u in units:
             if u.history:
                 for evt in u.history:
@@ -214,7 +220,9 @@ class CodeStatuteEvent(StatuteAffector, TableConfig):
 
     @classmethod
     def get_statutes_from_events(cls, c: Connection) -> Iterator[dict]:
-        """Extract relevant statute category and identifier pairs from the Codification Events table."""
+        """Extract relevant statute category and identifier pairs
+        from the Codification Events table.
+        """
         sql_file = "codes/list_unique_statute_category_idxes_from_events.sql"
         template = corpus_sqlenv.get_template(sql_file)
         q = template.render(statute_events_tbl=cls.__tablename__)
@@ -229,10 +237,13 @@ class CodeStatuteEvent(StatuteAffector, TableConfig):
 
     @classmethod
     def add_statutes_from_events(cls, c: Connection):
-        """Get `StatuteBases`; For each `StatuteBase`, extract possible folders. For each specific statute folder, setup a `Statute` object by extracting data from the folder and inserting the same into the database `db`."""
+        """Get `StatuteBases`; For each `StatuteBase`, extract possible
+        folders. For each specific statute folder, setup a `Statute` object
+        by extracting data from the folder and inserting the same into
+        the database `db`."""
         for x in cls.get_statutes_from_events(c):
             rule = Rule(cat=StatuteSerialCategory(x["cat"]), id=x["id"])
-            folders = rule.extract_folders(STATUTE_PATH)
+            folders = rule.extract_folders()
             for folder in folders:
                 content = folder / DETAILS_FILE
                 detail = Rule.get_details(content)
@@ -251,7 +262,10 @@ class CodeStatuteEvent(StatuteAffector, TableConfig):
 
     @classmethod
     def update_statute_ids(cls, c: Connection) -> sqlite3.Cursor:
-        """After running `cls.add_statutes_from_events()`, all Statutes contained in Codification statutory events will be present in the `db`. Supply the `affector_statute_id` of the CodeStatuteEvent table."""
+        """After running `cls.add_statutes_from_events()`, all Statutes
+        contained in Codification statutory events will be present in
+        the `db`. Supply the `affector_statute_id` of the
+        CodeStatuteEvent table."""
         sql_file = "codes/events/set_statute_id.sql"
         template = corpus_sqlenv.get_template(sql_file)
         with c.session as cur:
@@ -264,7 +278,10 @@ class CodeStatuteEvent(StatuteAffector, TableConfig):
 
     @classmethod
     def update_unit_ids(cls, c: Connection) -> sqlite3.Cursor:
-        """After running `cls.update_affector_statute_ids()`, all statute affector ids have been updated. Supply the `affector_statute_unit_id` and  `affector_statute_unit_material_path` of the CodeStatuteEvent table."""
+        """After running `cls.update_affector_statute_ids()`, all statute
+        affector ids have been updated. Supply the `affector_statute_unit_id`
+        and  `affector_statute_unit_material_path` of the CodeStatuteEvent
+        table."""
         sql_file = "codes/events/set_statute_unit_mp.sql"
         template = corpus_sqlenv.get_template(sql_file)
         with c.session as cur:
@@ -277,7 +294,8 @@ class CodeStatuteEvent(StatuteAffector, TableConfig):
 
     @classmethod
     def fetch_unmaterialized(cls, c: Connection) -> list[dict] | None:
-        """Search for unit events which were unable to get an affector material path."""
+        """Search for unit events which were unable to get an
+        affector material path."""
         sql_file = "codes/events/search_unmaterialized.sql"
         if rows := c.db.execute_returning_dicts(
             corpus_sqlenv.get_template(sql_file).render(

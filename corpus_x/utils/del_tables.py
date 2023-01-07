@@ -2,7 +2,8 @@ from sqlpyd import Connection
 
 
 def delete_tables_with_prefix(c: Connection, target_prefixes: list[str]):
-    """Delete tables containing  `table_prefix-` found in  database connection `c`."""
+    """Delete tables containing  `table_prefix-` found in  database
+    connection `c`."""
     for p in target_prefixes:
         sql = f"""--sql
             select name

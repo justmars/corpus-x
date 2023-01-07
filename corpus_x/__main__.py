@@ -19,7 +19,8 @@ def build_x_tables(c: Connection) -> Connection:
 
 
 def _decode(obj: dict, key: str) -> dict:
-    """Convert a string in the `obj` dictionary to a deserialized object value."""
+    """Convert a string in the `obj` dictionary to a deserialized
+    object value."""
     obj[key] = json.loads(obj.pop(key, []))
     return obj
 
