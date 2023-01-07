@@ -25,7 +25,7 @@ logger.configure(
             "level": "ERROR",
         },
         {
-            "sink": "logs/inclusions.log",
+            "sink": "logs/all_inclusions.log",
             "format": "{message}",
             "level": "DEBUG",
             "serialize": True,

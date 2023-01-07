@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from sqlpyd import Connection
 
 
@@ -15,6 +17,7 @@ def setup_corpus_x(c: Connection):
         StatuteInOpinion,
         populate_db_with_inclusions,
     )
+    from ..resources import corpus_sqlenv
     from ..statutes import Statute
 
     # initialize tables
@@ -42,6 +45,11 @@ def setup_corpus_x(c: Connection):
     for row in c.db[CodeRow.__tablename__].rows:
         CodeRow.set_update_units(c, row["id"])
 
+    # Sample: these are statutes that reference the civil code ordered by the most recent referrer (src)
+    # list(c.db["view_src_ref_mp_list"].rows_where("rf_id = ?", ('ra-386-june-18-1949',), select="rf_id, src_statute_id"))
+    sql = corpus_sqlenv.get_template("statutes/references/src_ref_mp_list.sql").render()
+    c.db.create_view("view_src_ref_mp_list", sql, replace=True)
+
 
 def setup_x_db(db_path: str) -> Connection:
     """Assuming, pre-setup steps are performed (see pre-inclusions)
@@ -58,11 +66,33 @@ def setup_x_db(db_path: str) -> Connection:
         Connection: sqlpyd variant of sqlite-utils / sqlite3 connection wrapper
     """
     from corpus_base import build_sc_tables, init_sc_cases
-    from corpus_pax import init_persons
+    from corpus_pax import (
+        add_articles_from_api,
+        add_individuals_from_api,
+        add_organizations_from_api,
+        init_person_tables,
+    )
 
+    # clear logs
+    logs = Path().cwd() / "logs"
+    for i in logs.glob("*"):
+        if i.is_file():
+            i.unlink()
+    logs.rmdir()
+
+    # connect
     c = Connection(DatabasePath=db_path, WAL=True)  # type: ignore
-    init_persons(c)
+
+    # pax tables
+    init_person_tables(c)
+    add_individuals_from_api(c)
+    add_organizations_from_api(c)
+    add_articles_from_api(c)
+
+    # sc tables
     build_sc_tables(c)
     init_sc_cases(c)
+
+    # x tables
     setup_corpus_x(c)
     return c

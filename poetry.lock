@@ -209,32 +209,32 @@ test = ["flake8 (==3.7.8)", "hypothesis (==3.55.3)"]
 
 [[package]]
 name = "corpus-base"
-version = "0.1.2"
+version = "0.1.3"
 description = "Add justice, decision, citation, voting, and opinion tables to pre-existing corpus-pax database."
 category = "main"
 optional = false
 python-versions = "==3.11.0"
 files = [
-    {file = "corpus_base-0.1.2-py3-none-any.whl", hash = "sha256:d315a5f37da44603449512303fdafa2e2b44c9f9fe98fd700ab13d1dae7b9b8a"},
-    {file = "corpus_base-0.1.2.tar.gz", hash = "sha256:5f1fb8df5a229e5c75f067aab5b5b420160889daac9cc138489da6fd7c96656b"},
+    {file = "corpus_base-0.1.3-py3-none-any.whl", hash = "sha256:eab33ccdce0b95194dd482508a71ace94e23f6e5a8311462617f629ea36e4e2e"},
+    {file = "corpus_base-0.1.3.tar.gz", hash = "sha256:9ff153c54af4006f14fba1d187ebdf94fba6e39aa50a21d5795ce0fa8c3cf069"},
 ]
 
 [package.dependencies]
 citation-utils = ">=0.0.17,<0.0.18"
-corpus-pax = ">=0.1.4,<0.2.0"
+corpus-pax = ">=0.1.5,<0.2.0"
 markdownify = ">=0.11.6,<0.12.0"
 unidecode = ">=1.3.6,<2.0.0"
 
 [[package]]
 name = "corpus-pax"
-version = "0.1.4"
+version = "0.1.6"
 description = "Using Github API (to pull individuals, orgs, and article content), setup a local sqlite database, syncing images to Cloudflare."
 category = "main"
 optional = false
 python-versions = "==3.11.0"
 files = [
-    {file = "corpus_pax-0.1.4-py3-none-any.whl", hash = "sha256:ee4e6a267774079a0cfd73ef0946609a9747d4f8da7967b0db03098d768c451d"},
-    {file = "corpus_pax-0.1.4.tar.gz", hash = "sha256:91b302d10e5c4b6f3bb4f4e72ac34c69d0311721a3f9ac2dc498195f2df534c4"},
+    {file = "corpus_pax-0.1.6-py3-none-any.whl", hash = "sha256:595df74738a1a73ef7da138bc29babdea2404004e46e17de8d523a4baf0d6ee0"},
+    {file = "corpus_pax-0.1.6.tar.gz", hash = "sha256:18d257ce33d90e42a862b046967062d07f41bfb43875a5c6a5509fc9cce2acbd"},
 ]
 
 [package.dependencies]
@@ -1242,4 +1242,4 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.0"         # see corpus-base issue why fixed at 3.11.0
-content-hash = "7f6538c27d2b379f0a3ab69a39a4978efc18002a8d4ac435adc7478206162866"
+content-hash = "529e06faaa2e944dbf97c19f6e2dbe6bf72fb8222c6cd440b43c632a1a60a1fd"
