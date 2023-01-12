@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from corpus_pax.utils import delete_tables_with_prefix
 from sqlpyd import Connection
 
 
@@ -27,6 +28,9 @@ def setup_corpus_x(c: Connection):
     )
     from ..resources import corpus_sqlenv
     from ..statutes import Statute
+
+    # reset tables
+    delete_tables_with_prefix(c, ["lex"])
 
     # initialize tables
     Statute.make_tables(c)
@@ -70,7 +74,6 @@ def setup_corpus_x(c: Connection):
         "statutes/references/src_ref_mp_list.sql"
     ).render()
     c.db.create_view("view_src_ref_mp_list", sql, replace=True)
-
 
 
 def setup_x_db(db_path: str) -> Connection:

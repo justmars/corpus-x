@@ -229,7 +229,6 @@ class Statute(Integrator):
     """A Statute is a container for statutory components.
     Because of the pre-processing required for each component, can save time
     by recreating the components into a single data file.
-    See `create_data_file()`.
     """
 
     id: str
