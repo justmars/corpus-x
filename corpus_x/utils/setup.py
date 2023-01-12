@@ -72,6 +72,7 @@ def setup_corpus_x(c: Connection):
     c.db.create_view("view_src_ref_mp_list", sql, replace=True)
 
 
+
 def setup_x_db(db_path: str) -> Connection:
     """Assuming, pre-setup steps are performed (see pre-inclusions)
     can create and populate tables defined in:
@@ -86,13 +87,8 @@ def setup_x_db(db_path: str) -> Connection:
     Returns:
         Connection: sqlpyd variant of sqlite-utils / sqlite3 connection wrapper
     """
-    from corpus_base import build_sc_tables, init_sc_cases
-    from corpus_pax import (
-        add_articles_from_api,
-        add_individuals_from_api,
-        add_organizations_from_api,
-        init_person_tables,
-    )
+    from corpus_base import setup_base
+    from corpus_pax import setup_pax
 
     # clear logs
     logs = Path().cwd() / "logs"
@@ -101,19 +97,11 @@ def setup_x_db(db_path: str) -> Connection:
             i.unlink()
     logs.rmdir()
 
+    setup_pax(db_path)
+    setup_base(db_path)
+
     # connect
     c = Connection(DatabasePath=db_path, WAL=True)  # type: ignore
 
-    # pax tables
-    init_person_tables(c)
-    add_individuals_from_api(c)
-    add_organizations_from_api(c)
-    add_articles_from_api(c)
-
-    # sc tables
-    build_sc_tables(c)
-    init_sc_cases(c)
-
-    # x tables
     setup_corpus_x(c)
     return c

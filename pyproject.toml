@@ -15,7 +15,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "3.11.0"         # see corpus-base issue why fixed at 3.11.0
-corpus-base = "^0.1.3"    # corpus-pax, sqlpyd, citation-utils
+corpus-base = "^0.1.5"    # corpus-pax, sqlpyd, citation-utils
 statute-trees = "^0.0.18" # citation-utils, statute-patterns
 
 [tool.poetry.group.dev.dependencies]
