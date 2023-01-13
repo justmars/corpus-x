@@ -15,27 +15,40 @@ flowchart LR
 repo(((github/corpus))) --download---> local(local machine)
 ```
 
-### Local database
-
-Setup local db:
+### Prerequisites
 
 ```mermaid
-flowchart LR
-  local(local corpus)--add corpus-pax tables--->db
-  local--add corpus-base tables-->db
-  local--format trees with statute-trees-->trees
-  trees(tree structures)--add corpus-x tables-->db[(sqlite.db)]
+flowchart TD
+corpus_pax--api--->x
+corpus_base--copy--->x
+x(corpus-x)-->db[(sqlite.db)]
 ```
 
-### Replicated database
-
-Store backup db on aws:
+### Inclusions
 
 ```mermaid
-flowchart LR
+flowchart TD
+op_stat(statutes in opinions)<--after prerequisites-->x
+op_cite(citations in opinions)<--after prerequisites-->x
+op_seg(segments in opinions)<--after prerequisites-->x
+x(corpus-x)-->db[(sqlite.db)]
+```
 
-  db[(sqlite.db)]--litestream replicate-->aws
-  aws--litestream restore-->lawdata.xyz
+### Trees
+
+```mermaid
+flowchart TD
+statutes--create trees-->x
+codifications--create trees-->x
+x(corpus-x)-->db[(sqlite.db)]
+```
+
+### Replication
+
+```mermaid
+flowchart TD
+  x(corpus-x)-->db[(sqlite.db)]
+  db--litestream replicate-->aws(((aws bucket)))
 ```
 
 ## Mode
@@ -43,9 +56,9 @@ flowchart LR
 Order | Time | Instruction | Docs
 :--:|:--:|--:|:--
 1 | ~6sec (if with test data) | [corpus-pax](https://github.com/justmars/corpus-pax#read-me) pre-requiste before `corpus-base` can work. |[Setup](docs/1-setup.md)
-2 | ~40min | [corpus-base](https://github.com/justmars/corpus-base#read-me) pre-requiste before `corpus-x` can work. |[Setup](docs/1-setup.md)
-3 | ~120-130min | If inclusion files not yet created, run script to generate. |[Pre-inclusions](docs/2-pre-inclusions.md)
-4 | ~10min | Assuming inclusion files are already created, can populate the various tables under `corpus-x` | [Post-inclusions](docs/3-post-inclusions.md)
+2 | ~20min | [corpus-base](https://github.com/justmars/corpus-base#read-me) pre-requiste before `corpus-x` can work. |[Setup](docs/1-setup.md)
+3 | ~70min | If inclusion files not yet created, run script to generate. |[Pre-inclusions](docs/2-pre-inclusions.md)
+4 | ~30min | Assuming inclusion files are already created, can populate the various tables under `corpus-x` | [Post-inclusions](docs/3-post-inclusions.md)
 5 | ~40 to ~60min | Litestream output `x.db` on AWS bucket | [Replicated db](docs/4-aws-replicate.md)
 
 ## Build from scratch

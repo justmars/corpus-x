@@ -16,6 +16,7 @@ from statute_trees.resources import StatuteBase
 
 from .resources import INCLUSION_FILE, STATUTE_PATH, corpus_sqlenv
 from .statutes import StatuteRow
+from .utils import validate_segment
 
 logger.configure(
     handlers=[
@@ -38,6 +39,79 @@ logger.configure(
         },
     ]
 )
+
+
+class SegmentRow(TableConfig):
+    __prefix__ = "lex"
+    __tablename__ = "opinion_segments"
+    __indexes__ = [
+        ["opinion_id", "decision_id"],
+    ]
+    id: str = Field(..., col=str)
+    decision_id: str = Field(
+        ...,
+        col=str,
+        fk=(DecisionRow.__tablename__, "id"),
+    )
+    opinion_id: str = Field(
+        ...,
+        col=str,
+        fk=(OpinionRow.__tablename__, "id"),
+    )
+    position: int = Field(
+        ...,
+        title="Relative Position",
+        description="The line number of the text as stripped from its markdown source.",  # noqa: E501
+        col=int,
+        index=True,
+    )
+    char_count: int = Field(
+        ...,
+        title="Character Count",
+        description="The number of characters of the text makes it easier to discover patterns.",  # noqa: E501
+        col=int,
+        index=True,
+    )
+    segment: str = Field(
+        ...,
+        title="Body Segment",
+        description="A partial text fragment of an opinion, exclusive of footnotes.",  # noqa: E501
+        col=str,
+        fts=True,
+    )
+
+    @classmethod
+    def extract_segments(
+        cls,
+        text: str,
+        opinion_id: str,
+        decision_id: str,
+    ) -> Iterator[dict[str, int | str]]:
+        """Using a customized line splitter (see `/utils/segmentize.py`), split
+        `text` associated with the `opinion_id` and `decision_id` into
+        segments that can be used as full-text search rows.
+
+        Note: The present algorithm for splitting is naive but is sufficient
+        in light of the bad structure of the raw markdown files.
+
+        Args:
+            text (str): The raw text to be split
+            opinion_id (str): The source of the text
+            decision_id (str): The source of the opinion
+
+        Yields:
+            Iterator[dict[str, int | str]]: The collection of output segments
+        """
+        for position, raw_segment in enumerate(text.splitlines(), start=1):
+            if segment := validate_segment(raw_segment):
+                yield {
+                    "id": f"{opinion_id}-{position}",
+                    "decision_id": decision_id,
+                    "opinion_id": opinion_id,
+                    "position": position,
+                    "segment": segment,
+                    "char_count": len(segment),
+                }
 
 
 class StatuteInOpinion(StatuteBase, TableConfig):
@@ -193,7 +267,6 @@ class CitationInOpinion(Citation, TableConfig):
 class Inclusion(NamedTuple):
     """Is not necessary as a table since this is used as a namespace to
     collect related entries and consolidating them into separate files.
-    Note that BaseModel does not support Iterator fields.
     """
 
     source: str  # whether sc / legacy
@@ -203,6 +276,7 @@ class Inclusion(NamedTuple):
     text: str  # text to examine
     statutes: list[StatuteInOpinion]
     citations: list[CitationInOpinion]
+    segments: list[dict[str, int | str]]
 
     @classmethod
     def get_base_data(cls, c: Connection, pk: str) -> dict:
@@ -241,6 +315,7 @@ class Inclusion(NamedTuple):
         if c.table(StatuteRow):
             c.create_table(StatuteInOpinion)
         if c.table(DecisionRow):
+            c.create_table(SegmentRow)
             c.create_table(CitationInOpinion)
 
     @property
@@ -253,7 +328,11 @@ class Inclusion(NamedTuple):
             return
         else:
             logger.debug(msg)
-            return {"statutes": statutes, "citations": citations}
+            return {
+                "statutes": statutes,
+                "citations": citations,
+                "segments": self.segments,
+            }
 
     @property
     def path_to_folder(self):
@@ -268,12 +347,15 @@ def populate_db_with_inclusions(c: Connection):
     previously run, we can extract the contents of each file and insert
     them into the database.
     """
-    for path in DECISION_PATH.glob(f"**/{INCLUSION_FILE}"):
+    paths = DECISION_PATH.glob(f"**/{INCLUSION_FILE}")
+    for path in track(paths, description="Pull inclusions..."):
         obj = yaml.safe_load(path.read_bytes())
         if obj.get("statutes"):
             c.add_records(StatuteInOpinion, obj["statutes"])
         if obj.get("citations"):
             c.add_records(CitationInOpinion, obj["citations"])
+        if obj.get("segments"):
+            c.add_records(SegmentRow, obj["segments"])
 
 
 def create_inclusion_files_from_db_opinions(c: Connection):
@@ -311,23 +393,33 @@ def create_inclusion_files_from_db_opinions(c: Connection):
             obj = Inclusion(
                 **o,
                 statutes=list(
-                    StatuteInOpinion.extracted(o["opinion_id"], o["text"])
+                    StatuteInOpinion.extracted(
+                        op_id=o["opinion_id"],
+                        text=o["text"],
+                    )
                 ),
                 citations=list(
-                    CitationInOpinion.extracted(o["opinion_id"], o["text"])
+                    CitationInOpinion.extracted(
+                        op_id=o["opinion_id"],
+                        text=o["text"],
+                    )
+                ),
+                segments=list(
+                    SegmentRow.extract_segments(
+                        text=o["text"],
+                        opinion_id=o["opinion_id"],
+                        decision_id=o["decision_id"],
+                    )
                 ),
             )
             if obj.content_for_file:
                 yield obj
 
-    def save_to_file(obj: Inclusion):
-        f = DECISION_PATH / obj.source / obj.origin / INCLUSION_FILE
-        f.unlink(missing_ok=True)  # replace
-        with open(f, "w") as writefile:
-            yaml.safe_dump(obj.content_for_file, writefile)
-
     opinions: list[dict] = read_opinions(c)
     inclusions: Iterator[Inclusion] = set_inclusion_objects(opinions)
     for obj in inclusions:
         logger.debug(f"Creating {obj.source=} / {obj.origin=}")
-        save_to_file(obj)
+        f = DECISION_PATH / obj.source / obj.origin / INCLUSION_FILE
+        f.unlink(missing_ok=True)  # replace
+        with open(f, "w") as writefile:
+            yaml.safe_dump(obj.content_for_file, writefile)
