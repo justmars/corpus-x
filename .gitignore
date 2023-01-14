@@ -6,6 +6,8 @@ x.db
 x.db*
 ex.db
 ex.db*
+xx.db
+xx.db*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

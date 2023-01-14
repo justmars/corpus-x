@@ -1,11 +1,12 @@
 import json
 
-from corpus_base import DecisionRow
+from corpus_base import DecisionRow, setup_pax_base
+from corpus_pax.utils import delete_tables_with_prefix
 from sqlpyd import Connection
 
 from .codifications import CodeRow, CodeStatuteEvent, Codification
 from .documents import DocRow, Document
-from .inclusions import Inclusion
+from .inclusions import Inclusion, set_inclusions
 from .resources import get_authored_object
 from .statutes import Statute, StatuteFoundInUnit, StatuteRow
 
@@ -13,9 +14,24 @@ from .statutes import Statute, StatuteFoundInUnit, StatuteRow
 def build_x_tables(c: Connection) -> Connection:
     Statute.make_tables(c)
     Codification.make_tables(c)
-    Document.make_tables(c)
+    # Document.make_tables(c)
     Inclusion.make_tables(c)
     return c
+
+
+def setup_x(c: Connection):
+    delete_tables_with_prefix(c=c, target_prefixes=["lex_tbl"])
+    build_x_tables(c)
+    Statute.add_rows(c)
+    Codification.add_rows(c)
+    set_inclusions(c)
+
+
+def reset_x(db_path: str):
+    """Needs to be connected to the internet because of `setup_pax_base()`"""
+    setup_pax_base(db_path)
+    c = Connection(DatabasePath=db_path, WAL=True)
+    setup_x(c)
 
 
 def _decode(obj: dict, key: str) -> dict:

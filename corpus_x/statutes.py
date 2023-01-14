@@ -317,3 +317,4 @@ class Statute(Integrator):
                 logger.error(f"Validation needed {detail=}; {e=}")
             except Exception as e:
                 logger.error(f"Generic exception on insertion: {e=}")
+        StatuteFoundInUnit.update_statute_ids(c)

@@ -408,3 +408,9 @@ def create_inclusion_files_from_db_opinions(c: Connection):
         f.unlink(missing_ok=True)  # replace
         with open(f, "w") as writefile:
             yaml.safe_dump(obj.content_for_file, writefile)
+
+
+def set_inclusions(c: Connection):
+    populate_db_with_inclusions(c)
+    StatuteInOpinion.update_statute_ids(c)
+    CitationInOpinion.update_decision_ids(c)
