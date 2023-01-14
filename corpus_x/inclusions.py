@@ -1,5 +1,4 @@
 import sqlite3
-import sys
 from collections.abc import Iterator
 from typing import NamedTuple
 
@@ -14,31 +13,14 @@ from statute_patterns import Rule, StatuteSerialCategory, count_rules
 from statute_patterns.components.utils import DETAILS_FILE
 from statute_trees.resources import StatuteBase
 
-from .resources import INCLUSION_FILE, STATUTE_PATH, corpus_sqlenv
+from .resources import (
+    INCLUSION_FILE,
+    STATUTE_FILES,
+    STATUTE_PATH,
+    corpus_sqlenv,
+)
 from .statutes import StatuteRow
 from .utils import validate_segment
-
-logger.configure(
-    handlers=[
-        {
-            "sink": sys.stdout,
-            "format": "{message}",
-            "level": "ERROR",
-        },
-        {
-            "sink": "logs/all_inclusions.log",
-            "format": "{message}",
-            "level": "DEBUG",
-            "serialize": True,
-        },
-        {
-            "sink": "logs/inclusion_errors.log",
-            "format": "{message}",
-            "level": "ERROR",
-            "serialize": True,
-        },
-    ]
-)
 
 
 class SegmentRow(TableConfig):
@@ -194,7 +176,9 @@ class StatuteInOpinion(StatuteBase, TableConfig):
                     logger.error(f"Could not extract detail; {folder=}")
                     continue
                 try:
-                    if idx := Statute.create_obj(c, content_file):
+                    obj = Statute.from_page(content_file)
+                    idx = obj.insert_objects(c, StatuteRow, obj.relations)
+                    if idx:
                         logger.debug(f"Created statute: {idx}")
                 except Exception as e:
                     logger.error(f"Did not make statute {content_file=}; {e=}")
@@ -226,7 +210,8 @@ class CitationInOpinion(Citation, TableConfig):
         try:
             base = dict(opinion_id=op_id, included_decision_id=None)
             for cite in extract_citations(text):
-                res = cite.dict() | base
+                data: dict = cite.dict()
+                res = data | base
                 yield cls(**res)  # type: ignore
         except Exception as e:
             logger.error(f"Bad citations; {op_id=}; {e=}")

@@ -17,6 +17,7 @@ classifiers = [
 python = "3.11.0"         # see corpus-base issue why fixed at 3.11.0
 corpus-base = "^0.1.6"    # corpus-pax, sqlpyd, citation-utils
 statute-trees = "^0.0.18" # citation-utils, statute-patterns
+jupyter = "^1.0.0"
 
 [tool.poetry.group.dev.dependencies]
 rich = "^12.6"

@@ -9,9 +9,8 @@ from corpus_x import Statute
 from sqlpyd import Connection
 
 c = Connection()  # type: ignore
-Statute.make_tables(
-    c
-)  # this will create the statutes table first (and it relations) so that the foreign keys created in the inclusions tables will work for StatutesInOpinions
+Statute.make_tables(c)
+# this will create the statutes table first (and it relations) so that the foreign keys created in the inclusions tables will work for StatutesInOpinions
 ```
 
 ## Populate StatuteInOpinion and CitationInOpinion rows

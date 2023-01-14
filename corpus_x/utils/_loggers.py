@@ -1,4 +1,7 @@
 import sys
+from pathlib import Path
+
+from loguru import logger
 
 
 def set_basic_handler(filename: str):
@@ -31,3 +34,32 @@ def set_info_handler(filename: str):
             "serialize": True,
         },
     ]
+
+
+logger.configure(
+    handlers=[
+        {
+            "sink": sys.stdout,
+            "format": "{message}",
+            "level": "ERROR",
+        },
+        {
+            "sink": "logs/corpus-x-debug.log",
+            "format": "{message}",
+            "level": "DEBUG",
+            "serialize": True,
+        },
+        {
+            "sink": "logs/corpus-x-error.log",
+            "format": "{message}",
+            "level": "ERROR",
+            "serialize": True,
+        },
+    ]
+)
+
+
+def clear_logs(p: Path = Path().cwd() / "logs"):
+    for i in p.glob("*"):
+        if i.is_file():
+            i.unlink()

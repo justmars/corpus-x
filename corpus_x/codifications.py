@@ -4,9 +4,7 @@ from collections.abc import Iterator
 from pathlib import Path
 
 from corpus_base.decision import CitationRow, DecisionRow
-from loguru import logger
 from pydantic import EmailStr, Field
-from sqlite_utils.db import NotFoundError
 from sqlpyd import Connection, TableConfig
 from statute_patterns import Rule, StatuteSerialCategory
 from statute_patterns.components.utils import DETAILS_FILE
@@ -21,11 +19,9 @@ from statute_trees import (
     generic_mp,
 )
 
-from .resources import CODIFICATION_PATH, Integrator, corpus_sqlenv
+from .resources import CODIFICATION_FILES, Integrator, corpus_sqlenv
 from .statutes import Statute, StatuteMaterialPath, StatuteRow, StatuteTitleRow
-from .utils import set_histories, set_info_handler
-
-set_info_handler("codes")
+from .utils import logger, set_histories
 
 
 class CodeRow(Page, StatuteBase, TableConfig):
@@ -257,7 +253,8 @@ class CodeStatuteEvent(StatuteAffector, TableConfig):
 
                 else:
                     logger.debug(f"Attempt {rule=}; pk {folder.stem=}")
-                    obj = Statute.create_obj(c, content)
+                    obj = Statute.from_page(content)
+                    obj.insert_objects(c, StatuteRow, obj.relations)
                     logger.debug(f"Created statute: {obj}")
 
     @classmethod
@@ -315,6 +312,14 @@ class Codification(Integrator):
     stat_events: list[CodeStatuteEvent]
     cite_events: list[CodeCitationEvent]
 
+    @property
+    def relations(self):
+        return [
+            (CodeUnitSearch, self.unit_fts),
+            (CodeStatuteEvent, self.stat_events),
+            (CodeCitationEvent, self.cite_events),
+        ]
+
     @classmethod
     def make_tables(cls, c: Connection):
         c.create_table(CodeRow)
@@ -325,46 +330,38 @@ class Codification(Integrator):
             c.create_table(CodeCitationEvent)
 
     @classmethod
-    def insert_statute_id(cls, c: Connection) -> sqlite3.Cursor:
-        template_name = "codes/update_statute_id.sql"  # TODO: needs refinement
-        return c.db.execute(
-            corpus_sqlenv.get_template(template_name).render(
-                code_tbl=CodeRow.__tablename__,
-                statutes_tbl=StatuteRow.__tablename__,
-            )
-        )
-
-    @classmethod
     def add_rows(cls, c: Connection):
-        stat = c.db[StatuteRow.__tablename__]
-        t = c.db[CodeRow.__tablename__]
-        t.add_column(  # type: ignore
+        # setup each codification row
+        for raw_code in CODIFICATION_FILES:
+            logger.debug(f"Adding codification {raw_code.stem=}")
+            obj = cls.from_page(raw_code)
+            idx = obj.insert_objects(c, CodeRow, obj.relations)
+            logger.debug(f"Added codification {idx=}")
+
+        # add the base statute of codification by first transforming the table
+        c.db[CodeRow.__tablename__].add_column(  # type: ignore
             col_name="statute_id",
             col_type=str,
             fk=StatuteRow.__tablename__,
             fk_col="id",
         )
+        c.db.execute(
+            corpus_sqlenv.get_template("codes/update_statute_id.sql").render(
+                code_tbl=CodeRow.__tablename__,
+                statutes_tbl=StatuteRow.__tablename__,
+            )
+        )
 
-        for f in CODIFICATION_PATH.glob("**/*.yaml"):
-            idx = Codification.create_obj(c, f)
-            code_obj = t.get(idx)  # type: ignore
-            try:  # check if statute base of code obj existing
-                stat.get(code_obj["statute_id"])  # type: ignore
-            except NotFoundError:
-                Statute.create_via_catid(
-                    c,
-                    code_obj["statute_category"],
-                    code_obj["statute_serial_id"],
-                )
-
-        cls.insert_statute_id(c)  # insert single statute
+        # set events then update original trees
         CodeStatuteEvent.add_statutes_from_events(c)  # populate statutes table
         CodeStatuteEvent.update_statute_ids(c)  # needed to update tree
         CodeStatuteEvent.update_unit_ids(c)  # needed to update tree
         CodeCitationEvent.update_decision_ids(c)
-
-        for row in t.rows:  # update the original trees
+        # update original trees
+        [
             CodeRow.set_update_units(c, row["id"])
+            for row in c.db[CodeRow.__tablename__].rows
+        ]
 
     @classmethod
     def from_page(cls, file_path: Path):
@@ -383,21 +380,3 @@ class Codification(Integrator):
             stat_events=list(CodeStatuteEvent.extract_units(*params)),
             cite_events=list(CodeCitationEvent.extract_units(*params)),
         )
-
-    @property
-    def relations(self):
-        return [
-            (CodeUnitSearch, self.unit_fts),
-            (CodeStatuteEvent, self.stat_events),
-            (CodeCitationEvent, self.cite_events),
-        ]
-
-    def add_to_database(self, c: Connection):
-        try:
-            if CodeRow.get_id(c, self.id):
-                logger.info(f"Already existing: {self.id=}")
-            else:
-                return self.insert_objects(c, CodeRow, self.relations)
-        except Exception as e:
-            logger.error(f"DB insertion: {e=}")
-            return None

@@ -1,9 +1,9 @@
 import sqlite3
 from collections.abc import Iterator
 from pathlib import Path
+from sqlite3 import IntegrityError
 
-from loguru import logger
-from pydantic import EmailStr, Field
+from pydantic import EmailStr, Field, ValidationError
 from sqlpyd import Connection, TableConfig
 from statute_patterns import (
     Rule,
@@ -21,7 +21,8 @@ from statute_trees import (
     generic_mp,
 )
 
-from corpus_x.resources import STATUTE_PATH, Integrator, corpus_sqlenv
+from .resources import STATUTE_FILES, STATUTE_PATH, Integrator, corpus_sqlenv
+from .utils import logger
 
 
 class StatuteRow(Page, StatuteBase, TableConfig):
@@ -115,6 +116,13 @@ class StatuteMaterialPath(Node, TableConfig):
 
 
 class StatuteFoundInUnit(StatuteBase, TableConfig):
+    """Each unit in Statute A (see MP) may refer to Statute B.
+    Statute B is referenced through it's category and identifier
+    (hence inheriting from `StatuteBase`). After securing the category
+    and identifier pairs, can use the `cls.update_statute_ids()` to
+    supply the matching statute  id of the category/identifier pair.
+    """
+
     __prefix__ = "lex"
     __tablename__ = "statute_unit_references"
     __indexes__ = [
@@ -130,6 +138,7 @@ class StatuteFoundInUnit(StatuteBase, TableConfig):
             " Statute B is referenced through it's category and identifier"
             " (see StatuteBase)."
         ),
+        col=str,
         fk=(StatuteRow.__tablename__, "id"),
     )
 
@@ -203,18 +212,17 @@ class StatuteFoundInUnit(StatuteBase, TableConfig):
     def get_statutes_from_references(cls, c: Connection) -> Iterator[dict]:
         """Extract relevant statute category and identifier pairs
         from the cls.__tablename__."""
-        template_name = "statutes/references/unique_statutes_list.sql"
-        template = corpus_sqlenv.get_template(template_name)
-        q = template.render(statute_references_tbl=cls.__tablename__)
-        for row in c.db.execute_returning_dicts(q):
+        for row in c.db.execute_returning_dicts(
+            corpus_sqlenv.get_template(
+                "statutes/references/unique_statutes_list.sql"
+            ).render(statute_references_tbl=cls.__tablename__)
+        ):
             yield StatuteBase(**row).dict()
 
     @classmethod
     def update_statute_ids(cls, c: Connection) -> sqlite3.Cursor:
-        """After running `cls.add_statutes_from_references()`, all Statutes
-        contained in Statute references will be present in the `db`.
-        Supply the `matching_statute_id`.
-        """
+        """Since all statutes present in `db`, supply `matching_statute_id` in
+        the references table."""
         with c.session as cur:
             return cur.execute(
                 corpus_sqlenv.get_template("statutes/update_id.sql").render(
@@ -226,11 +234,6 @@ class StatuteFoundInUnit(StatuteBase, TableConfig):
 
 
 class Statute(Integrator):
-    """A Statute is a container for statutory components.
-    Because of the pre-processing required for each component, can save time
-    by recreating the components into a single data file.
-    """
-
     id: str
     emails: list[EmailStr]
     meta: StatuteRow
@@ -240,6 +243,40 @@ class Statute(Integrator):
     material_paths: list[StatuteMaterialPath]
     statutes_found: list[StatuteFoundInUnit]
 
+    @property
+    def relations(self):
+        return [
+            (StatuteMaterialPath, self.material_paths),
+            (StatuteUnitSearch, self.unit_fts),
+            (StatuteTitleRow, self.titles),
+            (StatuteFoundInUnit, self.statutes_found),
+        ]
+
+    @classmethod
+    def from_page(cls, details_path: Path):
+        page = StatutePage.build(details_path)
+        return Statute(
+            id=page.id,
+            emails=page.emails,
+            meta=StatuteRow(**page.dict(exclude={"emails", "tree", "titles"})),
+            tree=page.tree,
+            titles=[
+                StatuteTitleRow(**statute_title.dict())
+                for statute_title in page.titles
+            ],
+            material_paths=[
+                StatuteMaterialPath(**unit)
+                for unit in StatuteUnit.granularize(page.id, page.tree)
+            ],
+            unit_fts=[
+                StatuteUnitSearch(**unit)
+                for unit in StatuteUnit.searchables(page.id, page.tree)
+            ],
+            statutes_found=list(
+                StatuteFoundInUnit.extract_units(page.id, page.tree)
+            ),
+        )
+
     @classmethod
     def create_via_catid(cls, c: Connection, cat: str, id: str):
         """Create statute/s if the `cat` and `id` passed does not yet
@@ -248,8 +285,10 @@ class Statute(Integrator):
             return
         rule = Rule(cat=StatuteSerialCategory(cat), id=id)
         for folder in rule.extract_folders(STATUTE_PATH):
-            if created_idx := cls.create_obj(c, folder / "details.yaml"):
-                logger.debug(f"Created statute: {created_idx}")
+            obj = cls.from_page(folder / "details.yaml")
+            idx = obj.insert_objects(c, StatuteRow, obj.relations)
+            if idx:
+                logger.debug(f"Added statute (cat/id): {idx}")
 
     @classmethod
     def make_tables(cls, c: Connection):
@@ -264,41 +303,17 @@ class Statute(Integrator):
 
     @classmethod
     def add_rows(cls, c: Connection):
-        for detail in STATUTE_PATH.glob("**/*/details.yaml"):
-            Statute.create_obj(c, detail.parent)
-        for ref in StatuteFoundInUnit.get_statutes_from_references(c):
-            cls.create_via_catid(c, ref["cat"], ref["id"])
-        StatuteFoundInUnit.update_statute_ids(c)
-
-    @classmethod
-    def from_page(cls, details_path: Path):
-        page = StatutePage.build(details_path)
-        mps = StatuteUnit.granularize(page.id, page.tree)
-        searchables = StatuteUnit.searchables(page.id, page.tree)
-        extracts = list(StatuteFoundInUnit.extract_units(page.id, page.tree))
-        return Statute(
-            id=page.id,
-            emails=page.emails,
-            meta=StatuteRow(**page.dict(exclude={"emails", "tree", "titles"})),
-            titles=[StatuteTitleRow(**t.dict()) for t in page.titles],
-            tree=page.tree,
-            material_paths=[StatuteMaterialPath(**unit) for unit in mps],
-            unit_fts=[StatuteUnitSearch(**unit) for unit in searchables],
-            statutes_found=extracts,
-        )
-
-    @property
-    def relations(self):
-        return [
-            (StatuteMaterialPath, self.material_paths),
-            (StatuteUnitSearch, self.unit_fts),
-            (StatuteTitleRow, self.titles),
-            (StatuteFoundInUnit, self.statutes_found),
-        ]
-
-    def add_to_database(self, c: Connection) -> str | None:
-        try:
-            return self.insert_objects(c, StatuteRow, self.relations)
-        except Exception as e:
-            logger.error(f"DB insertion: {e=}")
-            return None
+        for detail in STATUTE_FILES:
+            cat = detail.parent.parent
+            serial = detail.parent
+            try:
+                logger.debug(f"Adding statute {cat=} {serial=}")
+                obj = cls.from_page(detail)
+                obj.insert_objects(c, StatuteRow, obj.relations)
+                logger.debug(f"Added statute {cat=} {serial=}")
+            except IntegrityError:
+                logger.error(f"Already existing; skipped {cat=} {serial=}")
+            except ValidationError as e:
+                logger.error(f"Validation needed {detail=}; {e=}")
+            except Exception as e:
+                logger.error(f"Generic exception on insertion: {e=}")

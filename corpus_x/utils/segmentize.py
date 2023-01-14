@@ -4,7 +4,7 @@ XXX = re.compile(r"x\s*x\s*x\s*", re.I)
 """x x x"""
 
 MIN_LENGTH_CHARS_IN_LINE = 500
-"""The most important factor in determininig the number of segments to be added to the database"""
+"""The most important factor in determining number of segments in table"""
 
 START_NOT_ALPHANUM = re.compile(r"^\W+")
 """Start of line is not alphanumeric"""

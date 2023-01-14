@@ -1,23 +1,26 @@
 import abc
-import json
 from pathlib import Path
 from typing import Any
 
 from corpus_pax import Individual
 from jinja2 import Environment, PackageLoader, select_autoescape
-from loguru import logger
 from pydantic import BaseModel, EmailStr
 from sqlpyd import Connection
 
 BASE = "code/corpus"
+"""Source of all local files"""
 
 STATUTE_PATH = Path().home().joinpath(f"{BASE}/statutes")
+STATUTE_FILES = STATUTE_PATH.glob("**/*/details.yaml")
 
 CODIFICATION_PATH = Path().home().joinpath(f"{BASE}/codifications")
+CODIFICATION_FILES = CODIFICATION_PATH.glob("**/*.yaml")
 
 DOCUMENT_PATH = Path().home().joinpath(f"{BASE}/documents")
+DOCUMENT_FILES = DOCUMENT_PATH.glob("**/*.yaml")
 
 INCLUSION_FILE = "inclusions.yaml"
+"""Name of the file that will host all the included components of a decision"""
 
 
 corpus_sqlenv = Environment(
@@ -28,12 +31,22 @@ corpus_sqlenv = Environment(
 
 class Integrator(BaseModel, abc.ABC):
     """
-    1. Tables need to be created, see `cls.make_tables()`
-    2. With `cls.add_rows()`, the content of the table structures are
-        sourced from a local repository processed by `cls.create_obj`
-        functions.
-    3. The Integrator instance is a collection of @relations.
-    4. Each instance can be added to the tables. See `self.add_to_database()`
+    Each Integrator class ensures that inheriting classes implement:
+
+    1. common fields: `id`, `emails`, `meta`, `tree`, and `unit_fts`
+    2. `make_tables()`: create the model's instances in the sqlite db
+    3. `add_rows()`: to populate the tables created
+    4. `from_page()`: given a raw yaml file, extract fields into the BaseModel
+    5. `@relations`: the BaseModel will have relationships to other BaseModels
+
+    The reason for requiring `emails` is that the common
+    `insert_objects()` function can: create an m2m table with respect
+    to authors
+
+    The reason for requiring `@relations` is that the common
+    `insert_objects()` function can: go through each of the tuples where in
+    the first item of the tuple represents a table and the second item of the
+    tuple, rows to be inserted in such a table.
     """
 
     id: str = NotImplemented
@@ -55,14 +68,6 @@ class Integrator(BaseModel, abc.ABC):
         """Common process for creating objects from the source
         files for these to become prospective rows to
         the tables created."""
-        raise NotImplementedError
-
-    @abc.abstractmethod
-    def add_to_database(self, c: Connection) -> str | None:
-        """Each entry of the concrete class is an instance
-        of a pydantic BaseModel, this implies prior validation,
-        and thus can now be added to the tables created
-        in `cls.make_tables()`"""
         raise NotImplementedError
 
     @classmethod
@@ -114,18 +119,6 @@ class Integrator(BaseModel, abc.ABC):
             )
 
         return self.id
-
-    @classmethod
-    def create_obj(cls, c: Connection, file_path: Path) -> str | None:
-        """Should return `id` of object created, if created,"""
-        if obj := cls.from_page(file_path):
-            if idx := obj.add_to_database(c):
-                return idx
-            else:
-                logger.error(f"No db entry; see {obj.id}")
-        else:
-            logger.error(f"No entry created; see {file_path};")
-        return None
 
 
 def sql_get_detail(generic_tbl_name: str, generic_id: str) -> str:

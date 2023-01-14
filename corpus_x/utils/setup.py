@@ -3,6 +3,8 @@ from pathlib import Path
 from corpus_pax.utils import delete_tables_with_prefix
 from sqlpyd import Connection
 
+from ._loggers import clear_logs
+
 
 def setup_corpus_x(c: Connection):
     """
@@ -30,7 +32,7 @@ def setup_corpus_x(c: Connection):
     from ..statutes import Statute
 
     # reset tables
-    delete_tables_with_prefix(c, ["lex"])
+    delete_tables_with_prefix(c=c, target_prefixes=["lex"])
 
     # initialize tables
     Statute.make_tables(c)
@@ -94,12 +96,7 @@ def setup_x_db(db_path: str) -> Connection:
     from corpus_pax import setup_pax
 
     # clear logs
-    logs = Path().cwd() / "logs"
-    for i in logs.glob("*"):
-        if i.is_file():
-            i.unlink()
-    logs.rmdir()
-
+    clear_logs()
     setup_pax(db_path)
     setup_base(db_path)
 

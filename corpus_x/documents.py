@@ -29,6 +29,10 @@ class Document(Integrator):
     tree: list[DocUnit]
     unit_fts: list[DocUnitSearch]
 
+    @property
+    def relations(self):
+        return [(DocUnitSearch, self.unit_fts)]
+
     @classmethod
     def make_tables(cls, c: Connection):
         if c.table(CodeRow):
@@ -38,7 +42,10 @@ class Document(Integrator):
     @classmethod
     def add_rows(cls, c: Connection):
         for f in DOCUMENT_PATH.glob("**/*.yaml"):
-            cls.create_obj(c, f)
+            logger.debug(f"Adding document {f.stem=}")
+            obj = cls.from_page(f)
+            idx = obj.insert_objects(c, DocRow, obj.relations)
+            logger.debug(f"Added document {idx=}")
 
     @classmethod
     def from_page(cls, file_path: Path):
@@ -53,14 +60,3 @@ class Document(Integrator):
             tree=page.tree,
             unit_fts=[DocUnitSearch(**unit) for unit in searachables],
         )
-
-    @property
-    def relations(self):
-        return [(DocUnitSearch, self.unit_fts)]
-
-    def add_to_database(self, c: Connection):
-        try:
-            return self.insert_objects(c, DocRow, self.relations)
-        except Exception as e:
-            logger.error(f"{e=}")
-            return None
