@@ -297,6 +297,16 @@ class Inclusion(NamedTuple):
 
     @classmethod
     def make_tables(cls, c: Connection):
+        """These tables reference foreign keys.
+
+        Presumed to already exist:
+
+        1. Statute table
+        2. Decision table
+
+        Args:
+            c (Connection): _description_
+        """
         if c.table(StatuteRow):
             c.create_table(StatuteInOpinion)
         if c.table(DecisionRow):
@@ -411,6 +421,43 @@ def create_inclusion_files_from_db_opinions(c: Connection):
 
 
 def set_inclusions(c: Connection):
+    """Collect the pre-processed data and insert the same
+    into the created database tables.
+
+    Estimate at the end of 2022 (factors to consider):
+
+    1. the last time data was scraped as raw files,
+    2. the time separate opinions were manually included
+
+    Note: the statute and inclusion tables need to be created
+    before the pre-processed data can be inserted.
+
+    Result:
+
+    As of end of 2022:
+
+    table | row count | purpose
+    --:|:-- |:--
+    `CitationsInOpinions` | ~484k | itemize citations found per opinion
+    `StatutesInOpinions` | ~99k  | itemize statutes found per opinion
+    `SegmentRow` | ~700k | itemize segments found per opinion
+
+    After `populate_db_with_inclusions` is run, what will
+    exists in the database are records of statutes / citations but not
+    the statute_ids / decision_ids themselves. See `purpose` noted above
+    for the citations and statutes found per opinion.
+
+    Recall that the inclusion files are created because of `corpus-base`
+    tables. At the time the `corpus-base` tables were created, there were
+    were no StatuteInOpinions and CitationInOpinions tables yet since
+    these only exist in `corpus-x`
+
+    An update will need to be made so that these tables get a foreign key
+    to their proper tables.
+
+    Args:
+        c (Connection): database connection from sqlpyd
+    """
     populate_db_with_inclusions(c)
     StatuteInOpinion.update_statute_ids(c)
     CitationInOpinion.update_decision_ids(c)

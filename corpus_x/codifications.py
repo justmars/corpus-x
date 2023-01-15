@@ -333,10 +333,9 @@ class Codification(Integrator):
     def add_rows(cls, c: Connection):
         # setup each codification row
         for raw_code in CODIFICATION_FILES:
-            logger.debug(f"Adding codification {raw_code.stem=}")
             obj = cls.from_page(raw_code)
             idx = obj.insert_objects(c, CodeRow, obj.relations)
-            logger.debug(f"Added codification {idx=}")
+            logger.debug(f"Added codification {idx=} from {raw_code.stem=}")
 
         # add the base statute of codification by first transforming the table
         c.db[CodeRow.__tablename__].add_column(  # type: ignore

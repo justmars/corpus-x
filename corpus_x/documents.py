@@ -42,10 +42,9 @@ class Document(Integrator):
     @classmethod
     def add_rows(cls, c: Connection):
         for f in DOCUMENT_PATH.glob("**/*.yaml"):
-            logger.debug(f"Adding document {f.stem=}")
             obj = cls.from_page(f)
             idx = obj.insert_objects(c, DocRow, obj.relations)
-            logger.debug(f"Added document {idx=}")
+            logger.debug(f"Added document {idx=} from {f.stem=}")
 
     @classmethod
     def from_page(cls, file_path: Path):

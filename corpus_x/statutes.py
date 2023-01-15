@@ -304,13 +304,12 @@ class Statute(Integrator):
     @classmethod
     def add_rows(cls, c: Connection):
         for detail in STATUTE_FILES:
-            cat = detail.parent.parent
-            serial = detail.parent
+            cat = detail.parent.parent.stem
+            serial = detail.parent.stem
             try:
-                logger.debug(f"Adding statute {cat=} {serial=}")
                 obj = cls.from_page(detail)
                 obj.insert_objects(c, StatuteRow, obj.relations)
-                logger.debug(f"Added statute {cat=} {serial=}")
+                logger.debug(f"Added statute {cat=} {serial=} from {detail=}")
             except IntegrityError:
                 logger.error(f"Already existing; skipped {cat=} {serial=}")
             except ValidationError as e:
