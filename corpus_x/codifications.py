@@ -364,18 +364,45 @@ class Codification(Integrator):
 
     @classmethod
     def from_page(cls, file_path: Path):
+        # build and validate metadata from the path
         page = CodePage.build(file_path)
         if not page:
             raise Exception(f"No page from {file_path=}")
-        params = page.id, page.tree
-        searchables = CodeUnit.searchables(*params)
+
+        # assign row for creation
         meta = page.dict(exclude={"tree", "emails"})
+
+        # enable full text searches of contents of the tree; starts with `1.1.`
+        fts = [
+            CodeUnitSearch(**unit)
+            for unit in CodeUnit.searchables(pk=page.id, units=page.tree)
+        ]
+
+        # full text searches should includes a title row, i.e. node `1.``
+        root_fts = [
+            CodeUnitSearch(
+                codification_id=page.id,
+                material_path="1.",
+                unit_text=", ".join(
+                    [
+                        f"{page.statute_category} {page.statute_serial_id}",
+                        f"{page.title}",
+                        f"{page.description}",
+                    ]
+                ),
+            )
+        ]
+
         return cls(
             id=page.id,
             emails=page.emails,
             meta=CodeRow(**meta),
             tree=page.tree,
-            unit_fts=[CodeUnitSearch(**unit) for unit in searchables],
-            stat_events=list(CodeStatuteEvent.extract_units(*params)),
-            cite_events=list(CodeCitationEvent.extract_units(*params)),
+            unit_fts=root_fts + fts,
+            stat_events=list(
+                CodeStatuteEvent.extract_units(pk=page.id, units=page.tree)
+            ),
+            cite_events=list(
+                CodeCitationEvent.extract_units(pk=page.id, units=page.tree)
+            ),
         )

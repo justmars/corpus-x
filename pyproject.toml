@@ -11,6 +11,8 @@ classifiers = [
   "Typing :: Typed",
   "Development Status :: 4 - Beta",
   "Intended Audience :: Legal Industry",
+  "Framework :: Pydantic",
+  "Framework :: Pytest",
 ]
 
 [tool.poetry.dependencies]
@@ -37,6 +39,9 @@ filterwarnings = ['ignore::DeprecationWarning']
 minversion = "7.2"
 addopts = "-ra -q --cov=corpus_x tests/"
 testpaths = ["tests"]
+
+[tool.ruff]
+ignore = ["F401"]
 
 [tool.isort]
 profile = "black"

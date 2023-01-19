@@ -53,15 +53,15 @@ flowchart TD
 
 ## Mode
 
-Order | Time | Instruction | Docs
-:--:|:--:|--:|:--
-1 | ~6sec (if with test data) | [corpus-pax](https://github.com/justmars/corpus-pax#read-me) pre-requiste before `corpus-base` can work. |[Setup](docs/1-setup.md)
-2 | ~20min | [corpus-base](https://github.com/justmars/corpus-base#read-me) pre-requiste before `corpus-x` can work. |[Setup](docs/1-setup.md)
-3 | ~70min | If inclusion files not yet created, run script to generate. |[Pre-inclusions](docs/2-pre-inclusions.md)
-4 | ~30min | Assuming inclusion files are already created, can populate the various tables under `corpus-x` | [Post-inclusions](docs/3-post-inclusions.md)
-5 | ~40 to ~60min | Litestream output `x.db` on AWS bucket | [Replicated db](docs/4-aws-replicate.md)
+Order | Time | Instruction
+:--:|:--:|--:|
+1 | ~6sec (if with test data) | [corpus-pax](https://github.com/justmars/corpus-pax#read-me) pre-requiste before `corpus-base` can work.
+2 | ~20min | [corpus-base](https://github.com/justmars/corpus-base#read-me) pre-requiste before `corpus-x` can work.
+3 | ~70min | If inclusion files not yet created, run script to generate.
+4 | ~30min | Assuming inclusion files are already created, can populate the various tables under `corpus-x`
+5 | ~40 to ~60min | Litestream local output `x.db` to AWS bucket
 
-## Build from scratch
+## Build from corpus-base
 
 Assuming step 3 above has already been completed as a separate process and `pax_` and `_sc_` tables have already been added:
 
@@ -385,70 +385,52 @@ View the aws s3 [bucket](https://s3.console.aws.amazon.com/s3/buckets/) and conf
 
 With respect to a codification_id:
 
-```python
+```python shell
 >>> from sqlpyd import Connection
->>> from corpus_x import get_codification
->>> code_pk = "gr-l-63915-apr-24-1985-136-scra-27-220-phil-422"
->>> code_detail = get_codification(Connection(DatabasePath="x.db"), code_pk)
->>> print(code_detail)
-{
-    'created': 1668327185.4456773,
-    'modified': 1668327185.4456773,
-    'title': 'Judiciary Reorganization Act',
-    'description': 'The most recent statute designating jurisdiction of general courts in the Philippines.\n',
-    'date': '2022-10-01',
-    'statute_category': 'bp',
-    'statute_serial_id': '129',
-    'statute_id': 'bp-129-august-14-1981',
-    'statute_date': '1981-08-14',
-    'statute_titles': [
-        {'title': 'The Judiciary Reorganization Act of 1980', 'category': 'short'},
-        {'title': 'Batas Pambansa Blg. 129', 'category': 'serial'},
-        {
-            'title': 'An Act Reorganizing The Judiciary, Appropriating Funds Therefor, And For Other Purposes.',
-            'category': 'official'
-        } # these are the ways that this statute is referred to
-    ],
-    'units': [
-        { # this is the nested tree that can be styled via html / css / js
-            'item': 'Judiciary Reorganization Act',
-            'id': '1.', # why necessary to create a root node? easier to create relationships, i.e. repeals / associations of whole documents to a single unit node
-            'units': [
-                {
-                    'item': 'Container 1',
-                    'caption': 'Preliminary Chapter',
-                    'id': '1.1.',
-                    'units': [
-                        {
-                            'item': 'Section 1',
-                            'caption': 'Title.',
-                            'content': 'This Act shall be known as "The Judiciary Reorganization Act of 1980."',
-                            'id': '1.1.1.',
-                            'units': []
-                        },
-                    ],
-                    x x x
-                },
-                x x x
-            ],
-        },
-        x x x,
-    ],
-    'author_list': [{'id': 'mv', 'display': 'Marcelino Veloso III', 'img': 'members-mv'}],
-    'event_statute_affectors': [
-        {
-            'id': 'ra-11576-july-30-2021',
-            'official_title': 'An Act Further Expanding The Jurisdiction Of The Metropolitan Trial Courts, Municipal Trial Courts In Cities, Municipal Trial Courts, And Municipal Circuit Trial Courts, Amending For The Purpose Batas Pambansa Blg. 129, Otherwise Known As "The Judiciary Reorganization Act Of 1980," As Amended\n',
-            'serial_title': 'Republic Act No. 11576',
-            'statute_date': '2021-07-30'
-        },
-        {
-            'id': 'ra-11455-august-30-2019',
-            'official_title': 'An Act Creating Two (2) Additional Branches Of The Regional Trial Court In The Province Of Sultan Kudarat, One Each To Be Stationed In The Municipality Of Isulan And Tacurong City, Further Amending For The Purpose Section 14, Paragraph (M) Of Batas Pambansa Blg. 129, Otherwise Known As "The Judiciary Reorganization Act Of 1990," As Amended And Appropriating Funds Therefor',
-            'serial_title': 'Republic Act No. 11455',
-            'statute_date': '2019-08-30'
-        },
-        x x x  # these are the different statutes that affect the base statute bp 129
-    ]
+>>> from corpus_x.__main__ import get_codification
+>>> code_pk = "mv-2022-ra-386-modern-civil-code-v1"
+>>> c = Connection(DatabasePath="x.db", WAL=True)
+>>> code_detail = get_codification(c, code_pk)
+{ 'created': 1673686439.0847127,
+  'modified': 1673686439.0847127,
+  'title': 'Modern Civil Code',
+  'description': 'A Codification of Republic Act No. 386, As Amended.',
+  'date': '2022-10-01',
+  'statute_category': 'ra',
+  'statute_serial_id': '386',
+  'statute_id': 'ra-386-june-18-1949',
+  'statute_date': '1949-06-18',
+  'statute_titles': [{'title': 'New Civil Code', 'category': 'alias'},
+    {'title': 'Civil Code of 1950', 'category': 'alias'},
+    {'title': 'Civil Code of the Philippines', 'category': 'short'},
+    {'title': 'Republic Act No. 386', 'category': 'serial'},
+    {'title': 'An Act to Ordain and Institute the Civil Code of the Philippines',
+    'category': 'official'}],
+  'units': [{'item': 'Modern Civil Code',  # this is the nested tree that can be styled via html / css / js
+    'id': '1.',
+    'units': [{'item': 'Container 1',
+      'caption': 'Preliminary Title',
+      'id': '1.1.',
+      'units': [{'item': 'Chapter 1',
+        'caption': 'Effect and Application of Laws',
+        'id': '1.1.1.',
+        'units': [{'item': 'Article 1',
+          'content': 'This Act shall be known as the "Civil Code of the Philippines." (n)',
+          'id': '1.1.1.1.',
+          'units': []},
+        {'item': 'Article 2',
+          'content': 'Laws shall take effect after fifteen days following the completion of their publication either in the Official Gazette or in a newspaper of general circulation in the Philippines, unless it is otherwise provided. (1a)',
+          'id': '1.1.1.2.',
+        }]}]}]}],
+  'author_list': [{'id': 'mv', 'display': 'Marcelino Veloso III', 'img': 'members-mv'}],
+  'event_statute_affectors': [{'id': 'ra-11057-august-17-2018',
+    'serial_title': 'Republic Act No. 11057',
+    'official_title': 'An Act Strengthening The Secured Transactions Legal Framework In The Philippines. Which Shall Provide For The Creation, Perfection, Determination Of Priority, Establishment Of A Centralized Notice Registry, And Enforcement Of Security Interests In Personal Property, And For Other Purposes',
+    'statute_date': '2018-08-17'},
+  {'id': 'ra-10172-august-15-2012',
+    'serial_title': 'Republic Act No. 10172',
+    'official_title': 'An Act Further Authorizing The City Or Municipal Civil Registrar Or The Consul General To Correct Clerical Or Typographical Errors In The Day And Month In The Date Of Birth Or Sex Of A Person Appearing In The Civil Register Without Need Of A Judicial Order, Amending For This Purpose Republic Act Numbered Ninety Forty-Eight',
+    'statute_date': '2012-08-15'},
+  ...]
 }
 ```

@@ -11,15 +11,15 @@ repos:
       - id: trailing-whitespace
       - id: name-tests-test
         args: ["--django"]
-  - repo: https://github.com/pycqa/flake8
-    rev: 6.0.0
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    # Ruff version.
+    rev: 'v0.0.225'
     hooks:
-      - id: flake8
-        args: ["--ignore=F401,INP001"]
-        additional_dependencies:
-          - flake8-no-pep420==2.0.0
+      - id: ruff
+        # Respect `exclude` and `extend-exclude` settings.
+        args: ["--force-exclude"]
   - repo: https://github.com/pycqa/isort
-    rev: 5.10.1
+    rev: 5.11.4
     hooks:
       - id: isort
         args: ["--profile", "black", "--filter-files"]

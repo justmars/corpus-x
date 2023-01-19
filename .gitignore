@@ -1,7 +1,7 @@
 .DS_Store
 .vscode
-home.html
-node_modules
+.ruff_cache
+.x.db*
 x.db
 x.db*
 ex.db

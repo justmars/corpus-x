@@ -254,26 +254,51 @@ class Statute(Integrator):
 
     @classmethod
     def from_page(cls, details_path: Path):
+        # build and validate metadata from the path
         page = StatutePage.build(details_path)
+
+        # assign row for creation
+        meta = StatuteRow(**page.dict(exclude={"emails", "tree", "titles"}))
+
+        # setup associated titles
+        titles = [
+            StatuteTitleRow(**statute_title.dict())
+            for statute_title in page.titles
+        ]
+
+        # enable full text searches of contents of the tree; starts with `1.1.`
+        fts = [
+            StatuteUnitSearch(**unit)
+            for unit in StatuteUnit.searchables(page.id, page.tree)
+        ]
+
+        # full text searches should includes a title row, i.e. node `1.``
+        root_fts = [
+            StatuteUnitSearch(
+                statute_id=page.id,
+                material_path="1.",
+                unit_text=", ".join(
+                    [f"{meta.statute_category} {meta.statute_serial_id}"]
+                    + [t.text for t in titles]
+                ),
+            )
+        ]
+
         return Statute(
             id=page.id,
             emails=page.emails,
-            meta=StatuteRow(**page.dict(exclude={"emails", "tree", "titles"})),
+            meta=meta,
             tree=page.tree,
-            titles=[
-                StatuteTitleRow(**statute_title.dict())
-                for statute_title in page.titles
-            ],
+            titles=titles,
+            unit_fts=root_fts + fts,
             material_paths=[
                 StatuteMaterialPath(**unit)
-                for unit in StatuteUnit.granularize(page.id, page.tree)
-            ],
-            unit_fts=[
-                StatuteUnitSearch(**unit)
-                for unit in StatuteUnit.searchables(page.id, page.tree)
+                for unit in StatuteUnit.granularize(
+                    pk=page.id, nodes=page.tree
+                )
             ],
             statutes_found=list(
-                StatuteFoundInUnit.extract_units(page.id, page.tree)
+                StatuteFoundInUnit.extract_units(pk=page.id, units=page.tree)
             ),
         )
 
