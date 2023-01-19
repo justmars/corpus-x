@@ -16,6 +16,7 @@ def build_x_tables(c: Connection) -> Connection:
     Codification.make_tables(c)
     # Document.make_tables(c)
     Inclusion.make_tables(c)
+    c.db.index_foreign_keys()
     return c
 
 
@@ -25,6 +26,7 @@ def setup_x(c: Connection):
     Statute.add_rows(c)
     Codification.add_rows(c)
     set_inclusions(c)
+    c.db.index_foreign_keys()
 
 
 def reset_x(db_path: str):
