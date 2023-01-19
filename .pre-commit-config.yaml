@@ -12,11 +12,9 @@ repos:
       - id: name-tests-test
         args: ["--django"]
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    # Ruff version.
     rev: 'v0.0.225'
     hooks:
       - id: ruff
-        # Respect `exclude` and `extend-exclude` settings.
         args: ["--force-exclude"]
   - repo: https://github.com/pycqa/isort
     rev: 5.11.4
