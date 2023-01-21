@@ -44,13 +44,13 @@ logger.configure(
             "level": "ERROR",
         },
         {
-            "sink": "logs/corpus-x-debug.log",
+            "sink": "logs/debug.log",
             "format": "{message}",
             "level": "DEBUG",
             "serialize": True,
         },
         {
-            "sink": "logs/corpus-x-error.log",
+            "sink": "logs/error.log",
             "format": "{message}",
             "level": "ERROR",
             "serialize": True,

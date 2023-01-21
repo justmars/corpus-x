@@ -13,87 +13,8 @@ from statute_patterns import Rule, StatuteSerialCategory, count_rules
 from statute_patterns.components.utils import DETAILS_FILE
 from statute_trees.resources import StatuteBase
 
-from .resources import (
-    INCLUSION_FILE,
-    STATUTE_FILES,
-    STATUTE_PATH,
-    corpus_sqlenv,
-)
+from .resources import INCLUSION_FILE, STATUTE_PATH, corpus_sqlenv
 from .statutes import StatuteRow
-from .utils import validate_segment
-
-
-class SegmentRow(TableConfig):
-    __prefix__ = "lex"
-    __tablename__ = "opinion_segments"
-    __indexes__ = [
-        ["opinion_id", "decision_id"],
-    ]
-    id: str = Field(..., col=str)
-    decision_id: str = Field(
-        ...,
-        col=str,
-        fk=(DecisionRow.__tablename__, "id"),
-    )
-    opinion_id: str = Field(
-        ...,
-        col=str,
-        fk=(OpinionRow.__tablename__, "id"),
-    )
-    position: int = Field(
-        ...,
-        title="Relative Position",
-        description="The line number of the text as stripped from its markdown source.",  # noqa: E501
-        col=int,
-        index=True,
-    )
-    char_count: int = Field(
-        ...,
-        title="Character Count",
-        description="The number of characters of the text makes it easier to discover patterns.",  # noqa: E501
-        col=int,
-        index=True,
-    )
-    segment: str = Field(
-        ...,
-        title="Body Segment",
-        description="A partial text fragment of an opinion, exclusive of footnotes.",  # noqa: E501
-        col=str,
-        fts=True,
-    )
-
-    @classmethod
-    def extract_segments(
-        cls,
-        text: str,
-        opinion_id: str,
-        decision_id: str,
-    ) -> Iterator[dict[str, int | str]]:
-        """Using a customized line splitter (see `/utils/segmentize.py`), split
-        `text` associated with the `opinion_id` and `decision_id` into
-        segments that can be used as full-text search rows.
-
-        Note: The present algorithm for splitting is naive but is sufficient
-        in light of the bad structure of the raw markdown files.
-
-        Args:
-            text (str): The raw text to be split
-            opinion_id (str): The source of the text
-            decision_id (str): The source of the opinion
-
-        Yields:
-            Iterator[dict[str, int | str]]: The collection of output segments
-        """
-        for position, raw_segment in enumerate(text.splitlines(), start=1):
-            if segment := validate_segment(raw_segment):
-                yield {
-                    "id": f"{opinion_id}-{position}",
-                    "decision_id": decision_id,
-                    "opinion_id": opinion_id,
-                    "position": position,
-                    "segment": segment,
-                    "char_count": len(segment),
-                }
 
 
 class StatuteInOpinion(StatuteBase, TableConfig):
@@ -261,7 +182,6 @@ class Inclusion(NamedTuple):
     text: str  # text to examine
     statutes: list[StatuteInOpinion]
     citations: list[CitationInOpinion]
-    segments: list[dict[str, int | str]]
 
     @classmethod
     def get_base_data(cls, c: Connection, pk: str) -> dict:
@@ -305,12 +225,11 @@ class Inclusion(NamedTuple):
         2. Decision table
 
         Args:
-            c (Connection): _description_
+            c (Connection): sqlpyd connection to the database
         """
         if c.table(StatuteRow):
             c.create_table(StatuteInOpinion)
         if c.table(DecisionRow):
-            c.create_table(SegmentRow)
             c.create_table(CitationInOpinion)
 
     @property
@@ -323,11 +242,7 @@ class Inclusion(NamedTuple):
             return
         else:
             logger.debug(msg)
-            return {
-                "statutes": statutes,
-                "citations": citations,
-                "segments": self.segments,
-            }
+            return {"statutes": statutes, "citations": citations}
 
     @property
     def path_to_folder(self):
@@ -349,8 +264,6 @@ def populate_db_with_inclusions(c: Connection):
             c.add_records(StatuteInOpinion, obj["statutes"])
         if obj.get("citations"):
             c.add_records(CitationInOpinion, obj["citations"])
-        if obj.get("segments"):
-            c.add_records(SegmentRow, obj["segments"])
 
 
 def create_inclusion_files_from_db_opinions(c: Connection):
@@ -399,13 +312,6 @@ def create_inclusion_files_from_db_opinions(c: Connection):
                         text=o["text"],
                     )
                 ),
-                segments=list(
-                    SegmentRow.extract_segments(
-                        text=o["text"],
-                        opinion_id=o["opinion_id"],
-                        decision_id=o["decision_id"],
-                    )
-                ),
             )
             if obj.content_for_file:
                 yield obj
@@ -440,7 +346,6 @@ def set_inclusions(c: Connection):
     --:|:-- |:--
     `CitationsInOpinions` | ~484k | itemize citations found per opinion
     `StatutesInOpinions` | ~99k  | itemize statutes found per opinion
-    `SegmentRow` | ~700k | itemize segments found per opinion
 
     After `populate_db_with_inclusions` is run, what will
     exists in the database are records of statutes / citations but not
@@ -456,7 +361,7 @@ def set_inclusions(c: Connection):
     to their proper tables.
 
     Args:
-        c (Connection): database connection from sqlpyd
+        c (Connection): sqlpyd connection to the database
     """
     populate_db_with_inclusions(c)
     StatuteInOpinion.update_statute_ids(c)

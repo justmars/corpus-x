@@ -30,7 +30,6 @@ x(corpus-x)-->db[(sqlite.db)]
 flowchart TD
 op_stat(statutes in opinions)<--after prerequisites-->x
 op_cite(citations in opinions)<--after prerequisites-->x
-op_seg(segments in opinions)<--after prerequisites-->x
 x(corpus-x)-->db[(sqlite.db)]
 ```
 
@@ -168,14 +167,12 @@ It takes about **~3 minutes** to populate all the codification tables.
 Each opinion declared via `corpus_base` will contain references to:
 
 1. statutes;
-2. citations; and
-3. segments.
+2. citations
 
 We'll use these references by first generating an inclusion `yaml` file for each opinion to serve as future rows to `corpus_x`-related tables:
 
 1. `opinion_statutes`
 2. `opinion_citations`
-3. `opinion_segments`
 
 #### Inclusion path/s
 
@@ -217,43 +214,6 @@ It takes about **~20 minutes** to populate all the inclusion tables.
 >>> StatuteInOpinion.add_statutes(c)  # eta ~2 minutes to store 500 objects
 >>> StatuteInOpinion.update_statute_ids(c)
 >>> CitationInOpinion.update_decision_ids(c)
-```
-
-### Segment discovery
-
-The [segmenting function](../corpus_x/utils/segmentize.py) determines the kind of rows that becomes associated with an opinion and a decision.
-
-#### Search for qualifying segments
-
-The `char_count` can be used to limit the number of segments:
-
-```sql
-select count(id)
-from sc_tbl_segments
-where char_count >= 500
-```
-
-`char_count` is the SQL column per segment.
-
-#### Limit input of segments
-
-`MIN_LENGTH_CHARS_IN_LINE` is the python filtering mechanism that determines what goes into the database. Assuming a minimum of only 20 characters, the number of segment rows can be as many as ~2.9m.
-
-`MIN_LENGTH_CHARS_IN_LINE` | Total Num. of Rows | Time to Create from Scratch
-:--:|:--:|:--:
-20 | ~2.9m | 1.5 hours
-500 | ~700k | 40 minutes
-1000 | ~170k | TBD
-
-We will settle with `500` until we come up with a better segmentizing algorithm.
-
-#### Number of segments per decision
-
-```sql
-select decision_id, count(id)
-from sc_tbl_segments
-where char_count >= 500
-group by decision_id
 ```
 
 ## Replication to AWS
@@ -298,7 +258,7 @@ replicating to: name="s3" type="s3" bucket="corpus-x" path="db" region="" endpoi
 path/to/db/x.db: sync: new generation "xxxxxxxx", no generation exists
 ```
 
-### Nonitor upload
+### Monitor upload
 
 See replication / upload progress in MacOS's *Activity Monitor* / *Network* panel.
 
