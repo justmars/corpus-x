@@ -62,13 +62,13 @@ Order | Time | Instruction
 
 ## Build from corpus-base
 
-Assuming step 3 above has already been completed as a separate process and `pax_` and `_sc_` tables have already been added:
+Assuming step 3 above has already been completed as a separate process and `pax_` and `sc_` tables have already been added:
 
 ```python shell
 >>> from corpus_x import setup_x
 >>> from sqlpyd import Connection
 >>> c = Connection(DatabasePath="x.db", WAL=True)
->>> setup_x('x.db') # creates the database in present working directory
+>>> setup_x('x.db') # adds to the database in present working directory, takes ~2300 seconds or ~40 minutes
 ```
 
 The produced `x.db` file can then be [replicated](docs/4-aws-replicate.md) to aws via litestream, which should take another hour.

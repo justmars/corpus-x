@@ -366,3 +366,4 @@ def set_inclusions(c: Connection):
     populate_db_with_inclusions(c)
     StatuteInOpinion.update_statute_ids(c)
     CitationInOpinion.update_decision_ids(c)
+    c.db.index_foreign_keys()

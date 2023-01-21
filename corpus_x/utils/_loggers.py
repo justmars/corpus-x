@@ -39,11 +39,6 @@ def set_info_handler(filename: str):
 logger.configure(
     handlers=[
         {
-            "sink": sys.stdout,
-            "format": "{message}",
-            "level": "ERROR",
-        },
-        {
             "sink": "logs/debug.log",
             "format": "{message}",
             "level": "DEBUG",

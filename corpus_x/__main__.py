@@ -26,7 +26,6 @@ def setup_x(c: Connection):
     Statute.add_rows(c)
     Codification.add_rows(c)
     set_inclusions(c)
-    c.db.index_foreign_keys()
 
 
 def reset_x(db_path: str):
