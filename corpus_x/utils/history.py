@@ -125,7 +125,6 @@ def set_histories(code_pk: str, nodes: list[dict], c: Connection):
     for node in nodes:
         if h_list := node.get("history", None):
             for h in h_list:
-
                 case_id = detect_case_id(code_pk, ct_evt, h)  # type: ignore
                 if case_id:
                     case_date = dec.get(case_id)["date"]  # type: ignore

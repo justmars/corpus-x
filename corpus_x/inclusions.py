@@ -3,7 +3,7 @@ from collections.abc import Iterator
 from typing import NamedTuple
 
 import yaml
-from citation_utils import Citation, extract_citations
+from citation_utils import Citation
 from corpus_base import DECISION_PATH, CitationRow, DecisionRow, OpinionRow
 from loguru import logger
 from pydantic import Field
@@ -130,7 +130,7 @@ class CitationInOpinion(Citation, TableConfig):
     def extracted(cls, op_id: str, text: str) -> Iterator["CitationInOpinion"]:
         try:
             base = dict(opinion_id=op_id, included_decision_id=None)
-            for cite in extract_citations(text):
+            for cite in Citation.extract_citations(text):
                 data: dict = cite.dict()
                 res = data | base
                 yield cls(**res)  # type: ignore
