@@ -559,13 +559,42 @@
 <h2 id="concept">Concept</h2>
 <p><a href="https://github.com/justmars/corpus-pax">corpus-pax</a> + <a href="https://github.com/justmars/corpus-base">corpus-base</a> + <a href="https://github.com/justmars/statute-trees">statute-trees</a> = converts raw <code>yaml</code>-based corpus repository to its database variant <strong>corpus-x</strong>. After constructing all of the required tables, it becomes possible to <a href="evaluation/">evaluate the raw data</a></p>
 <h2 id="mode">Mode</h2>
-<p>Order | Time | Instruction
-:--:|:--:|--:|
-1 | ~6sec (if with test data) | <a href="https://github.com/justmars/corpus-pax#read-me">corpus-pax</a> pre-requiste before <code>corpus-base</code> can work.
-2 | ~20min | <a href="https://github.com/justmars/corpus-base#read-me">corpus-base</a> pre-requiste before <code>corpus-x</code> can work.
-3 | ~70min | If inclusion files not yet created, run script to generate.
-4 | ~30min | Assuming inclusion files are already created, can populate the various tables under <code>corpus-x</code>
-5 | ~40 to ~60min | Litestream local output <code>x.db</code> to AWS bucket</p>
+<table>
+<thead>
+<tr>
+<th align="center">Order</th>
+<th align="center">Time</th>
+<th align="right">Instruction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="center">~6sec (if with test data)</td>
+<td align="right"><a href="https://github.com/justmars/corpus-pax#read-me">corpus-pax</a> pre-requiste before <code>corpus-base</code> can work.</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">~40min</td>
+<td align="right"><a href="https://github.com/justmars/corpus-base#read-me">corpus-base</a> pre-requiste before <code>corpus-x</code> can work.</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">~70min</td>
+<td align="right">If inclusion files not yet created, run script to generate.</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">~30min</td>
+<td align="right">Assuming inclusion files are already created, can populate the various tables under <code>corpus-x</code></td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">~40 to ~60min</td>
+<td align="right">Litestream local output <code>x.db</code> to AWS bucket</td>
+</tr>
+</tbody>
+</table>
 <h2 id="build-from-corpus-base">Build from corpus-base</h2>
 <p>Assuming step 3 above has already been completed as a separate process and <code>pax_</code> and <code>sc_</code> tables have already been added:</p>
 <div class="highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">corpus_x</span> <span class="kn">import</span> <span class="n">setup_x</span>
