@@ -2,7 +2,7 @@
 
 ## Decision
 
-```python
+```py
 >>> from sqlpyd import Connection
 >>> from corpus_x import get_decision
 >>> case_pk = "gr-l-63915-apr-24-1985-136-scra-27-220-phil-422"

@@ -7,9 +7,9 @@
 ## Mode
 
 Order | Time | Instruction
-:--:|:--:|--:|
+:--:|:--:|--:
 1 | ~6sec (if with test data) | [corpus-pax](https://github.com/justmars/corpus-pax#read-me) pre-requiste before `corpus-base` can work.
-2 | ~20min | [corpus-base](https://github.com/justmars/corpus-base#read-me) pre-requiste before `corpus-x` can work.
+2 | ~40min | [corpus-base](https://github.com/justmars/corpus-base#read-me) pre-requiste before `corpus-x` can work.
 3 | ~70min | If inclusion files not yet created, run script to generate.
 4 | ~30min | Assuming inclusion files are already created, can populate the various tables under `corpus-x`
 5 | ~40 to ~60min | Litestream local output `x.db` to AWS bucket
