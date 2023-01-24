@@ -176,14 +176,14 @@ lxml = ["lxml"]
 
 [[package]]
 name = "bleach"
-version = "5.0.1"
+version = "6.0.0"
 description = "An easy safelist-based HTML-sanitizing tool."
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "bleach-5.0.1-py3-none-any.whl", hash = "sha256:085f7f33c15bd408dd9b17a4ad77c577db66d76203e5984b1bd59baeee948b2a"},
-    {file = "bleach-5.0.1.tar.gz", hash = "sha256:0d03255c47eb9bd2f26aa9bb7f2107732e7e8fe195ca2f64709fcf3b0a4a085c"},
+    {file = "bleach-6.0.0-py3-none-any.whl", hash = "sha256:33c16e3353dbd13028ab4799a0f89a83f113405c766e9c122df8a06f5b85b3f4"},
+    {file = "bleach-6.0.0.tar.gz", hash = "sha256:1a1a85c1595e07d8db14c5f09f09e6433502c51c595970edc090551f0db99414"},
 ]
 
 [package.dependencies]
@@ -192,7 +192,6 @@ webencodings = "*"
 
 [package.extras]
 css = ["tinycss2 (>=1.1.0,<1.2)"]
-dev = ["Sphinx (==4.3.2)", "black (==22.3.0)", "build (==0.8.0)", "flake8 (==4.0.1)", "hashin (==0.17.0)", "mypy (==0.961)", "pip-tools (==6.6.2)", "pytest (==7.1.2)", "tox (==3.25.0)", "twine (==4.0.1)", "wheel (==0.37.1)"]
 
 [[package]]
 name = "certifi"
@@ -395,14 +394,14 @@ files = [
 
 [[package]]
 name = "citation-date"
-version = "0.0.8"
+version = "0.1.1"
 description = "Regex date formula and decoder - Philippine Supreme Court Decisions"
 category = "main"
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "citation_date-0.0.8-py3-none-any.whl", hash = "sha256:b8791ccf64b2271eaf632100d3f2e08e30e39d9a34d314ea501dc70cb4082700"},
-    {file = "citation_date-0.0.8.tar.gz", hash = "sha256:e77c77d50aa52130bc692b06057d688a45945e391693e77b7893b6974e318548"},
+    {file = "citation_date-0.1.1-py3-none-any.whl", hash = "sha256:4382eec1a6c83bf8613b3810ba4cd14907afe0fa5a4833069bfbc456b1f46de5"},
+    {file = "citation_date-0.1.1.tar.gz", hash = "sha256:7e2c7d80b53fa3e8c6e865c443fbbc6a2f265de718dff7bd0403a7e80b402f1d"},
 ]
 
 [package.dependencies]
@@ -411,49 +410,49 @@ types-python-dateutil = ">=2.8.19,<3.0.0"
 
 [[package]]
 name = "citation-docket"
-version = "0.0.18"
-description = "Parse legal citations having the docket format - i.e. GR, AM, AC, BM - referring to Philippine Supreme Court decisions."
+version = "0.1.1"
+description = "Regex formula of Philippine Supreme Court citations in docket format, i.e. GR, AM, AC, BM."
 category = "main"
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "citation_docket-0.0.18-py3-none-any.whl", hash = "sha256:3a69e5491039b96598b2bae036015e05f4e4650e8c4de6ab0d3c220496f93740"},
-    {file = "citation_docket-0.0.18.tar.gz", hash = "sha256:1928d94adb314059d3d784a03ebb7612df1ab2887dbe046b0e1872a05a58edc4"},
+    {file = "citation_docket-0.1.1-py3-none-any.whl", hash = "sha256:7426359c0482377120f98306cae311e0c72cddf106ea3fdac84effea671b203b"},
+    {file = "citation_docket-0.1.1.tar.gz", hash = "sha256:e4c2da7b4ca852117826fd1d5fe1849c832ad7b55218546cd6bc53f1fd9f4b17"},
 ]
 
 [package.dependencies]
-citation_report = ">=0.0.11,<0.0.12"
+citation_report = ">=0.1.1,<0.2.0"
 
 [[package]]
 name = "citation-report"
-version = "0.0.11"
-description = "Parse legal citations having the publisher format - i.e. SCRA, PHIL, OFFG - referring to Philippine Supreme Court decisions."
+version = "0.1.1"
+description = "Regex formula of Philippine Supreme Court citations in report format, i.e. SCRA, PHIL, OFFG."
 category = "main"
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "citation_report-0.0.11-py3-none-any.whl", hash = "sha256:2f5409c1b94ac2ea961bcd41d5fb699c1c3ca6044828ec90636fad6e2601a7b5"},
-    {file = "citation_report-0.0.11.tar.gz", hash = "sha256:81eb84217c7f83213837ee098d22f32bf34e52b791bc0c9ae30606487077cc7b"},
+    {file = "citation_report-0.1.1-py3-none-any.whl", hash = "sha256:8ad84458500559b929eb503124bb914a270e61c4624fae47b5758a14842c0e8f"},
+    {file = "citation_report-0.1.1.tar.gz", hash = "sha256:ea3c257b99f454bd05b58209ad09bf3505ce0c55d2ca9e8f6d3788dd485074a8"},
 ]
 
 [package.dependencies]
-citation-date = ">=0.0.8,<0.0.9"
+citation-date = ">=0.1.1,<0.2.0"
 pydantic = ">=1.10.4,<2.0.0"
 
 [[package]]
 name = "citation-utils"
-version = "0.2.0"
-description = "Regex-based Citations in Philippine Supreme Court decisions."
+version = "0.2.3"
+description = "Regex-based docket- and report- styled citations based on Philippine Supreme Court decisions."
 category = "main"
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "citation_utils-0.2.0-py3-none-any.whl", hash = "sha256:1fcf884b55eb7cc386102f2749c32c0ff050e9420ade67a8a5866e9e8fa95cbb"},
-    {file = "citation_utils-0.2.0.tar.gz", hash = "sha256:87ed77523a5ee99c0f22f2fca4fe7784a6b81156749dc4c1f694fe7ded0694f7"},
+    {file = "citation_utils-0.2.3-py3-none-any.whl", hash = "sha256:2d91325fc912fa9099d4c5986c1839113c1feb43580ea6c302dc504697aa4ebb"},
+    {file = "citation_utils-0.2.3.tar.gz", hash = "sha256:eb325ca29c90f1883f3a0e3e6a8f2d0be522b424d75e26c59f3b8add98ef972b"},
 ]
 
 [package.dependencies]
-citation-docket = ">=0.0.18,<0.0.19"
+citation-docket = ">=0.1.0,<0.2.0"
 loguru = ">=0.6.0,<0.7.0"
 python-slugify = ">=6.1.2,<7.0.0"
 sqlite-utils = ">=3.30,<4.0"
@@ -535,32 +534,32 @@ test = ["flake8 (==3.7.8)", "hypothesis (==3.55.3)"]
 
 [[package]]
 name = "corpus-base"
-version = "0.1.8"
-description = "Add justice, decision, citation, voting, opinion, and segment tables to pre-existing corpus-pax database."
+version = "0.1.10"
+description = "Add justice, decision, citation, voting, opinion, and segment tables to database."
 category = "main"
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "corpus_base-0.1.8-py3-none-any.whl", hash = "sha256:bef95173c536652ca63f6154b7ed7ddc0ff9c03f9e8472ac4c548d9b3d721e6e"},
-    {file = "corpus_base-0.1.8.tar.gz", hash = "sha256:aae339c8fd14697e9a60be5a272bd11e973ab92568c14f08fb86931c1c75051f"},
+    {file = "corpus_base-0.1.10-py3-none-any.whl", hash = "sha256:bf568f6d360c972673eccd0266ff7c6321133595e0596ba0c5b43f69ed34853a"},
+    {file = "corpus_base-0.1.10.tar.gz", hash = "sha256:0a32eba9289b224c32f5a6ec5a7c52805c14f93c9d0537f713e09e5e75a9a481"},
 ]
 
 [package.dependencies]
-citation-utils = ">=0.2.0,<0.3.0"
-corpus-pax = ">=0.1.11,<0.2.0"
+citation-utils = ">=0.2.3,<0.3.0"
+corpus-pax = ">=0.1.12,<0.2.0"
 markdownify = ">=0.11.6,<0.12.0"
 unidecode = ">=1.3.6,<2.0.0"
 
 [[package]]
 name = "corpus-pax"
-version = "0.1.11"
+version = "0.1.12"
 description = "Using Github API (to pull individuals, orgs, and article content), setup a local sqlite database, syncing images to Cloudflare."
 category = "main"
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "corpus_pax-0.1.11-py3-none-any.whl", hash = "sha256:a0bf0f406a93942377141cc238c99301abe8fc5ecfda8994af102c99a6f86543"},
-    {file = "corpus_pax-0.1.11.tar.gz", hash = "sha256:54307351000ce2925a3681ad44c56f1c1b62e1b104dbac9ac4f203a20fa4881e"},
+    {file = "corpus_pax-0.1.12-py3-none-any.whl", hash = "sha256:ceb3bd9e5dc12ee2f3acfa25cabfc54fa8367fbc7eedd341fc54859e8a078cad"},
+    {file = "corpus_pax-0.1.12.tar.gz", hash = "sha256:204e5098b96b54fd98410d8fa8fd6214acb4bee5d20851f8a39818837f46c2bb"},
 ]
 
 [package.dependencies]
@@ -571,7 +570,7 @@ mkdocs = ">=1.4.2,<2.0.0"
 mkdocs-material = ">=9.0.6,<10.0.0"
 mkdocstrings = {version = ">=0.20.0,<0.21.0", extras = ["python"]}
 python-frontmatter = ">=1.0.0,<2.0.0"
-sqlpyd = ">=0.1.3,<0.2.0"
+sqlpyd = ">=0.1.4,<0.2.0"
 
 [[package]]
 name = "coverage"
@@ -639,30 +638,30 @@ toml = ["tomli"]
 
 [[package]]
 name = "debugpy"
-version = "1.6.5"
+version = "1.6.6"
 description = "An implementation of the Debug Adapter Protocol for Python"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "debugpy-1.6.5-cp310-cp310-macosx_11_0_x86_64.whl", hash = "sha256:696165f021a6a17da08163eaae84f3faf5d8be68fb78cd78488dd347e625279c"},
-    {file = "debugpy-1.6.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:17039e392d6f38388a68bd02c5f823b32a92142a851e96ba3ec52aeb1ce9d900"},
-    {file = "debugpy-1.6.5-cp310-cp310-win32.whl", hash = "sha256:62a06eb78378292ba6c427d861246574dc8b84471904973797b29dd33c7c2495"},
-    {file = "debugpy-1.6.5-cp310-cp310-win_amd64.whl", hash = "sha256:9984fc00ab372c97f63786c400107f54224663ea293daab7b365a5b821d26309"},
-    {file = "debugpy-1.6.5-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:048368f121c08b00bbded161e8583817af5055982d2722450a69efe2051621c2"},
-    {file = "debugpy-1.6.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:74e4eca42055759032e3f1909d1374ba1d729143e0c2729bb8cb5e8b5807c458"},
-    {file = "debugpy-1.6.5-cp37-cp37m-win32.whl", hash = "sha256:0f9afcc8cad6424695f3356dc9a7406d5b18e37ee2e73f34792881a44b02cc50"},
-    {file = "debugpy-1.6.5-cp37-cp37m-win_amd64.whl", hash = "sha256:b5a74ecebe5253344501d9b23f74459c46428b30437fa9254cfb8cb129943242"},
-    {file = "debugpy-1.6.5-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:9e809ef787802c808995e5b6ade714a25fa187f892b41a412d418a15a9c4a432"},
-    {file = "debugpy-1.6.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:947c686e8adb46726f3d5f19854f6aebf66c2edb91225643c7f44b40b064a235"},
-    {file = "debugpy-1.6.5-cp38-cp38-win32.whl", hash = "sha256:377391341c4b86f403d93e467da8e2d05c22b683f08f9af3e16d980165b06b90"},
-    {file = "debugpy-1.6.5-cp38-cp38-win_amd64.whl", hash = "sha256:286ae0c2def18ee0dc8a61fa76d51039ca8c11485b6ed3ef83e3efe8a23926ae"},
-    {file = "debugpy-1.6.5-cp39-cp39-macosx_11_0_x86_64.whl", hash = "sha256:500dd4a9ff818f5c52dddb4a608c7de5371c2d7d905c505eb745556c579a9f11"},
-    {file = "debugpy-1.6.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8f3fab217fe7e2acb2d90732af1a871947def4e2b6654945ba1ebd94bd0bea26"},
-    {file = "debugpy-1.6.5-cp39-cp39-win32.whl", hash = "sha256:15bc5febe0edc79726517b1f8d57d7ac7c784567b5ba804aab8b1c9d07a57018"},
-    {file = "debugpy-1.6.5-cp39-cp39-win_amd64.whl", hash = "sha256:7e84d9e4420122384cb2cc762a00b4e17cbf998022890f89b195ce178f78ff47"},
-    {file = "debugpy-1.6.5-py2.py3-none-any.whl", hash = "sha256:8116e40a1cd0593bd2aba01d4d560ee08f018da8e8fbd4cbd24ff09b5f0e41ef"},
-    {file = "debugpy-1.6.5.zip", hash = "sha256:5e55e6c79e215239dd0794ee0bf655412b934735a58e9d705e5c544f596f1603"},
+    {file = "debugpy-1.6.6-cp310-cp310-macosx_11_0_x86_64.whl", hash = "sha256:0ea1011e94416e90fb3598cc3ef5e08b0a4dd6ce6b9b33ccd436c1dffc8cd664"},
+    {file = "debugpy-1.6.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:dff595686178b0e75580c24d316aa45a8f4d56e2418063865c114eef651a982e"},
+    {file = "debugpy-1.6.6-cp310-cp310-win32.whl", hash = "sha256:87755e173fcf2ec45f584bb9d61aa7686bb665d861b81faa366d59808bbd3494"},
+    {file = "debugpy-1.6.6-cp310-cp310-win_amd64.whl", hash = "sha256:72687b62a54d9d9e3fb85e7a37ea67f0e803aaa31be700e61d2f3742a5683917"},
+    {file = "debugpy-1.6.6-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:78739f77c58048ec006e2b3eb2e0cd5a06d5f48c915e2fc7911a337354508110"},
+    {file = "debugpy-1.6.6-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:23c29e40e39ad7d869d408ded414f6d46d82f8a93b5857ac3ac1e915893139ca"},
+    {file = "debugpy-1.6.6-cp37-cp37m-win32.whl", hash = "sha256:7aa7e103610e5867d19a7d069e02e72eb2b3045b124d051cfd1538f1d8832d1b"},
+    {file = "debugpy-1.6.6-cp37-cp37m-win_amd64.whl", hash = "sha256:f6383c29e796203a0bba74a250615ad262c4279d398e89d895a69d3069498305"},
+    {file = "debugpy-1.6.6-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:23363e6d2a04d726bbc1400bd4e9898d54419b36b2cdf7020e3e215e1dcd0f8e"},
+    {file = "debugpy-1.6.6-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9b5d1b13d7c7bf5d7cf700e33c0b8ddb7baf030fcf502f76fc061ddd9405d16c"},
+    {file = "debugpy-1.6.6-cp38-cp38-win32.whl", hash = "sha256:70ab53918fd907a3ade01909b3ed783287ede362c80c75f41e79596d5ccacd32"},
+    {file = "debugpy-1.6.6-cp38-cp38-win_amd64.whl", hash = "sha256:c05349890804d846eca32ce0623ab66c06f8800db881af7a876dc073ac1c2225"},
+    {file = "debugpy-1.6.6-cp39-cp39-macosx_11_0_x86_64.whl", hash = "sha256:11a0f3a106f69901e4a9a5683ce943a7a5605696024134b522aa1bfda25b5fec"},
+    {file = "debugpy-1.6.6-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a771739902b1ae22a120dbbb6bd91b2cae6696c0e318b5007c5348519a4211c6"},
+    {file = "debugpy-1.6.6-cp39-cp39-win32.whl", hash = "sha256:549ae0cb2d34fc09d1675f9b01942499751d174381b6082279cf19cdb3c47cbe"},
+    {file = "debugpy-1.6.6-cp39-cp39-win_amd64.whl", hash = "sha256:de4a045fbf388e120bb6ec66501458d3134f4729faed26ff95de52a754abddb1"},
+    {file = "debugpy-1.6.6-py2.py3-none-any.whl", hash = "sha256:be596b44448aac14eb3614248c91586e2bc1728e020e82ef3197189aae556115"},
+    {file = "debugpy-1.6.6.zip", hash = "sha256:b9c2130e1c632540fbf9c2c88341493797ddf58016e7cba02e311de9b0a96b67"},
 ]
 
 [[package]]
@@ -904,14 +903,14 @@ socks = ["socksio (>=1.0.0,<2.0.0)"]
 
 [[package]]
 name = "identify"
-version = "2.5.13"
+version = "2.5.15"
 description = "File identification library for Python"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "identify-2.5.13-py2.py3-none-any.whl", hash = "sha256:8aa48ce56e38c28b6faa9f261075dea0a942dfbb42b341b4e711896cbb40f3f7"},
-    {file = "identify-2.5.13.tar.gz", hash = "sha256:abb546bca6f470228785338a01b539de8a85bbf46491250ae03363956d8ebb10"},
+    {file = "identify-2.5.15-py2.py3-none-any.whl", hash = "sha256:1f4b36c5f50f3f950864b2a047308743f064eaa6f6645da5e5c780d1c7125487"},
+    {file = "identify-2.5.15.tar.gz", hash = "sha256:c22aa206f47cc40486ecf585d27ad5f40adbfc494a3fa41dc3ed0499a23b123f"},
 ]
 
 [package.extras]
@@ -1210,14 +1209,14 @@ test = ["pexpect"]
 
 [[package]]
 name = "jupyter-core"
-version = "5.1.3"
+version = "5.1.4"
 description = "Jupyter core package. A base package on which Jupyter projects rely."
 category = "dev"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "jupyter_core-5.1.3-py3-none-any.whl", hash = "sha256:d23ab7db81ca1759f13780cd6b65f37f59bf8e0186ac422d5ca4982cc7d56716"},
-    {file = "jupyter_core-5.1.3.tar.gz", hash = "sha256:82e1cff0ef804c38677eff7070d5ff1d45037fef01a2d9ba9e6b7b8201831e9f"},
+    {file = "jupyter_core-5.1.4-py3-none-any.whl", hash = "sha256:fe812ffffd0ead286327dc570888684183cef4070e57d9ebadc92f3bd9c9a05d"},
+    {file = "jupyter_core-5.1.4.tar.gz", hash = "sha256:80d29fef4210ca8d30f25018a28d06dcc582bb1a82b848f2eab61a349a007af1"},
 ]
 
 [package.dependencies]
@@ -1470,6 +1469,28 @@ files = [
     {file = "mergedeep-1.3.4-py3-none-any.whl", hash = "sha256:70775750742b25c0d8f36c55aed03d24c3384d17c951b3175d898bd778ef0307"},
     {file = "mergedeep-1.3.4.tar.gz", hash = "sha256:0096d52e9dad9939c3d975a774666af186eda617e6ca84df4c94dec30004f2a8"},
 ]
+
+[[package]]
+name = "mike"
+version = "1.1.2"
+description = "Manage multiple versions of your MkDocs-powered documentation"
+category = "dev"
+optional = false
+python-versions = "*"
+files = [
+    {file = "mike-1.1.2-py3-none-any.whl", hash = "sha256:4c307c28769834d78df10f834f57f810f04ca27d248f80a75f49c6fa2d1527ca"},
+    {file = "mike-1.1.2.tar.gz", hash = "sha256:56c3f1794c2d0b5fdccfa9b9487beb013ca813de2e3ad0744724e9d34d40b77b"},
+]
+
+[package.dependencies]
+jinja2 = "*"
+mkdocs = ">=1.0"
+pyyaml = ">=5.1"
+verspec = "*"
+
+[package.extras]
+dev = ["coverage", "flake8 (>=3.0)", "shtab"]
+test = ["coverage", "flake8 (>=3.0)", "shtab"]
 
 [[package]]
 name = "mistune"
@@ -1923,14 +1944,14 @@ virtualenv = ">=20.10.0"
 
 [[package]]
 name = "prometheus-client"
-version = "0.15.0"
+version = "0.16.0"
 description = "Python client for the Prometheus monitoring system."
 category = "dev"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "prometheus_client-0.15.0-py3-none-any.whl", hash = "sha256:db7c05cbd13a0f79975592d112320f2605a325969b270a94b71dcabc47b931d2"},
-    {file = "prometheus_client-0.15.0.tar.gz", hash = "sha256:be26aa452490cfcf6da953f9436e95a9f2b4d578ca80094b4458930e5f584ab1"},
+    {file = "prometheus_client-0.16.0-py3-none-any.whl", hash = "sha256:0836af6eb2c8f4fed712b2f279f6c0a8bbab29f9f4aa15276b91c7cb0d1616ab"},
+    {file = "prometheus_client-0.16.0.tar.gz", hash = "sha256:a03e35b359f14dd1630898543e2120addfdeacd1a6069c1367ae90fd93ad3f48"},
 ]
 
 [package.extras]
@@ -2806,14 +2827,14 @@ test = ["black", "cogapp", "hypothesis", "pytest"]
 
 [[package]]
 name = "sqlpyd"
-version = "0.1.3"
+version = "0.1.4"
 description = "Validate raw content with pydantic for consumption by sqlite-utils."
 category = "main"
 optional = false
 python-versions = ">=3.10,<4.0"
 files = [
-    {file = "sqlpyd-0.1.3-py3-none-any.whl", hash = "sha256:32acfd639823e836e40a5c1aa377e07259ac84c48b78b93a7067f11b2c13ddcc"},
-    {file = "sqlpyd-0.1.3.tar.gz", hash = "sha256:05fed9cdca0e26e47edaf3fb8025cca28a93f4ea2de94bf7909f4c2a35dfc312"},
+    {file = "sqlpyd-0.1.4-py3-none-any.whl", hash = "sha256:f0ed9664d58d8eccde1da1de5666c3984d73d7f578d08d99a7b38f8cebc59bbb"},
+    {file = "sqlpyd-0.1.4.tar.gz", hash = "sha256:7d5270ee09eef350eab4f13f4357f56064904de5f9d81c7e17ea0b4883c6157b"},
 ]
 
 [package.dependencies]
@@ -2843,14 +2864,14 @@ tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
 
 [[package]]
 name = "statute-patterns"
-version = "0.0.26"
-description = "Philippine statutory law pattern matching library."
+version = "0.2.0"
+description = "Philippine statutory law pattern matching and unit retrieval."
 category = "main"
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "statute_patterns-0.0.26-py3-none-any.whl", hash = "sha256:33d8c0466142d9be42e1a8299eaf50ea8a686b7edab47e00375ed42d74bbd362"},
-    {file = "statute_patterns-0.0.26.tar.gz", hash = "sha256:0af39a862cfae507054b41951e578840a0053ede1e3e8fe0f9fcd6d6b89d3b84"},
+    {file = "statute_patterns-0.2.0-py3-none-any.whl", hash = "sha256:bf4449299b88759a6ff02751204778f36c886c5b2fb0efe84345129f44953b60"},
+    {file = "statute_patterns-0.2.0.tar.gz", hash = "sha256:b92ab0694b4173351960b95aaee5feb7556df668e96af07ff384be62c131b7f8"},
 ]
 
 [package.dependencies]
@@ -2862,20 +2883,19 @@ python-slugify = ">=6.1.2,<7.0.0"
 
 [[package]]
 name = "statute-trees"
-version = "0.0.21"
-description = "Law mostly consists of tree-like nodes. This package supports a common tree format for Philippine Codifications, Statutes, and Documents, using a uniform node structure (i.e., leaves of a tree) identified by a given material path."
+version = "0.1.0"
+description = "Tree-based Philippine Codifications, Statutes, and Documents, using a uniform node structure (i.e., leaves of a tree) identified by a given material path."
 category = "main"
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "statute_trees-0.0.21-py3-none-any.whl", hash = "sha256:651c721149d302c8538deb3ac3f930df20ac8b47e413758748b356d25450fade"},
-    {file = "statute_trees-0.0.21.tar.gz", hash = "sha256:18efce257bf0149e93fbe111303aaec50630840feccb239774344374e6b1f942"},
+    {file = "statute_trees-0.1.0-py3-none-any.whl", hash = "sha256:23d1fd6d4eda06ec1f4eabf31a23a64d24d4454dde370a2c3f9a44f6c5e76321"},
+    {file = "statute_trees-0.1.0.tar.gz", hash = "sha256:9c5c91d0cf63d6b6b1739bf3ab5525e95be3719cf81a460fb69faacb18d5e0b9"},
 ]
 
 [package.dependencies]
-citation-utils = ">=0.2.0,<0.3.0"
-email-validator = ">=1.3.0,<2.0.0"
-statute-patterns = ">=0.0.26,<0.0.27"
+citation-utils = ">=0.2.3,<0.3.0"
+statute-patterns = ">=0.2.0,<0.3.0"
 
 [[package]]
 name = "tabulate"
@@ -3098,6 +3118,21 @@ secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "ipaddress", "p
 socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
+name = "verspec"
+version = "0.1.0"
+description = "Flexible version handling"
+category = "dev"
+optional = false
+python-versions = "*"
+files = [
+    {file = "verspec-0.1.0-py3-none-any.whl", hash = "sha256:741877d5633cc9464c45a469ae2a31e801e6dbbaa85b9675d481cda100f11c31"},
+    {file = "verspec-0.1.0.tar.gz", hash = "sha256:c4504ca697b2056cdb4bfa7121461f5a0e81809255b41c03dda4ba823637c01e"},
+]
+
+[package.extras]
+test = ["coverage", "flake8 (>=3.7)", "mypy", "pretend", "pytest"]
+
+[[package]]
 name = "virtualenv"
 version = "20.17.1"
 description = "Virtual Python Environment builder"
@@ -3241,4 +3276,4 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "7d6fb0b979969efc9eae97364341daff81b4948fdfc2561f2c2408880eef68b6"
+content-hash = "bcbaf8221e490ea3286a3b18aed75c5f8d57e1dc24616da720a0c055e3b4c59e"

@@ -6,7 +6,7 @@ Create the `x.db` sqlite database for lawdata; utilized in the [LawSQL dataset](
 
 ## Documentation
 
-See [documentation](https://justmars.github.io/corpus-x).
+See [documentation](https://justmars.github.io/corpus-x), building on top of [corpus-base](https://justmars.github.io/corpus-base)
 
 ## Development
 
