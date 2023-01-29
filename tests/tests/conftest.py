@@ -4,10 +4,9 @@ from pathlib import Path
 
 import pytest
 import yaml
+from corpus_base import build_sc_tables, setup_case
 from corpus_pax import Individual, init_person_tables
 from sqlpyd import Connection
-
-from corpus_base import build_sc_tables, setup_case
 
 temppath = "tests/test.db"
 

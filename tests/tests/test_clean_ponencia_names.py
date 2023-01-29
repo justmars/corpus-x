@@ -1,5 +1,4 @@
 import pytest
-
 from corpus_base import RawPonente
 
 data = [

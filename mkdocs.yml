@@ -2,7 +2,7 @@ site_name: Corpus X Docs
 site_description: All corpus packages to generate sqlite db for lawdata.xyz
 site_url: https://lawsql.com
 site_author: Marcelino Veloso III
-repo_url: https://github.com/justmars/corpus-base
+repo_url: https://github.com/justmars/corpus-x
 theme:
   name: "material"
   palette:

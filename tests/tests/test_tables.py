@@ -1,5 +1,3 @@
-from sqlpyd import Connection
-
 from corpus_base import (
     CitationRow,
     DecisionRow,
@@ -8,6 +6,7 @@ from corpus_base import (
     TitleTagRow,
     VoteLine,
 )
+from sqlpyd import Connection
 
 
 def test_rows_made(session: Connection):
