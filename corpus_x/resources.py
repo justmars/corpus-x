@@ -136,12 +136,12 @@ def sql_get_authors(generic_tbl_name: str, generic_id: str) -> str:
     CodeRow, DocRow, StatuteRow. Each of these tables are associated
     with the Individual table. The result looks something like this:
 
-    ```
-    >>> from .statutes import StatuteRow
-    >>> sql = sql_get_authors(StatuteRow.__tablename__, "ra-386-june-18-1949")
-    >>> type(sql)
-    <class 'str'>
-    ```
+    Examples:
+        >>> from .statutes import StatuteRow
+        >>> sql = sql_get_authors(StatuteRow.__tablename__, "ra-386-june-18-1949")
+        >>> type(sql)
+        <class 'str'>
+
 
     See sqlite_utils which creates m2m object tables after sorting the tables
     alphabetically.

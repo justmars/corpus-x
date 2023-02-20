@@ -27,7 +27,7 @@ export REPLICA_URL=s3://bucket/path
 
 Run the following replication command:
 
-```console
+```sh
 litestream replicate -config litestream.yml
 ```
 
